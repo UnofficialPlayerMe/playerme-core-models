@@ -1,0 +1,22 @@
+{
+  "name": "upa-models",
+  "version": "0.0.0",
+  "description": "A module containing models that represent objects in the Player v1 API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zazz-PlayerMe/upa-models.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zazz-PlayerMe/upa-models/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-jsdoc3": "~0.2.1"
+  }
+}
