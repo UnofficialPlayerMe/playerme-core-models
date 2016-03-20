@@ -1,8 +1,9 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.CommentModel = exports.UserExtendedModel = exports.UserModel = undefined;
 
 var _UserModel = require('./models/UserModel');
 
@@ -18,10 +19,6 @@ var _CommentModel2 = _interopRequireDefault(_CommentModel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var UpaModels = {
-    UserModel: _UserModel2.default,
-    UserExtendedModel: _UserExtendedModel2.default,
-    CommentModel: _CommentModel2.default
-};
-
-exports.default = UpaModels;
+exports.UserModel = _UserModel2.default;
+exports.UserExtendedModel = _UserExtendedModel2.default;
+exports.CommentModel = _CommentModel2.default;
