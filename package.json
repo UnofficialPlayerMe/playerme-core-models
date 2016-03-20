@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A module containing models that represent objects in the Player v1 API",
   "private": true,
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +12,9 @@
     "url": "https://github.com/Zazz-PlayerMe/upa-models.git"
   },
   "author": {
-    "name" : "Zazz",
-    "email" : "zazz@playerme.zazz.rocks",
-    "url" : "playerme.zazz.rocks"
+    "name": "Zazz",
+    "email": "zazz@playerme.zazz.rocks",
+    "url": "playerme.zazz.rocks"
   },
   "license": "MIT",
   "bugs": {
@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "gulp": "~3.9.1",
-    "gulp-jsdoc3": "~0.2.1"
+    "gulp-jsdoc3": "~0.2.1",
+    "gulp-babel": "~6.1.2",
+    "babel-preset-es2015": "~6.6.0"
   }
 }
