@@ -6,7 +6,7 @@ var dateString = date.toISOString();
 
 var standard = {
     id:                 1,
-    user_id:            2,
+    user_id:            RawUserModel.id,
     activity_user_id:   3,
     activity_id:        4,
     post:               'post',
