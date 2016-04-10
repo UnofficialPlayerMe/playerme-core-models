@@ -4,7 +4,7 @@ var standard = {
     title:          'Mock Meta Title',
     description:    'Mock Meta Description',
     provider:       'provider',
-    content:        'content',
+    content:        'photo',
     isInternal:     false,
     thumbnail:      'thumbnail'
 };
