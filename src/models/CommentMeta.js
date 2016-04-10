@@ -35,7 +35,7 @@ class CommentMeta {
      * @returns {string}
      */
     get url() {
-        return this._images;
+        return this._url;
     }
 
     /**
