@@ -11,6 +11,11 @@ class UserExtendedModel extends UserModel{
      */
     constructor(obj=null)
     {
+        var toDate = (str) => {
+            if (!str) return null;
+            return new Date(str);
+        };
+
         super(obj);
         var cover = obj && obj.cover || null;
         var avatar = obj && obj.avatar || null;
@@ -24,7 +29,7 @@ class UserExtendedModel extends UserModel{
         this._avatarOriginal            = avatar && avatar.original             || '';
         this._avatarCached              = avatar && avatar.cached               || '';
         this._avatarOriginalFilename    = avatar && avatar.original_filename    || '';
-        this._createdAt                 = obj    && obj   .created_at           || '';
+        this._createdAt                 = obj    && toDate(obj.created_at)      || '';
         this._generatedBy               = obj    && obj   .generated_by         || null;
         this._isCurrentUser             = obj    && obj   .is_current_user      || false;
         this._isFollowing               = obj    && obj   .is_following         || false;
@@ -91,16 +96,6 @@ class UserExtendedModel extends UserModel{
     }
 
     /**
-     * The path to the cached cover image.
-     * @readonly
-     * @member {string} UserExtendedModel#coverCached
-     * @returns {string}
-     */
-    get coverCached() {
-        return this._coverCached;
-    }
-
-    /**
      * The original cover image's filename.
      * @readonly
      * @member {string} UserExtendedModel#coverOriginalFilename
@@ -118,16 +113,6 @@ class UserExtendedModel extends UserModel{
      */
     get avatarOriginal() {
         return this._avatarOriginal;
-    }
-
-    /**
-     * The path to the cached avatar.
-     * @readonly
-     * @member {string} UserExtendedModel#avatarCached
-     * @returns {string}
-     */
-    get avatarCached() {
-        return this._avatarCached;
     }
 
     /**

@@ -11,6 +11,11 @@ class CommentModel {
      */
     constructor(obj=null)
     {
+        var toDate = (str) => {
+            if (!str) return null;
+            return new Date(str);
+        };
+
         var data = obj && obj.data || null;
 
         this._id             = obj  && obj.id                   || 0;
@@ -20,10 +25,10 @@ class CommentModel {
         this._post           = data && data.post                || '';
         this._postRaw        = data && data.post_raw            || '';
         this._metas          = obj  && obj.metas.map((meta)=>new CommentMeta(meta)) || [];
-        this._createdAt      = obj  && obj.created_at           || null;
-        this._updatedAt      = obj  && obj.updated_at           || null;
-        this._editedAt       = obj  && obj.edited_at            || null;
-        this._deletedAt      = obj  && obj.deleted_at           || null;
+        this._createdAt      = obj  && toDate(obj.created_at)   || null;
+        this._updatedAt      = obj  && toDate(obj.updated_at)   || null;
+        this._editedAt       = obj  && toDate(obj.edited_at)    || null;
+        this._deletedAt      = obj  && toDate(obj.deleted_at)   || null;
         this._user           = obj  && new UserModel(obj.user)  || null;
         this._userIsBlocked  = obj  && obj.userIsBlocked        || false;
         this._hasLiked       = obj  && obj.hasLiked             || false;
@@ -32,12 +37,6 @@ class CommentModel {
         this._showEdit       = obj  && obj.showEdit             || false;
         this._isOwnComment   = obj  && obj.isOwnComment         || false;
         this._likesCount     = obj  && obj.likesCount           || 0;
-
-        //Convert ISO date strings to Dates
-        this._createdAt = (this._createdAt ? new Date(this._createdAt) : false) || null;
-        this._updatedAt = (this._updatedAt ? new Date(this._updatedAt) : false) || null;
-        this._editedAt  = (this._editedAt  ? new Date(this._editedAt ) : false) || null;
-        this._deletedAt = (this._deletedAt ? new Date(this._deletedAt) : false) || null;
     }
 
     toString() {

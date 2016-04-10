@@ -28,10 +28,8 @@ describe("CommentModel", function() {
         assertProperty( model, 'description',               'string' );
         assertProperty( model, 'descriptionHtml',           'string' );
         assertProperty( model, 'coverOriginal',             'string' );
-        assertProperty( model, 'coverCached',               'string' );
         assertProperty( model, 'coverOriginalFilename',     'string' );
         assertProperty( model, 'avatarOriginal',            'string' );
-        assertProperty( model, 'avatarCached',              'string' );
         assertProperty( model, 'avatarOriginalFilename',    'string' );
         assertProperty( model, 'createdAt',                 'Date'    );
         assertProperty( model, 'generatedBy',               'string'  );
