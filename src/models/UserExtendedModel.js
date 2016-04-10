@@ -36,8 +36,11 @@ class UserExtendedModel extends UserModel{
         this._followingCount            = obj    && obj   .following_count      || 0;
 
         // Overrides
-        if (cover && !this._cover) this._cover = cover.cached;
-        if (avatar && !this._avatar) this._avatar = avatar.cached;
+        if (cover)  this._cover  = cover.cached;
+        if (avatar) this._avatar = avatar.cached;
+
+        //Convert ISO date strings to Dates
+        this._createdAt = (this._createdAt ? new Date(this._createdAt) : false) || null;
     }
 
     /**
