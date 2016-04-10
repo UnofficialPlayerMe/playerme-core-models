@@ -1,56 +1,30 @@
 import CommentModel from '../src/models/CommentModel';
+import {assertHasProperty} from './utils/TestHelpers';
 import RawCommentModel from './mocks/RawCommentModel';
 
 describe("CommentModel", function() {
     it("has the expected fields", function() {
         var model = new CommentModel(RawCommentModel);
 
-        var hasProperty = (key, type, target) => {
-            target = target || model;
-            let value = target[key];
-
-            expect(value).toBeDefined("["+key+"] is not defined");
-
-            switch(type){
-                case undefined:
-                    break;
-                default:
-                    expect(value.constructor.name).toBe(type, "["+key+"] is not an instance of ["+type+"]");
-                    break;
-                case 'null':
-                    expect(value).toBeNull("["+key+"] is not null");
-                    break;
-                case 'undefined':
-                case 'object':
-                case 'boolean':
-                case 'number':
-                case 'string':
-                case 'symbol':
-                case 'function':
-                    expect(typeof value).toBe(type, "["+key+"] is not of type ["+type+"]");
-                    break;
-            }
-        };
-
-        hasProperty('id',               'number');
-        hasProperty('userId',           'number');
-        hasProperty('activityUserId',   'number');
-        hasProperty('activityId',       'number');
-        hasProperty('post',             'string');
-        hasProperty('postRaw',          'string');
-        hasProperty('metas',            'object');
-        hasProperty('0',                'CommentMeta', model.metas);
-        hasProperty('createdAt',        'Date');
-        hasProperty('updatedAt',        'Date');
-        hasProperty('editedAt',         'null');
-        hasProperty('deletedAt',        'null');
-        hasProperty('user',             'UserModel');
-        hasProperty('userIsBlocked',    'boolean');
-        hasProperty('hasLiked',         'boolean');
-        hasProperty('url',              'string');
-        hasProperty('showDelete',       'boolean');
-        hasProperty('showEdit',         'boolean');
-        hasProperty('isOwnComment',     'boolean');
-        hasProperty('likesCount',       'number');
+        assertHasProperty( model,       'id',               'number'        );
+        assertHasProperty( model,       'userId',           'number'        );
+        assertHasProperty( model,       'activityUserId',   'number'        );
+        assertHasProperty( model,       'activityId',       'number'        );
+        assertHasProperty( model,       'post',             'string'        );
+        assertHasProperty( model,       'postRaw',          'string'        );
+        assertHasProperty( model,       'metas',            'array'         );
+        assertHasProperty( model.metas, '0',                'CommentMeta'   );
+        assertHasProperty( model,       'createdAt',        'Date'          );
+        assertHasProperty( model,       'updatedAt',        'Date'          );
+        assertHasProperty( model,       'editedAt',         'null'          );
+        assertHasProperty( model,       'deletedAt',        'null'          );
+        assertHasProperty( model,       'user',             'UserModel'     );
+        assertHasProperty( model,       'userIsBlocked',    'boolean'       );
+        assertHasProperty( model,       'hasLiked',         'boolean'       );
+        assertHasProperty( model,       'url',              'string'        );
+        assertHasProperty( model,       'showDelete',       'boolean'       );
+        assertHasProperty( model,       'showEdit',         'boolean'       );
+        assertHasProperty( model,       'isOwnComment',     'boolean'       );
+        assertHasProperty( model,       'likesCount',       'number'        );
     });
 });
