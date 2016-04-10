@@ -1,6 +1,7 @@
 import UserModel from './UserModel';
 import CommentModel from './CommentModel';
 import ActivityPostData from './ActivityPostData';
+import ActivityVideoData from './ActivityVideoData';
 
 /**
  * A model representing a Player.me Activity.
@@ -60,7 +61,7 @@ class ActivityModel {
                 this._postData = new ActivityPostData(obj.data);
             }
             if (this.isVideo()){
-                // TODO Video Data
+                this._videoData = new ActivityVideoData(obj.data);
             }
         }
     }
@@ -339,6 +340,26 @@ class ActivityModel {
      */
     get comments(){
         return this._comments;
+    }
+
+    /**
+     * Data about the post, if this Activity is the right type
+     * @readonly
+     * @member {ActivityPostData|null} ActivityModel#post
+     * @returns {ActivityPostData|null}
+     */
+    get post(){
+        return this._postData;
+    }
+
+    /**
+     * Data about the video, if this Activity is the right type
+     * @readonly
+     * @member {ActivityVideoData|null} ActivityModel#video
+     * @returns {ActivityVideoData|null}
+     */
+    get video(){
+        return this._videoData;
     }
 
     //////////////
