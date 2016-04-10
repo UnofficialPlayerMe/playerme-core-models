@@ -1,8 +1,6 @@
+import {getDateString} from '../utils/MockHelpers';
 import RawUserModel from '../mocks/RawUserModel';
 import RawCommentMeta from '../mocks/RawCommentMeta';
-
-var date = new Date(2000, 0, 1, 1, 0, 0, 0);
-var dateString = date.toISOString();
 
 var standard = {
     id:                 1,
@@ -12,8 +10,8 @@ var standard = {
     post:               'post',
     post_raw:           'post_raw',
     metas:              [RawCommentMeta],
-    created_at:         dateString,
-    updated_at:         dateString,
+    created_at:         getDateString(),
+    updated_at:         getDateString(),
     edited_at:          null,
     deleted_at:         null,
     user:               RawUserModel,
