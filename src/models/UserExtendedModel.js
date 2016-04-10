@@ -43,6 +43,13 @@ class UserExtendedModel extends UserModel{
         this._createdAt = (this._createdAt ? new Date(this._createdAt) : false) || null;
     }
 
+    toString() {
+        var msg = '[UserExtendedModel';
+        if (this._id) msg += ' #'+this._id;
+        if (this._username) msg += ' "'+this._username+'"';
+        return msg +']';
+    }
+
     /**
      * The user's short bio.
      * @readonly

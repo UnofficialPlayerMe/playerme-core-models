@@ -40,6 +40,12 @@ class CommentModel {
         this._deletedAt = (this._deletedAt ? new Date(this._deletedAt) : false) || null;
     }
 
+    toString() {
+        var msg = '[ActivityModel';
+        if (this._id) msg += ' #'+this._id;
+        return msg +']';
+    }
+
     /**
      * The comment's ID number.
      * @readonly

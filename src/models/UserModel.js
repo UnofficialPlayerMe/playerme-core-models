@@ -22,6 +22,13 @@ class UserModel {
         this._isPrivate         = obj && obj.is_private         || false;
     }
 
+    toString() {
+        var msg = '[UserModel';
+        if (this._id) msg += ' #'+this._id;
+        if (this._username) msg += ' "'+this._username+'"';
+        return msg +']';
+    }
+
     /**
      * The user's ID.
      * @readonly
