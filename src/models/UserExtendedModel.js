@@ -51,7 +51,7 @@ class UserExtendedModel extends UserModel{
     toString() {
         var msg = '[UserExtendedModel';
         if (this._id) msg += ' #'+this._id;
-        if (this._username) msg += ' "'+this._username+'"';
+        if (this._slug) msg += ' "'+this._slug+'"';
         return msg +']';
     }
 

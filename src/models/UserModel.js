@@ -25,7 +25,7 @@ class UserModel {
     toString() {
         var msg = '[UserModel';
         if (this._id) msg += ' #'+this._id;
-        if (this._username) msg += ' "'+this._username+'"';
+        if (this._slug) msg += ' "'+this._slug+'"';
         return msg +']';
     }
 
