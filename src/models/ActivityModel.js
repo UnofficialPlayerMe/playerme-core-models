@@ -1,5 +1,6 @@
 import UserModel from './UserModel';
 import CommentModel from './CommentModel';
+import ActivityPostData from './ActivityPostData';
 
 /**
  * A model representing a Player.me Activity.
@@ -55,12 +56,11 @@ class ActivityModel {
         this._videoData = null;
 
         if (obj && obj.data){
-            // TODO
             if (this.isPost()){
-
+                this._postData = new ActivityPostData(obj.data);
             }
             if (this.isVideo()){
-
+                // TODO Video Data
             }
         }
     }
