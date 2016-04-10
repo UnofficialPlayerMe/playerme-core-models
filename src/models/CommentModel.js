@@ -1,4 +1,5 @@
 import CommentMeta from './CommentMeta';
+import UserModel from './UserModel';
 
 /**
  * A model representing a Player.me Comment.
@@ -12,25 +13,31 @@ class CommentModel {
     {
         var data = obj && obj.data || null;
 
-        this._id             = obj  && obj.id               || -1;
-        this._userId         = obj  && obj.user_id          || -1;
-        this._activityUserId = obj  && obj.activity_user_id || -1;
-        this._activityId     = obj  && obj.activity_id      || -1;
-        this._post           = data && data.post            || '';
-        this._postRaw        = data && data.post_raw        || '';
+        this._id             = obj  && obj.id                   || -1;
+        this._userId         = obj  && obj.user_id              || -1;
+        this._activityUserId = obj  && obj.activity_user_id     || -1;
+        this._activityId     = obj  && obj.activity_id          || -1;
+        this._post           = data && data.post                || '';
+        this._postRaw        = data && data.post_raw            || '';
         this._metas          = obj  && obj.metas.map((meta)=>new CommentMeta(meta)) || [];
-        this._createdAt      = obj  && obj.created_at       || null;
-        this._updatedAt      = obj  && obj.updated_at       || null;
-        this._editedAt       = obj  && obj.edited_at        || null;
-        this._deletedAt      = obj  && obj.deleted_at       || null;
-        this._user           = obj  && obj.user             || null; // TODO Convert to User model
-        this._userIsBlocked  = obj  && obj.userIsBlocked    || false;
-        this._hasLiked       = obj  && obj.hasLiked         || false;
-        this._url            = obj  && obj.url              || '';
-        this._showDelete     = obj  && obj.showDelete       || false;
-        this._showEdit       = obj  && obj.showEdit         || false;
-        this._isOwnComment   = obj  && obj.isOwnComment     || false;
-        this._likesCount     = obj  && obj.likesCount       || 0;
+        this._createdAt      = obj  && obj.created_at           || null;
+        this._updatedAt      = obj  && obj.updated_at           || null;
+        this._editedAt       = obj  && obj.edited_at            || null;
+        this._deletedAt      = obj  && obj.deleted_at           || null;
+        this._user           = obj  && new UserModel(obj.user)  || null;
+        this._userIsBlocked  = obj  && obj.userIsBlocked        || false;
+        this._hasLiked       = obj  && obj.hasLiked             || false;
+        this._url            = obj  && obj.url                  || '';
+        this._showDelete     = obj  && obj.showDelete           || false;
+        this._showEdit       = obj  && obj.showEdit             || false;
+        this._isOwnComment   = obj  && obj.isOwnComment         || false;
+        this._likesCount     = obj  && obj.likesCount           || 0;
+
+        //Convert ISO date strings to Dates
+        this._createdAt = (this._createdAt ? new Date(this._createdAt) : false) || null;
+        this._updatedAt = (this._updatedAt ? new Date(this._updatedAt) : false) || null;
+        this._editedAt  = (this._editedAt  ? new Date(this._editedAt ) : false) || null;
+        this._deletedAt = (this._deletedAt ? new Date(this._deletedAt) : false) || null;
     }
 
     /**
