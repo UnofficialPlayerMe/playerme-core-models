@@ -13,10 +13,10 @@ class CommentModel {
     {
         var data = obj && obj.data || null;
 
-        this._id             = obj  && obj.id                   || -1;
-        this._userId         = obj  && obj.user_id              || -1;
-        this._activityUserId = obj  && obj.activity_user_id     || -1;
-        this._activityId     = obj  && obj.activity_id          || -1;
+        this._id             = obj  && obj.id                   || 0;
+        this._userId         = obj  && obj.user_id              || 0;
+        this._activityUserId = obj  && obj.activity_user_id     || 0;
+        this._activityId     = obj  && obj.activity_id          || 0;
         this._post           = data && data.post                || '';
         this._postRaw        = data && data.post_raw            || '';
         this._metas          = obj  && obj.metas.map((meta)=>new CommentMeta(meta)) || [];

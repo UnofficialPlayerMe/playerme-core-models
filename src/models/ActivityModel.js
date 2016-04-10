@@ -16,8 +16,8 @@ class ActivityModel {
             return new Date(str);
         };
 
-        this._id                = obj && obj.id                     || -1;
-        this._resourceId        = obj && obj.resource_id            || -1;
+        this._id                = obj && obj.id                     || 0;
+        this._resourceId        = obj && obj.resource_id            || 0;
         this._type              = obj && obj.type                   || '';
         this._user              = obj && new UserModel(obj.user)    || null;
         this._source            = obj && obj.source                 || '';
@@ -51,8 +51,17 @@ class ActivityModel {
             );
         }
 
+        this._postData = null;
+        this._videoData = null;
+
         if (obj && obj.data){
             // TODO
+            if (this.isPost()){
+
+            }
+            if (this.isVideo()){
+
+            }
         }
     }
 

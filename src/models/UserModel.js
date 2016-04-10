@@ -8,7 +8,7 @@ class UserModel {
      */
     constructor(obj=null)
     {
-        this._id                = obj && obj.id                 || -1;
+        this._id                = obj && obj.id                 || 0;
         this._username          = obj && obj.username           || '';
         this._accountType       = obj && obj.account_type       || '';
         this._slug              = obj && obj.slug               || '';
