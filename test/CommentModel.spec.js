@@ -1,5 +1,5 @@
-import CommentModel from '../../src/models/CommentModel';
-import RawCommentModel from '../mocks/RawCommentModel';
+import CommentModel from '../src/models/CommentModel';
+import RawCommentModel from './mocks/RawCommentModel';
 
 describe("CommentModel", function() {
     it("has the expected fields", function() {
