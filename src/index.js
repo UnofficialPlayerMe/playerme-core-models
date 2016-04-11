@@ -1,9 +1,9 @@
-import UserModel from './models/UserModel';
-import UserExtendedModel from './models/UserExtendedModel';
-import CommentModel from './models/CommentModel';
-import ActivityModel from './models/ActivityModel';
-import GameModel from './models/GameModel';
-import GameExtendedModel from './models/GameExtendedModel';
+import UserModel from './models/user/UserModel';
+import UserExtendedModel from './models/user/UserExtendedModel';
+import CommentModel from './models/activity/comment/CommentModel';
+import ActivityModel from './models/activity/ActivityModel';
+import GameModel from './models/game/GameModel';
+import GameExtendedModel from './models/game/GameExtendedModel';
 
 export {
     UserModel,

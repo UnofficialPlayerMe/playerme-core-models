@@ -1,4 +1,4 @@
-import GameModel from './GameModel';
+import GameModel from './../game/GameModel';
 
 /**
  * The main content of a Post

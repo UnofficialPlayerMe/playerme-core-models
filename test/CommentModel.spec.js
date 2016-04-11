@@ -1,5 +1,5 @@
 import {assertProperty, assertMethod} from './utils/TestHelpers';
-import CommentModel from '../src/models/CommentModel';
+import CommentModel from '../src/models/activity/comment/CommentModel';
 import RawCommentModel from './mocks/RawCommentModel';
 
 describe("CommentModel", function() {

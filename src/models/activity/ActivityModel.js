@@ -1,5 +1,5 @@
-import UserModel from './UserModel';
-import CommentModel from './CommentModel';
+import UserModel from './../user/UserModel';
+import CommentModel from './comment/CommentModel';
 import ActivityPostData from './ActivityPostData';
 import ActivityVideoData from './ActivityVideoData';
 

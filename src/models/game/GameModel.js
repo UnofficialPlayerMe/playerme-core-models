@@ -86,10 +86,10 @@ class GameModel {
     /**
      * The original filename of the game's cover
      * @readonly
-     * @member {string|null} GameModel#coverOriginal
+     * @member {string|null} GameModel#coverOriginalFilename
      * @returns {string|null}
      */
-    get coverOriginal(){
+    get coverOriginalFilename(){
         return this._coverOriginalFilename;
     }
 
@@ -99,7 +99,7 @@ class GameModel {
      * @member {string|null} GameModel#boxCached
      * @returns {string|null}
      */
-    get boxCached(){
+    get box(){
         return this._boxCached;
     }
 

@@ -1,5 +1,5 @@
 import CommentMeta from './CommentMeta';
-import UserModel from './UserModel';
+import UserModel from './../../user/UserModel';
 
 /**
  * A model representing a Player.me Comment.
