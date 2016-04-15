@@ -5,8 +5,8 @@ import RawCommentMeta from '../mocks/RawCommentMeta';
 var standard = {
     id:                 1,
     user_id:            RawUserModel.id,
-    activity_user_id:   3,
-    activity_id:        4,
+    activity_user_id:   1,
+    activity_id:        1,
     post:               'post',
     post_raw:           'post_raw',
     metas:              [RawCommentMeta],

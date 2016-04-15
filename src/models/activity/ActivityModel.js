@@ -43,7 +43,7 @@ class ActivityModel {
         this._shareCount        = obj && obj.shareCount             || 0;
         this._commentsCount     = obj && obj.commentsCount          || 0;
         this._fullUrl           = obj && obj.fullUrl                || '';
-        this._url               = obj && obj.url                    || '';
+        this._hasLiked          = obj && obj.hasLiked               || false;
         this._likesCount        = obj && obj.likesCount             || 0;
 
         this._comments = [];
@@ -188,7 +188,7 @@ class ActivityModel {
      * @member {Date|null} ActivityModel#editedAt
      * @returns {Date|null}
      */
-    get updatedAt(){
+    get editedAt(){
         return this._editedAt;
     }
 
@@ -371,15 +371,15 @@ class ActivityModel {
      * @returns {boolean}
      */
     isVideo(){
-        return this._type == "Video";
+        return this._type == "video";
     }
 
     /**
      * True if this Activity's type is a Post
      * @returns {boolean}
      */
-    isPost (){
-        return this._type == "Post";
+    isPost(){
+        return this._type == "post";
     }
 
     //////////////
@@ -398,7 +398,7 @@ class ActivityModel {
      * True if this Activity's source is Twitch
      * @returns {boolean}
      */
-    isFromTwich (){
+    isFromTwitch(){
         return this.source == "twitch";
     }
 
@@ -406,7 +406,7 @@ class ActivityModel {
      * True if this Activity's source is Player.me
      * @returns {boolean}
      */
-    isFromPlayer (){
+    isFromPlayer(){
         return this.source == "player";
     }
 
