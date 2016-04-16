@@ -91,20 +91,29 @@ var assertProperty = function(target, key, expectedType, expectedValue){
  */
 var assertMethod = function(target, key, args, expectedType, expectedValue){
     assertProperty(target, key, 'function');
-    var result = target[key].apply(target, args);
+    if (!Array.isArray(args)) return;
 
-    if (typeof expectedType == 'string'){
-        assertType(key+'()', result, expectedType);
-    }
-    if (typeof expectedType != 'undefined'){
-        assertValue(key+'()', result, expectedValue)
-    }
+    var testType = typeof expectedType == 'string';
+    var testValue = typeof expectedValue != 'undefined';
+    if (!testType && !testValue) return;
+
+    var result = target[key].apply(target, args);
+    if (testType) assertType(key+'()', result, expectedType);
+    if (testValue) assertValue(key+'()', result, expectedValue);
 };
 
 /**
  * Test that the passed variable is an object/instance. Expected properties can also be passed in to test.
- * Examples:
- *  assertObject('myObject', myObject, {
+ * @example:
+ *  assertObject('The instance', myInstance, {
+ *      var1: false,
+ *      var2: "string",
+ *      var3: {type:"string"},
+ *      var4: {type:"number", value: 1},
+ *      func1: {args:[]},
+ *      func2: {args:[], type:"number"},
+ *      func3: {args:[], type:"number", value:"something"},
+ *  }, true, "MyClass");
  * @param {string}  name        The name of the object to appear in messages
  * @param {Object}  target      The object to test against
  * @param {Object}  [tests]     An object containing the properties to test
