@@ -280,6 +280,26 @@ class GameExtendedModel extends GameModel {
     get favouritesCount(){
         return this._favouritesCount;
     }
+    
+    /**
+     * A list of the companies that developed the game
+     * @readonly
+     * @member {GameCompany[]} GameExtendedModel#developers
+     * @returns {GameCompany[]}
+     */
+    get developers(){
+        return this._developers;
+    }
+    
+    /**
+     * A list of the companies that published the game
+     * @readonly
+     * @member {GameCompany[]} GameExtendedModel#publishers
+     * @returns {GameCompany[]}
+     */
+    get publishers(){
+        return this._publishers;
+    }
 }
 
 class GamePlatform {
