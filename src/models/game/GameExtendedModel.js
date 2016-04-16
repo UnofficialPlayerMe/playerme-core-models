@@ -37,9 +37,14 @@ class GameExtendedModel extends GameModel {
         this._youtube           = obj && obj.youtube                || '';
         this._buyLink           = obj && obj.buy_link               || '';
         this._kickstarter       = obj && obj.kickstarter            || '';
-        this._platforms         = obj && obj.platforms              || [];
         this._favouritesCount   = obj && obj.favourites_count       || 0;
 
+        this._platforms = [];
+        if (obj && obj.platforms){
+            this._platforms = obj.platforms.map(
+                (platform) => new GamePlatform(platform)
+            );
+        }
         this._developers = [];
         if (obj && obj.developers){
             this._developers = obj.developers.map(
@@ -309,11 +314,11 @@ class GamePlatform {
      */
     constructor(obj=null)
     {
-        this._id       = obj && obj.id            || 0;
-        this._name       = obj && obj.name            || '';
-        this._order       = obj && obj.order            || 0;
-        this._slug       = obj && obj.slug            || '';
-        this._displayName       = obj && obj.display_name            || '';
+        this._id          = obj && obj.id           || 0;
+        this._name        = obj && obj.name         || '';
+        this._order       = obj && obj.order        || '';
+        this._slug        = obj && obj.slug         || '';
+        this._displayName = obj && obj.display_name || null;
     }
 
     toString() {
@@ -346,8 +351,8 @@ class GamePlatform {
     /**
      * TODO What is this?
      * @readonly
-     * @member {number} GamePlatform#order
-     * @returns {number}
+     * @member {string} GamePlatform#order
+     * @returns {string}
      */
     get order(){
         return this._order;

@@ -35,7 +35,13 @@ var standard = {
     youtube: "youtube",
     buy_link: "buy_link",
     kickstarter: "kickstarter",
-    platforms: [],
+    platforms: [{
+        "id":63,
+        "name":"PSP",
+        "order":"1260",
+        "slug":"psp",
+        "display_name":null
+    }],
     url: "url",
     likes_count: 0,
     favourites_count: 0,
