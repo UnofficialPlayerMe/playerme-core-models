@@ -93,11 +93,12 @@ var assertMethod = function(target, key, args, expectedType, expectedValue){
     assertProperty(target, key, 'function');
     if (!Array.isArray(args)) return;
 
+    var result = target[key].apply(target, args);
+
     var testType = typeof expectedType == 'string';
     var testValue = typeof expectedValue != 'undefined';
     if (!testType && !testValue) return;
 
-    var result = target[key].apply(target, args);
     if (testType) assertType(key+'()', result, expectedType);
     if (testValue) assertValue(key+'()', result, expectedValue);
 };
