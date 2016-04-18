@@ -1,21 +1,29 @@
-var gulp = require('gulp');
-var path = require('path');
-var jsdoc = require('gulp-jsdoc3');
-var babel = require('gulp-babel');
-
-var karma = require('karma');
+var gulp    = require('gulp');
+var path    = require('path');
+var webpack = require('webpack-stream');
+var jsdoc   = require('gulp-jsdoc3');
+var karma   = require('karma');
 
 //////////////////////////////////////
 
 gulp.task('default', function() {
     return gulp.src(
-        path.join('src/**/*.js')
+        'src/entry.js'
+    ).pipe(
+        webpack({
+            output: {
+                filename: 'upa.models.js',
+                library: ['UPA', 'models']
+            },
+            module: {
+                loaders: [
+                    {test: /\.js$/, loader: 'babel'}
+                ]
+            }
+        })
     )
-    .pipe(babel({
-        presets: ['es2015']
-    }))
     .pipe(
-        gulp.dest('dist')
+        gulp.dest('dist/')
     );
 });
 
