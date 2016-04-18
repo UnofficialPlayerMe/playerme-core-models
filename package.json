@@ -40,6 +40,7 @@
     "karma-babel-preprocessor": "~6.0.1",
     "karma-es6-shim": "~0.2.3",
     "es6-shim": "~0.35.0",
-    "webpack-stream": "~3.1.0"
+    "webpack-stream": "~3.1.0",
+    "gulp-minify": "0.0.9"
   }
 }

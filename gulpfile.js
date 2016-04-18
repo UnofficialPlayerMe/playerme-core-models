@@ -1,6 +1,7 @@
 var gulp    = require('gulp');
 var path    = require('path');
 var webpack = require('webpack-stream');
+var minify  = require('gulp-minify');
 var jsdoc   = require('gulp-jsdoc3');
 var karma   = require('karma');
 
@@ -21,6 +22,9 @@ gulp.task('default', function() {
                 ]
             }
         })
+    )
+    .pipe(
+        minify()
     )
     .pipe(
         gulp.dest('dist/')
