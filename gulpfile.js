@@ -7,7 +7,9 @@ var karma   = require('karma');
 
 //////////////////////////////////////
 
-gulp.task('default', function() {
+gulp.task('default', ['build', 'doc']);
+
+gulp.task('build', function() {
     return gulp.src(
         'src/entry.js'
     ).pipe(
