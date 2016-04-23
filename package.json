@@ -42,6 +42,7 @@
     "es6-shim": "~0.35.0",
     "webpack-stream": "~3.1.0",
     "gulp-minify": "0.0.9",
-    "karma-html-reporter": "~0.2.7"
+    "karma-html-reporter": "~0.2.7",
+    "node-notifier": "~4.5.0"
   }
 }
