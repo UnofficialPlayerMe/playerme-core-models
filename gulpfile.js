@@ -7,7 +7,7 @@ var karma   = require('karma');
 
 //////////////////////////////////////
 
-gulp.task('default', ['build', 'doc']);
+gulp.task('default', ['lint', 'test', 'build', 'doc']);
 
 gulp.task('build', function() {
     return gulp.src(
@@ -46,6 +46,13 @@ gulp.task('test', function (done) {
     new karma.Server({
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
+    }, done).start();
+});
+
+gulp.task('tdd', function (done) {
+    new karma.Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: false
     }, done).start();
 });
 
