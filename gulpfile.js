@@ -47,11 +47,37 @@ gulp.task('build', function() {
 });
 
 gulp.task('doc', function (done) {
+    var config = {
+        "tags": {
+            "allowUnknownTags": true
+        },
+        "source": {
+            "excludePattern": "(^|\\/|\\\\)_"
+        },
+        "opts": {
+            "destination": "./docs/api"
+        },
+        "plugins": [
+            "plugins/markdown"
+        ],
+        "templates": {
+            "cleverLinks": false,
+            "monospaceLinks": false,
+            "default": {
+                "outputSourceFiles": true
+            },
+            "path": "ink-docstrap",
+            "theme": "cerulean",
+            "navType": "vertical",
+            "linenums": true,
+            "dateFormat": "MMMM Do YYYY, h:mm:ss a"
+        }
+    };
     gulp.src(
         ['README.md', './src/**/*.js'], {read: false}
     )
     .pipe(
-        jsdoc(done)
+        jsdoc(config, done)
     );
 });
 
