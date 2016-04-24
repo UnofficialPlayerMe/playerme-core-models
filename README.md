@@ -23,9 +23,9 @@ Written in ES6
 * Change user's attributes - **No model**
 
 ## [User's Avatars](http://docs.playerme.apiary.io/#reference/user's-avatars)
-* Avatars Collection - **To Do**  
-  
-```[{
+* Avatars Collection - **To Do**
+```json
+[{
   "id":                 35411,
   "user_id":            10027,
   "filename":{
@@ -37,11 +37,11 @@ Written in ES6
   "created_at":         "2015-04-08T08:38:30+0000",
   "updated_at":         "2015-04-20T08:54:22+0000",
   "deleted_at":         null
-}]```  
-  
-* Avatar Entity - **To Do**  
-  
-```{
+}]
+```    
+* Avatar Entity - **To Do**
+```json
+{
   "id":                 29891,
   "user_id":            10027,
   "filename":{
@@ -53,12 +53,13 @@ Written in ES6
   "created_at":         "2015-01-05T02:04:58+0000",
   "updated_at":         "2016-03-18T00:04:42+0000",
   "deleted_at":         null
-}```
+}
+```
   
 ## [User's Covers](http://docs.playerme.apiary.io/#reference/user's-covers)
-* Covers Collection - **To Do**  
-  
-```[{
+* Covers Collection - **To Do**
+```json
+[{
   "id":                 137154,
   "user_id":            10027,
   "filename":{
@@ -82,11 +83,12 @@ Written in ES6
   "created_at":         "2015-10-27T10:36:40+0000",
   "updated_at":         "2016-03-28T01:03:22+0000",
   "deleted_at":         null
-}]```  
+}]
+```  
   
-* Cover Entity - **To Do**  
-  
-```{
+* Cover Entity - **To Do**
+```json
+{
   "id":                 35002,
   "user_id":            10027,
   "filename":{
@@ -98,7 +100,8 @@ Written in ES6
   "created_at":         "2015-04-21T19:03:28+0000",
   "updated_at":         "2016-03-28T01:03:22+0000",
   "deleted_at":         null
-}```
+}
+```
   
 ## [User's Groups](http://docs.playerme.apiary.io/#reference/user's-groups)
 * Groups Collection - **UserExtendedModel[]**
@@ -107,9 +110,9 @@ Written in ES6
 * Activities Collections - **ActivityModel[]**
 
 ## [User's Social Profiles](http://docs.playerme.apiary.io/#reference/user's-social-profiles)
-* Profiles Collection - **To Do**  
-  
-```{
+* Profiles Collection - **To Do**
+```json
+{
   "profiles": [{
     "id":                   10,
     "user_id":              4,
@@ -131,12 +134,13 @@ Written in ES6
     "url":                  "seanyfee",
     "is_visible":           true
   }]
-}```
+}
+```
   
 ## [User's Videos](http://docs.playerme.apiary.io/#reference/user's-videos)
-* Videos Collection - **To Do**  
-  
-```[{
+* Videos Collection - **To Do**
+```json
+[{
   "url":        "https:\/\/www.youtube.com\/watch?v=jwx8eFgEU2M",
   "id":         1137393,
   "thumbnail":  "\/\/something.jpg",
@@ -154,14 +158,15 @@ Written in ES6
   "title":      "2014 - A Year in Gaming in 3 mins",
   "showAuthor": false,
   "showDelete": false
-}]```  
+}]
+```
   
 * ~~Video Entity~~
 
 ## [User's Notifications](http://docs.playerme.apiary.io/#reference/user's-notifications)
-* Notifications Collection - **To Do**  
-  
-```[{
+* Notifications Collection - **To Do**
+```json
+[{
   "key":            "c3736725",
   "type":           "like_comment",
   "set":            "like_comment:c3736725",
@@ -211,12 +216,13 @@ Written in ES6
   "names":          "Pl4smic, MgBacon and 2 other players",
   "text":           "have posted a comment in a conversation you are in.",
   "unread":         false
-}]```
+}]
+```
 
 ## [User's Photos](http://docs.playerme.apiary.io/#reference/user's-photos)
-* Photos Collection - **To Do**  
-  
-```[{
+* Photos Collection - **To Do**
+```json
+[{
   "id":             18464,
   "user_id":        10027,
   "description":    "Mauricio Abril http:\/\/conceptartworld.com\/?p=12373",
@@ -236,7 +242,8 @@ Written in ES6
   "thumbnail":      "\/\/something.jpg",
   "showDelete":     true,
   "showAuthor":     false
-}]```  
+}]
+```
   
 * ~~Photos Entity**~~
 
@@ -256,9 +263,9 @@ Written in ES6
 * Games Collection - **GameModel[]**
 * Game Entity - **GameModel**
 * ~~Game Attributes~~~~
-* Game Videos - **To Do**  
-  
-```[{
+* Game Videos - **To Do**
+```json
+[{
   "id":                 26391,
   "user_id":            46771,
   "game_id":            "705",
@@ -309,12 +316,13 @@ Written in ES6
   "thumbnail":          "\/\/something.jpg",
   "showAuthor":         true,
   "showDelete":         false
-}]```  
+}]
+```
   
 * Game Videos Entity - **One of above**
-* Game Images - **To Do**  
-  
-```[{
+* Game Images - **To Do**
+```json
+[{
   "id":                 13182,
   "user_id":            161520,
   "game_id":            "978",
@@ -404,12 +412,13 @@ Written in ES6
     "followers_count":      5,
     "following_count":      56
   }
-}]```  
+}]
+```
   
 * Game Activities - **ActivityModel[]**
-* Game Tags - **To Do**  
-  
-```[{  
+* Game Tags - **To Do**
+```json
+[{  
   "id":             5,
   "user_id":        0,
   "name":           "Completed",
@@ -437,14 +446,15 @@ Written in ES6
   "is_editable":    false,
   "is_tagged":      false,
   "url":            "\/g\/minecraft\/players\/contributor\/1"
-}]```  
+}]
+```
   
 * Game Players - **UserExtendedModel[]** (e.g. https://player.me/api/v1/games/978/players/contributor)
 
 ## [Games Platforms](http://docs.playerme.apiary.io/#reference/games-platforms)
-* Platforms - **To Do**  
-  
-```[{
+* Platforms - **To Do**
+```json
+[{
   "id":240,
   "name":"3DO",
   "short_name":"",
@@ -466,7 +476,8 @@ Written in ES6
   "deleted_at":null,
   "slug":"amiga",
   "display_name":"Amiga"
-}]```  
+}]
+```
   
 ## [Feed](http://docs.playerme.apiary.io/#reference/feed)
 * Post Collections - **ActivityModel[]**
@@ -483,9 +494,9 @@ Written in ES6
 * Report a post/comment - **Not checked**
 
 ## [Messaging](http://docs.playerme.apiary.io/#reference/messaging)
-* Message Groups Collection - **To Do**  
-  
-```[{  
+* Message Groups Collection - **To Do**
+```json
+[{  
   "id":3021,
   "name":"maktouch",
   "is_group":false,
@@ -550,11 +561,12 @@ Written in ES6
       "is_private":false
     }
   }
-}]```  
+}]
+```
   
-* Message Groups Search - **To Do**  
-  
-```[{  
+* Message Groups Search - **To Do**
+```json
+[{  
   "id":3021,
   "name":"maktouch",
   "is_group":false,
@@ -620,12 +632,13 @@ Written in ES6
       "is_private":false
     }
   }
-}]```  
+}]
+```
   
 * Message Groups Entity - **Not Checked**
-* Messages collection - **To Do**  
-  
-```[{
+* Messages collection - **To Do**
+```json
+[{
   "id":4088352,
   "group_id":3021,
   "user_id":1,
@@ -681,14 +694,15 @@ Written in ES6
     "is_private":false
   },
   "direction":"sent"
-}]```  
+}]
+```
   
 * Messaging notifications - **Not checked**
 
 ## [Search and Browse](http://docs.playerme.apiary.io/#reference/search-and-browse)
-* Global Search - **Not checked**  
-  
-```[{  
+* Global Search - **Not checked**
+```json
+[{  
   "id":10473,
   "username":"Battlechili1",
   "account_type":"user",
@@ -742,7 +756,8 @@ Written in ES6
     "owned"
   ],
   "is_tagged":true
-}]```  
+}]
+```
   
 ## [Game Library](http://docs.playerme.apiary.io/#reference/game-library)
 * Game Tags Collection - **Not checked**
