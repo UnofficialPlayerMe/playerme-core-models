@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ActivityPostMetaData</title>
+	<title>Documentation Class: UserModel</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ActivityPostMetaData</h1>
+	<h1 class="page-title">Class: UserModel</h1>
 <section>
 
 <header>
     
         <h2>
-        ActivityPostMetaData
+        UserModel
         </h2>
         
-            <div class="class-description"><p>Metadata associated with a Post</p></div>
+            <div class="class-description"><p>A model representing a Player.me User.</p></div>
         
     
 </header>
@@ -84,12 +84,16 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ActivityPostMetaData"><span class="type-signature"></span>new ActivityPostMetaData(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="UserModel"><span class="type-signature"></span>new UserModel(<span class="optional">obj</span>)</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        <p>Create a new User model.</p>
+    </div>
     
 
     
@@ -131,7 +135,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
 
@@ -152,7 +156,7 @@
 
             
 
-            <td class="description last"><p>Part of a player response object to initialise this instance with.</p></td>
+            <td class="description last"><p>A player response object to initialise this model with.</p></td>
         </tr>
 
     
@@ -235,15 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="content">
-    <h4><span class="type-signature">&lt;readonly> </span>content<span class="type-signature"> :string</span></h4>
+<dt class="name" id="accountType">
+    <h4><span class="type-signature">&lt;readonly> </span>accountType<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The meta's content type (i.e. &quot;Photo&quot;)</p>
+        <p>The type of account.</p>
     </div>
     
 
@@ -306,15 +310,16 @@
         
             
 <hr>
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string|null</span></h4>
+<dt class="name" id="avatar">
+    <h4><span class="type-signature">&lt;readonly> </span>avatar<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The description for the metadata, if applicable</p>
+        <p>The URL of the user's avatar.
+Player provides a default.</p>
     </div>
     
 
@@ -324,9 +329,6 @@
             <li>
                 
 <span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
 
 
 
@@ -380,15 +382,15 @@
         
             
 <hr>
-<dt class="name" id="images">
-    <h4><span class="type-signature">&lt;readonly> </span>images<span class="type-signature"> :Array.&lt;string></span></h4>
+<dt class="name" id="cover">
+    <h4><span class="type-signature">&lt;readonly> </span>cover<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>A list of image URLs</p>
+        <p>The URL to the user's profile cover image.</p>
     </div>
     
 
@@ -397,7 +399,7 @@
         <ul>
             <li>
                 
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">string</span>
 
 
 
@@ -451,15 +453,157 @@
         
             
 <hr>
-<dt class="name" id="isInternal">
-    <h4><span class="type-signature">&lt;readonly> </span>isInternal<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="followersCount">
+    <h4><span class="type-signature">&lt;readonly> </span>followersCount<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>TODO What is this?</p>
+        <p>The number of followers the user has.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="id">
+    <h4><span class="type-signature">&lt;readonly> </span>id<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The user's ID.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="isFeatured">
+    <h4><span class="type-signature">&lt;readonly> </span>isFeatured<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether Player.me has listed this as a featured user.</p>
     </div>
     
 
@@ -522,15 +666,15 @@
         
             
 <hr>
-<dt class="name" id="provider">
-    <h4><span class="type-signature">&lt;readonly> </span>provider<span class="type-signature"> :string</span></h4>
+<dt class="name" id="isPartner">
+    <h4><span class="type-signature">&lt;readonly> </span>isPartner<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The provider for the metadata (e.g. &quot;Player&quot;)</p>
+        <p>Whether this is a Player.me staff member or partner.</p>
     </div>
     
 
@@ -539,7 +683,7 @@
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
 
@@ -593,15 +737,15 @@
         
             
 <hr>
-<dt class="name" id="thumbnail">
-    <h4><span class="type-signature">&lt;readonly> </span>thumbnail<span class="type-signature"> :string|null</span></h4>
+<dt class="name" id="isPrivate">
+    <h4><span class="type-signature">&lt;readonly> </span>isPrivate<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>URL of the metadata's thumbnail</p>
+        <p>Whether this is a private user.</p>
     </div>
     
 
@@ -610,10 +754,7 @@
         <ul>
             <li>
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
+<span class="param-type">boolean</span>
 
 
 
@@ -667,15 +808,86 @@
         
             
 <hr>
-<dt class="name" id="title">
-    <h4><span class="type-signature">&lt;readonly> </span>title<span class="type-signature"> :string|null</span></h4>
+<dt class="name" id="isVerified">
+    <h4><span class="type-signature">&lt;readonly> </span>isVerified<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The title of the metadata, if applicable</p>
+        <p>Whether Player.me has verified this user.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="slug">
+    <h4><span class="type-signature">&lt;readonly> </span>slug<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The URL-friendly version of the user's name.</p>
     </div>
     
 
@@ -685,9 +897,6 @@
             <li>
                 
 <span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
 
 
 
@@ -749,7 +958,78 @@
 <dd>
     
     <div class="description">
-        <p>The link to the metadata</p>
+        <p>A relative URL to the user's profile</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="username">
+    <h4><span class="type-signature">&lt;readonly> </span>username<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The user's username.</p>
     </div>
     
 
@@ -813,6 +1093,206 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="isGroup"><span class="type-signature"></span>isGroup()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Whether the account is for a group</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isUser"><span class="type-signature"></span>isUser()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Whether the account is for a normal user</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
 
     
 
@@ -859,7 +1339,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on April 23rd 2016, 8:47:30 pm
+		on April 24th 2016, 11:41:00 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

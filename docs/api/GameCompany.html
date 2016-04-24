@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ActivityVideoData</title>
+	<title>Documentation Class: GameCompany</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,16 +63,14 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ActivityVideoData</h1>
+	<h1 class="page-title">Class: GameCompany</h1>
 <section>
 
 <header>
     
         <h2>
-        ActivityVideoData
+        GameCompany
         </h2>
-        
-            <div class="class-description"><p>The main content of a video activity</p></div>
         
     
 </header>
@@ -84,12 +82,16 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ActivityVideoData"><span class="type-signature"></span>new ActivityVideoData(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="GameCompany"><span class="type-signature"></span>new GameCompany(<span class="optional">obj</span>)</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        <p>Create a new Activity model.</p>
+    </div>
     
 
     
@@ -131,7 +133,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
 
@@ -152,7 +154,7 @@
 
             
 
-            <td class="description last"><p>Part of a player response object to initialise this instance with.</p></td>
+            <td class="description last"><p>A player response object to initialise this model with.</p></td>
         </tr>
 
     
@@ -235,15 +237,160 @@
         <dl>
             
 <hr>
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string</span></h4>
+<dt class="name" id="createdAt">
+    <h4><span class="type-signature">&lt;readonly> </span>createdAt<span class="type-signature"> :Date</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The video's description</p>
+        <p>The date the game entry was created</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="deletedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>deletedAt<span class="type-signature"> :Date|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date the game was deleted</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="homepage">
+    <h4><span class="type-signature">&lt;readonly> </span>homepage<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A description of the company</p>
     </div>
     
 
@@ -306,15 +453,15 @@
         
             
 <hr>
-<dt class="name" id="thumbnail">
-    <h4><span class="type-signature">&lt;readonly> </span>thumbnail<span class="type-signature"> :string</span></h4>
+<dt class="name" id="homepage">
+    <h4><span class="type-signature">&lt;readonly> </span>homepage<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The video's thumbnail</p>
+        <p>The company's homepage</p>
     </div>
     
 
@@ -377,15 +524,86 @@
         
             
 <hr>
-<dt class="name" id="title">
-    <h4><span class="type-signature">&lt;readonly> </span>title<span class="type-signature"> :string</span></h4>
+<dt class="name" id="id">
+    <h4><span class="type-signature">&lt;readonly> </span>id<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The video's title</p>
+        <p>The company's ID</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="name">
+    <h4><span class="type-signature">&lt;readonly> </span>name<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The company's name</p>
     </div>
     
 
@@ -448,15 +666,15 @@
         
             
 <hr>
-<dt class="name" id="url">
-    <h4><span class="type-signature">&lt;readonly> </span>url<span class="type-signature"> :string</span></h4>
+<dt class="name" id="slug">
+    <h4><span class="type-signature">&lt;readonly> </span>slug<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The URL of the video</p>
+        <p>The URL friendly name of the company</p>
     </div>
     
 
@@ -466,6 +684,148 @@
             <li>
                 
 <span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="updatedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>updatedAt<span class="type-signature"> :Date</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date the game entry was updated</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="userId">
+    <h4><span class="type-signature">&lt;readonly> </span>userId<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The ID of the company's user</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
 
 
 
@@ -566,7 +926,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on April 23rd 2016, 8:47:30 pm
+		on April 24th 2016, 11:41:00 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

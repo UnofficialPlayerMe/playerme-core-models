@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: CommentMeta</title>
+	<title>Documentation Class: ActivityPostData</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: CommentMeta</h1>
+	<h1 class="page-title">Class: ActivityPostData</h1>
 <section>
 
 <header>
     
         <h2>
-        CommentMeta
+        ActivityPostData
         </h2>
         
-            <div class="class-description"><p>A class representing a Player.me Comment's assets.</p></div>
+            <div class="class-description"><p>The main content of a Post</p></div>
         
     
 </header>
@@ -84,16 +84,12 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="CommentMeta"><span class="type-signature"></span>new CommentMeta(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="ActivityPostData"><span class="type-signature"></span>new ActivityPostData(<span class="optional">obj</span>)</h4>
     
     
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>Create a new Comment Meta instance.</p>
-    </div>
     
 
     
@@ -135,7 +131,7 @@
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">object</span>
 
 
 
@@ -156,7 +152,7 @@
 
             
 
-            <td class="description last"><p>A player response object to initialise this object with.</p></td>
+            <td class="description last"><p>Part of a player response object to initialise this instance with.</p></td>
         </tr>
 
     
@@ -234,31 +230,37 @@
     
 
     
-
-    
-        <h3 class="subsection-title">Methods</h3>
+        <h3 class="subsection-title">Members</h3>
 
         <dl>
             
 <hr>
-<dt>
-    <h4 class="name" id="isPhoto"><span class="type-signature"></span>isPhoto()</h4>
-    
+<dt class="name" id="game">
+    <h4><span class="type-signature">&lt;readonly> </span>game<span class="type-signature"> :<a href="GameModel.html">GameModel</a>|null</span></h4>
+
     
 </dt>
 <dd>
-
     
     <div class="description">
-        <p>Whether this asset is a photo.</p>
+        <p>The game that has been checked in, if any</p>
     </div>
     
 
     
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="GameModel.html">GameModel</a></span>
+|
 
-    
+<span class="param-type">null</span>
 
-    
+
+
+            </li>
+        </ul>
     
 
     
@@ -302,36 +304,79 @@
 
 
     
+</dd>
 
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
         
-<span class="param-type">boolean</span>
+            
+<hr>
+<dt class="name" id="gameCheckInType">
+    <h4><span class="type-signature">&lt;readonly> </span>gameCheckInType<span class="type-signature"> :string|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The type of check-in for the game, if any (e.g. &quot;playing&quot;)
+TODO Find other types</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
 
 
 
-    </dd>
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-
-        
 
     
 </dd>
@@ -339,8 +384,227 @@
         
             
 <hr>
+<dt class="name" id="meta">
+    <h4><span class="type-signature">&lt;readonly> </span>meta<span class="type-signature"> :Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The post's related content</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="post">
+    <h4><span class="type-signature">&lt;readonly> </span>post<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The post's formatted text</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="postRaw">
+    <h4><span class="type-signature">&lt;readonly> </span>postRaw<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The post's un-formatted text</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
 <dt>
-    <h4 class="name" id="isVideo"><span class="type-signature"></span>isVideo()</h4>
+    <h4 class="name" id="isPlayingGame"><span class="type-signature"></span>isPlayingGame()</h4>
     
     
 </dt>
@@ -348,7 +612,7 @@
 
     
     <div class="description">
-        <p>Whether this asset is a video.</p>
+        <p>If the post says the author is playing a game</p>
     </div>
     
 
@@ -482,7 +746,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on April 23rd 2016, 8:47:30 pm
+		on April 24th 2016, 11:41:00 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ActivityPostData</title>
+	<title>Documentation Class: ActivityPostMetaData</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ActivityPostData</h1>
+	<h1 class="page-title">Class: ActivityPostMetaData</h1>
 <section>
 
 <header>
     
         <h2>
-        ActivityPostData
+        ActivityPostMetaData
         </h2>
         
-            <div class="class-description"><p>The main content of a Post</p></div>
+            <div class="class-description"><p>Metadata associated with a Post</p></div>
         
     
 </header>
@@ -84,7 +84,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ActivityPostData"><span class="type-signature"></span>new ActivityPostData(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="ActivityPostMetaData"><span class="type-signature"></span>new ActivityPostMetaData(<span class="optional">obj</span>)</h4>
     
     
 </dt>
@@ -235,15 +235,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="game">
-    <h4><span class="type-signature">&lt;readonly> </span>game<span class="type-signature"> :<a href="GameModel.html">GameModel</a>|null</span></h4>
+<dt class="name" id="content">
+    <h4><span class="type-signature">&lt;readonly> </span>content<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The game that has been checked in, if any</p>
+        <p>The meta's content type (i.e. &quot;Photo&quot;)</p>
     </div>
     
 
@@ -252,10 +252,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="GameModel.html">GameModel</a></span>
-|
-
-<span class="param-type">null</span>
+<span class="param-type">string</span>
 
 
 
@@ -309,16 +306,15 @@
         
             
 <hr>
-<dt class="name" id="gameCheckInType">
-    <h4><span class="type-signature">&lt;readonly> </span>gameCheckInType<span class="type-signature"> :string|null</span></h4>
+<dt class="name" id="description">
+    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string|null</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The type of check-in for the game, if any (e.g. &quot;playing&quot;)
-TODO Find other types</p>
+        <p>The description for the metadata, if applicable</p>
     </div>
     
 
@@ -384,15 +380,15 @@ TODO Find other types</p>
         
             
 <hr>
-<dt class="name" id="meta">
-    <h4><span class="type-signature">&lt;readonly> </span>meta<span class="type-signature"> :Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span></h4>
+<dt class="name" id="images">
+    <h4><span class="type-signature">&lt;readonly> </span>images<span class="type-signature"> :Array.&lt;string></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The post's related content</p>
+        <p>A list of image URLs</p>
     </div>
     
 
@@ -401,7 +397,7 @@ TODO Find other types</p>
         <ul>
             <li>
                 
-<span class="param-type">Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span>
+<span class="param-type">Array.&lt;string></span>
 
 
 
@@ -455,15 +451,15 @@ TODO Find other types</p>
         
             
 <hr>
-<dt class="name" id="post">
-    <h4><span class="type-signature">&lt;readonly> </span>post<span class="type-signature"> :string</span></h4>
+<dt class="name" id="isInternal">
+    <h4><span class="type-signature">&lt;readonly> </span>isInternal<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The post's formatted text</p>
+        <p>TODO What is this?</p>
     </div>
     
 
@@ -472,233 +468,350 @@ TODO Find other types</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="postRaw">
-    <h4><span class="type-signature">&lt;readonly> </span>postRaw<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The post's un-formatted text</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="isPlayingGame"><span class="type-signature"></span>isPlayingGame()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>If the post says the author is playing a game</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
 <span class="param-type">boolean</span>
 
 
 
-    </dd>
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
+</dd>
+
         
+            
+<hr>
+<dt class="name" id="provider">
+    <h4><span class="type-signature">&lt;readonly> </span>provider<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The provider for the metadata (e.g. &quot;Player&quot;)</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="thumbnail">
+    <h4><span class="type-signature">&lt;readonly> </span>thumbnail<span class="type-signature"> :string|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>URL of the metadata's thumbnail</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="title">
+    <h4><span class="type-signature">&lt;readonly> </span>title<span class="type-signature"> :string|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The title of the metadata, if applicable</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="url">
+    <h4><span class="type-signature">&lt;readonly> </span>url<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The link to the metadata</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
 
     
 </dd>
 
         </dl>
+    
+
     
 
     
@@ -746,7 +859,7 @@ TODO Find other types</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on April 23rd 2016, 8:47:30 pm
+		on April 24th 2016, 11:41:00 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
