@@ -23,44 +23,48 @@ Written in ES6
 * Change user's attributes - **No model**
 
 ## [User's Avatars](http://docs.playerme.apiary.io/#reference/user's-avatars)
-* Avatars Collection - **To Do**
+* Avatars Collection - **To Do**  
+  
 ```[{
   "id":                 35411,
   "user_id":            10027,
   "filename":{
-    "original":             "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/avatar\/a9\/1f\/54\/3b0c44b54e39014fc2a5c63549388c89.jpg",
-    "cached":               "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/a9\/1f\/54\/3b0c44b54e39014fc2a5c63549388c89.jpg",
-    "original_filename":    "3b0c44b54e39014fc2a5c63549388c89.jpg"
+    "original":             "\/\/something.jpg",
+    "cached":               "\/\/something.jpg",
+    "original_filename":    "something.jpg"
   },
   "is_active":          false,
   "created_at":         "2015-04-08T08:38:30+0000",
   "updated_at":         "2015-04-20T08:54:22+0000",
   "deleted_at":         null
-}]```
-* Avatar Entity - **To Do**
+}]```  
+  
+* Avatar Entity - **To Do**  
+  
 ```{
   "id":                 29891,
   "user_id":            10027,
   "filename":{
-    "original":             "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/avatar\/55\/46\/9e\/3365d9e4b771e888ff11a710854dd0f3.jpg",
-    "cached":               "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/55\/46\/9e\/3365d9e4b771e888ff11a710854dd0f3.jpg",
-    "original_filename":    "3365d9e4b771e888ff11a710854dd0f3.jpg"
+    "original":             "\/\/something.jpg",
+    "cached":               "\/\/something.jpg",
+    "original_filename":    "something.jpg"
   },
   "is_active":          true,
   "created_at":         "2015-01-05T02:04:58+0000",
   "updated_at":         "2016-03-18T00:04:42+0000",
   "deleted_at":         null
 }```
-
+  
 ## [User's Covers](http://docs.playerme.apiary.io/#reference/user's-covers)
-* Covers Collection - **To Do**
+* Covers Collection - **To Do**  
+  
 ```[{
   "id":                 137154,
   "user_id":            10027,
   "filename":{
-    "original":             "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/cover\/1f\/77\/4f\/c369c7555d7455418ed0373f2ae41a76.jpg",
-    "cached":               "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/1f\/77\/4f\/c369c7555d7455418ed0373f2ae41a76.jpg",
-    "original_filename":    "c369c7555d7455418ed0373f2ae41a76.jpg"
+    "original":             "\/\/something.jpg",
+    "cached":               "\/\/something.jpg",
+    "original_filename":    "something.jpg"
   },
   "is_active":          false,
   "created_at":         "2016-03-28T01:02:27+0000",
@@ -70,30 +74,32 @@ Written in ES6
   "id":                 114605,
   "user_id":            10027,
   "filename":{
-    "original":             "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/cover\/b9\/69\/bf\/15f6bb04a782e2e8be9fce7bfd72035c.jpg",
-    "cached":               "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/b9\/69\/bf\/15f6bb04a782e2e8be9fce7bfd72035c.jpg",
-    "original_filename":    "15f6bb04a782e2e8be9fce7bfd72035c.jpg"
+    "original":             "\/\/something.jpg",
+    "cached":               "\/\/something.jpg",
+    "original_filename":    "something.jpg"
   },
   "is_active":          false,
   "created_at":         "2015-10-27T10:36:40+0000",
   "updated_at":         "2016-03-28T01:03:22+0000",
   "deleted_at":         null
-}]```
-* Cover Entity - **To Do**
+}]```  
+  
+* Cover Entity - **To Do**  
+  
 ```{
   "id":                 35002,
   "user_id":            10027,
   "filename":{
-    "original":             "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/cover\/60\/c5\/bd\/690d82af98a8067fa5467b171f1fc7d7.jpg",
-    "cached":               "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/60\/c5\/bd\/690d82af98a8067fa5467b171f1fc7d7.jpg",
-    "original_filename":    "690d82af98a8067fa5467b171f1fc7d7.jpg"
+    "original":             "\/\/something.jpg",
+    "cached":               "\/\/something.jpg",
+    "original_filename":    "something.jpg"
   },
   "is_active":          true,
   "created_at":         "2015-04-21T19:03:28+0000",
   "updated_at":         "2016-03-28T01:03:22+0000",
   "deleted_at":         null
 }```
-
+  
 ## [User's Groups](http://docs.playerme.apiary.io/#reference/user's-groups)
 * Groups Collection - **UserExtendedModel[]**
 
@@ -101,7 +107,8 @@ Written in ES6
 * Activities Collections - **ActivityModel[]**
 
 ## [User's Social Profiles](http://docs.playerme.apiary.io/#reference/user's-social-profiles)
-* Profiles Collection - **To Do**
+* Profiles Collection - **To Do**  
+  
 ```{
   "profiles": [{
     "id":                   10,
@@ -125,13 +132,14 @@ Written in ES6
     "is_visible":           true
   }]
 }```
-
+  
 ## [User's Videos](http://docs.playerme.apiary.io/#reference/user's-videos)
-* Videos Collection - **To Do**
+* Videos Collection - **To Do**  
+  
 ```[{
   "url":        "https:\/\/www.youtube.com\/watch?v=jwx8eFgEU2M",
   "id":         1137393,
-  "thumbnail":  "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/video\/c9\/7a\/d0\/4ae13f50a22b1cd4a63ae14327d1ab12.jpg",
+  "thumbnail":  "\/\/something.jpg",
   "source":     "youtube",
   "duration":   "00:00",
   "title":      "Player.me Launch Competition Draw",
@@ -140,17 +148,19 @@ Written in ES6
 },{
   "url":        "https:\/\/www.youtube.com\/watch?v=YiuSnK40nyU",
   "id":         736035,
-  "thumbnail":  "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/video\/89\/b8\/3c\/cf5be1d41912a0ad9c8eb933cd733952.jpg",
+  "thumbnail":  "\/\/something.jpg",
   "source":     "youtube",
   "duration":   "00:00",
   "title":      "2014 - A Year in Gaming in 3 mins",
   "showAuthor": false,
   "showDelete": false
-}]```
+}]```  
+  
 * ~~Video Entity~~
 
 ## [User's Notifications](http://docs.playerme.apiary.io/#reference/user's-notifications)
-* Notifications Collection - **To Do**
+* Notifications Collection - **To Do**  
+  
 ```[{
   "key":            "c3736725",
   "type":           "like_comment",
@@ -162,8 +172,8 @@ Written in ES6
     "username":         "MZQayyum",
     "account_type":     "user",
     "slug":             "mzqayyum",
-    "avatar":           "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/e2\/61\/ed\/308c0d6bdad2e757e09a9bcf7afa0593.jpg",
-    "cover":            "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/01\/09\/33\/2379801d51d399ebe62db861c895b1c9.jpg",
+    "avatar":           "\/\/something.jpg",
+    "cover":            "\/\/something.jpg",
     "url":              "\/mzqayyum",
     "followers_count":  383,
     "is_featured":      false,
@@ -187,8 +197,8 @@ Written in ES6
     "username":         "Pl4smic",
     "account_type":     "user",
     "slug":             "pl4smic",
-    "avatar":           "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/25\/ca\/29\/72e1b0e0915a2fb5cf7d2f883dd0416c.jpg",
-    "cover":            "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/b3\/57\/d5\/1a732a773cc5181072c4d33d0daec4f9.jpg",
+    "avatar":           "\/\/something.jpg",
+    "cover":            "\/\/something.jpg",
     "url":              "\/pl4smic",
     "followers_count":  846,
     "is_featured":      false,
@@ -204,15 +214,16 @@ Written in ES6
 }]```
 
 ## [User's Photos](http://docs.playerme.apiary.io/#reference/user's-photos)
-* Photos Collection - **To Do**
+* Photos Collection - **To Do**  
+  
 ```[{
   "id":             18464,
   "user_id":        10027,
   "description":    "Mauricio Abril http:\/\/conceptartworld.com\/?p=12373",
   "created_at":     "2015-04-24T08:17:40+0000",
-  "original":       "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/photo\/32\/e6\/20\/34edf4755a4b3a7689c6e73e4e206e7a.jpg",
-  "resized":        "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/photo\/32\/e6\/20\/34edf4755a4b3a7689c6e73e4e206e7a.jpg",
-  "thumbnail":      "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/photo\/32\/e6\/20\/34edf4755a4b3a7689c6e73e4e206e7a-216x121.jpg",
+  "original":       "\/\/something.jpg",
+  "resized":        "\/\/something.jpg",
+  "thumbnail":      "\/\/something.jpg",
   "showDelete":     true,
   "showAuthor":     false
 },{
@@ -220,12 +231,13 @@ Written in ES6
   "user_id":        10027,
   "description":    "From FFXIV\nhttp:\/\/na.finalfantasyxiv.com\/lodestone\/character\/2280782\/",
   "created_at":     "2015-04-23T08:28:19+0000",
-  "original":       "\/\/d1zqrvc06emslq.cloudfront.net\/media\/originals\/photo\/cd\/fc\/b4\/5db8f52dba03d7021ef1dd7c586fb958.jpg",
-  "resized":        "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/photo\/cd\/fc\/b4\/5db8f52dba03d7021ef1dd7c586fb958.jpg",
-  "thumbnail":      "\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/photo\/cd\/fc\/b4\/5db8f52dba03d7021ef1dd7c586fb958-216x121.jpg",
+  "original":       "\/\/something.jpg",
+  "resized":        "\/\/something.jpg",
+  "thumbnail":      "\/\/something.jpg",
   "showDelete":     true,
   "showAuthor":     false
-}]```
+}]```  
+  
 * ~~Photos Entity**~~
 
 ## [Groups](http://docs.playerme.apiary.io/#reference/groups)
@@ -244,7 +256,8 @@ Written in ES6
 * Games Collection - **GameModel[]**
 * Game Entity - **GameModel**
 * ~~Game Attributes~~~~
-* Game Videos - **To Do**
+* Game Videos - **To Do**  
+  
 ```[{
   "id":                 26391,
   "user_id":            46771,
@@ -264,8 +277,8 @@ Written in ES6
   "deleted_by":         null,
   "thumbnails": {
     "host":                 "\/\/d1zqrvc06emslq.cloudfront.net",
-    "cached":               "\/media\/cache\/gamevideo\/71\/16\/de\/b802f145e057985908fc6bdbcaab1b19.jpg",
-    "original":             "\/media\/originals\/gamevideo\/71\/16\/de\/b802f145e057985908fc6bdbcaab1b19.jpg"
+    "cached":               "\/something.jpg",
+    "original":             "\/something.jpg"
   },
   "user": {
     "id":                   46771,
@@ -279,12 +292,12 @@ Written in ES6
     "cover": {
       "original":               "\/\/something.jpg",
       "cached":                 "\/\/something.jpg",
-      "original_filename":      "4a95ced8c3a67b841babf6350aed53db.jpg"
+      "original_filename":      "something.jpg"
     },
     "avatar": {
       "original":               "\/\/something.jpg",
       "cached":                 "\/\/something.jpg",
-      "original_filename":      "4b9da96348a4aa1b5a822f3b9972870b.jpg"
+      "original_filename":      "something.jpg"
     },
     "created_at":           "2015-05-27T06:24:37+0000",
     "is_verified":          false,
@@ -296,9 +309,11 @@ Written in ES6
   "thumbnail":          "\/\/something.jpg",
   "showAuthor":         true,
   "showDelete":         false
-}]```
+}]```  
+  
 * Game Videos Entity - **One of above**
-* Game Images - **To Do**
+* Game Images - **To Do**  
+  
 ```[{
   "id":                 13182,
   "user_id":            161520,
@@ -389,9 +404,11 @@ Written in ES6
     "followers_count":      5,
     "following_count":      56
   }
-}]```
+}]```  
+  
 * Game Activities - **ActivityModel[]**
-* Game Tags - **To Do**
+* Game Tags - **To Do**  
+  
 ```[{  
   "id":             5,
   "user_id":        0,
@@ -420,11 +437,13 @@ Written in ES6
   "is_editable":    false,
   "is_tagged":      false,
   "url":            "\/g\/minecraft\/players\/contributor\/1"
-}]```
+}]```  
+  
 * Game Players - **UserExtendedModel[]** (e.g. https://player.me/api/v1/games/978/players/contributor)
 
 ## [Games Platforms](http://docs.playerme.apiary.io/#reference/games-platforms)
-* Platforms - **To Do**
+* Platforms - **To Do**  
+  
 ```[{
   "id":240,
   "name":"3DO",
@@ -447,8 +466,8 @@ Written in ES6
   "deleted_at":null,
   "slug":"amiga",
   "display_name":"Amiga"
-}]```
-
+}]```  
+  
 ## [Feed](http://docs.playerme.apiary.io/#reference/feed)
 * Post Collections - **ActivityModel[]**
 * Post Entity - **ActivityModel**
@@ -464,7 +483,8 @@ Written in ES6
 * Report a post/comment - **Not checked**
 
 ## [Messaging](http://docs.playerme.apiary.io/#reference/messaging)
-* Message Groups Collection - **To Do**
+* Message Groups Collection - **To Do**  
+  
 ```[{  
   "id":3021,
   "name":"maktouch",
@@ -473,7 +493,7 @@ Written in ES6
   "updated_at":"2014-10-06T18:47:23+0000",
   "order":0,
   "url":"https:\/\/player.me\/me\/messaging\/3021",
-  "image":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/69\/0c\/57\/3b0621d1672638929336e054347b46b7.jpg",
+  "image":"\/\/something.jpg",
   "private_with":1,
   "is_unread":false,
   "users":[{  
@@ -481,8 +501,8 @@ Written in ES6
     "username":"maktouch",
     "account_type":"user",
     "slug":"maktouch",
-    "avatar":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/69\/0c\/57\/3b0621d1672638929336e054347b46b7.jpg",
-    "cover":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/54\/4d\/3e\/a0eb0439d51808d90259ff228b4b30bb.jpg",
+    "avatar":"\/\/something.jpg",
+    "cover":"\/\/something.jpg",
     "url":"\/maktouch",
     "followers_count":1409,
     "is_featured":false,
@@ -494,8 +514,8 @@ Written in ES6
     "username":"Zazz",
     "account_type":"user",
     "slug":"zazz",
-    "avatar":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/55\/46\/9e\/3365d9e4b771e888ff11a710854dd0f3.jpg",
-    "cover":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/60\/c5\/bd\/690d82af98a8067fa5467b171f1fc7d7.jpg",
+    "avatar":"\/\/something.jpg",
+    "cover":"\/\/something.jpg",
     "url":"\/zazz",
     "followers_count":190,
     "is_featured":false,
@@ -520,8 +540,8 @@ Written in ES6
       "username":"maktouch",
       "account_type":"user",
       "slug":"maktouch",
-      "avatar":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/avatar\/69\/0c\/57\/3b0621d1672638929336e054347b46b7.jpg",
-      "cover":"\/\/d1zqrvc06emslq.cloudfront.net\/media\/cache\/cover\/54\/4d\/3e\/a0eb0439d51808d90259ff228b4b30bb.jpg",
+      "avatar":"\/\/something.jpg",
+      "cover":"\/\/something.jpg",
       "url":"\/maktouch",
       "followers_count":1409,
       "is_featured":false,
@@ -530,8 +550,10 @@ Written in ES6
       "is_private":false
     }
   }
-}]```
-* Message Groups Search - **To Do**
+}]```  
+  
+* Message Groups Search - **To Do**  
+  
 ```[{  
   "id":3021,
   "name":"maktouch",
@@ -598,9 +620,11 @@ Written in ES6
       "is_private":false
     }
   }
-}]```
+}]```  
+  
 * Message Groups Entity - **Not Checked**
-* Messages collection - **To Do**
+* Messages collection - **To Do**  
+  
 ```[{
   "id":4088352,
   "group_id":3021,
@@ -657,11 +681,13 @@ Written in ES6
     "is_private":false
   },
   "direction":"sent"
-}]```
+}]```  
+  
 * Messaging notifications - **Not checked**
 
 ## [Search and Browse](http://docs.playerme.apiary.io/#reference/search-and-browse)
-* Global Search - **Not checked**
+* Global Search - **Not checked**  
+  
 ```[{  
   "id":10473,
   "username":"Battlechili1",
@@ -716,8 +742,8 @@ Written in ES6
     "owned"
   ],
   "is_tagged":true
-}]```
-
+}]```  
+  
 ## [Game Library](http://docs.playerme.apiary.io/#reference/game-library)
 * Game Tags Collection - **Not checked**
 * Game Tags Entity - **Not checked**
