@@ -1,4 +1,4 @@
-import {assertProperty, assertMethod} from './utils/TestHelpers';
+import {assertObject} from './utils/TestHelpers';
 import CommentModel from '../src/models/activity/comment/CommentModel';
 import RawCommentModel from './mocks/RawCommentModel';
 
@@ -6,41 +6,41 @@ describe("CommentModel", function() {
     it("has the expected fields", function() {
         var model = new CommentModel(RawCommentModel);
 
-        // Test standard comment model
-        assertProperty( model, 'id',             'number'    );
-        assertProperty( model, 'userId',         'number'    );
-        assertProperty( model, 'activityUserId', 'number'    );
-        assertProperty( model, 'activityId',     'number'    );
-        assertProperty( model, 'post',           'string'    );
-        assertProperty( model, 'postRaw',        'string'    );
-        assertProperty( model, 'metas',          'array'     );
-        assertProperty( model, 'createdAt',      'Date'      );
-        assertProperty( model, 'updatedAt',      'Date'      );
-        assertProperty( model, 'editedAt',       'null'      );
-        assertProperty( model, 'deletedAt',      'null'      );
-        assertProperty( model, 'user',           'UserModel' );
-        assertProperty( model, 'userIsBlocked',  'boolean'   );
-        assertProperty( model, 'hasLiked',       'boolean'   );
-        assertProperty( model, 'url',            'string'    );
-        assertProperty( model, 'showDelete',     'boolean'   );
-        assertProperty( model, 'showEdit',       'boolean'   );
-        assertProperty( model, 'isOwnComment',   'boolean'   );
-        assertProperty( model, 'likesCount',     'number'    );
+        assertObject("Comment Model", model, {
+            'id':             'number',
+            'userId':         'number',
+            'activityUserId': 'number',
+            'activityId':     'number',
+            'post':           'string',
+            'postRaw':        'string',
+            'metas':          'array',
+            'createdAt':      'Date',
+            'updatedAt':      'Date',
+            'editedAt':       'null',
+            'deletedAt':      'null',
+            'user':           'UserModel',
+            'userIsBlocked':  'boolean',
+            'hasLiked':       'boolean',
+            'url':            'string',
+            'showDelete':     'boolean',
+            'showEdit':       'boolean',
+            'isOwnComment':   'boolean',
+            'likesCount':     'number',
+            'like':           {args:[]}
+        }, true, 'CommentModel');
 
-        // Test meta
-        assertProperty(model.metas, '0', 'CommentMeta');
         var meta = model.metas[0];
-
-        assertProperty( meta, 'images',      'array'   );
-        assertProperty( meta, 'url',         'string'  );
-        assertProperty( meta, 'title',       'string'  );
-        assertProperty( meta, 'description', 'string'  );
-        assertProperty( meta, 'provider',    'string'  );
-        assertProperty( meta, 'content',     'string'  );
-        assertProperty( meta, 'isInternal',  'boolean' );
-        assertProperty( meta, 'thumbnail',   'string'  );
-
-        assertMethod( meta, 'isPhoto', [], 'boolean', meta.content == 'photo' );
-        assertMethod( meta, 'isVideo', [], 'boolean', meta.content == 'video' );
+        assertObject("Comment Metadata", meta, {
+            'images':      'array',
+            'url':         'string',
+            'title':       'string',
+            'description': 'string',
+            'provider':    'string',
+            'content':     'string',
+            'isInternal':  'boolean',
+            'thumbnail':   'string',
+            'isPhoto':     { args: [], type: "boolean", value: meta.content == 'photo' },
+            'isVideo':     { args: [], type: "boolean", value: meta.content == 'video' }
+        }, true, 'CommentMeta');
     });
 });
