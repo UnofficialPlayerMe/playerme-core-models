@@ -40,6 +40,11 @@ class UserExtendedModel extends UserModel{
         this._isOnline                  = obj    && obj   .is_online            || false;
         this._followingCount            = obj    && obj   .following_count      || 0;
 
+        // Group specific
+        this._isConfirmedGroupMember = obj && obj.is_confirmed_group_member || false;
+        this._canConfirmMembership   = obj && obj.can_confirm_membership    || false;
+        this._canRemoveMembership    = obj && obj.can_remove_membership     || false;
+
         // Overrides
         if (cover)  this._cover  = cover.cached;
         if (avatar) this._avatar = avatar.cached;
@@ -223,6 +228,38 @@ class UserExtendedModel extends UserModel{
      */
     get followingCount() {
         return this._followingCount;
+    }
+
+    /**
+     * Whether the logged in user is a member of this group
+     * @readonly
+     * @member {boolean} UserExtendedModel#isConfirmedGroupMember
+     * @returns {boolean}
+     */
+    get isConfirmedGroupMember() {
+        return this._isConfirmedGroupMember;
+    }
+
+    /**
+     * Whether the logged in user has rights to confirm memberships
+     * TODO Confirm the description for canConfirmMembership() is correct
+     * @readonly
+     * @member {boolean} UserExtendedModel#canConfirmMembership
+     * @returns {boolean}
+     */
+    get canConfirmMembership() {
+        return this._canConfirmMembership;
+    }
+
+    /**
+     * Whether the logged in user has rights to remove memberships
+     * TODO Confirm the description for canRemoveMembership() is correct
+     * @readonly
+     * @member {boolean} UserExtendedModel#canRemoveMembership
+     * @returns {boolean}
+     */
+    get canRemoveMembership() {
+        return this._canRemoveMembership;
     }
 }
 
