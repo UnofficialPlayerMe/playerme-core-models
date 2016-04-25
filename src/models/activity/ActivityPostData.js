@@ -1,4 +1,4 @@
-import GameModel from './../game/GameModel';
+import GameMetadataModel from './../game/GameMetadataModel';
 
 /**
  * The main content of a Post
@@ -14,7 +14,7 @@ class ActivityPostData {
         this._post            = obj && obj.post     || '';
         this._postRaw         = obj && obj.post_raw || '';
         this._metas           = obj && obj.metas.map((meta) => new ActivityPostMetaData(meta)) || [];
-        this._game            = game && new GameModel(obj.game) || null;
+        this._game            = game && new GameMetadataModel(obj.game) || null;
         this._gameCheckInType = game && game.check_in_type      || null;
     }
 
@@ -51,8 +51,8 @@ class ActivityPostData {
     /**
      * The game that has been checked in, if any
      * @readonly
-     * @member {GameModel|null} ActivityPostData#game
-     * @returns {GameModel|null}
+     * @member {GameMetadataModel|null} ActivityPostData#game
+     * @returns {GameMetadataModel|null}
      */
     get game(){
         return this._game;

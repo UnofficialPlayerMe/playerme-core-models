@@ -85,11 +85,11 @@ describe("ActivityModel (Post)", function() {
         assertProperty( model, 'video', 'null'              );
 
         var post = model.post;
-        assertProperty( post, 'post',               'string'    );
-        assertProperty( post, 'postRaw',            'string'    );
-        assertProperty( post, 'metas',              'Array'     );
-        assertProperty( post, 'game',               'GameModel' );
-        assertProperty( post, 'gameCheckInType',    'string'    );
+        assertProperty( post, 'post',               'string'            );
+        assertProperty( post, 'postRaw',            'string'            );
+        assertProperty( post, 'metas',              'Array'             );
+        assertProperty( post, 'game',               'GameMetadataModel' );
+        assertProperty( post, 'gameCheckInType',    'string'            );
         assertMethod(   post, 'isPlayingGame', [],  'boolean', post.gameCheckInType   == 'playing' );
 
         var metas = post.metas;
