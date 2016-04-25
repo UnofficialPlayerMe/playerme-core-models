@@ -12,7 +12,7 @@ var dataTypes = [
  * Assert that the passed value is of the expected class/type
  * @param {string}  name            Name of the value, to be shown in the exception message
  * @param {*}       value           The value to be tested
- * @param {string}  expectedType    The expected type/class
+ * @param {string}  expectedType    The expected type/class, or array type if it ends with '[]' (recursive)
  */
 var assertType = function (name, value, expectedType) {
     var typeLower = expectedType.toLocaleLowerCase();
@@ -39,11 +39,29 @@ var assertType = function (name, value, expectedType) {
         return;
     }
 
+    // Test array type if 'Something[]'
+    if (expectedType.length > 2 && expectedType.slice(-2) == '[]'){
+        var arrayType = expectedType.slice(0, -2);
+        expect(Array.isArray(value)).toBe(true, "[" + name + "] is not an array");
+        expect(value.length).not.toBe(0, "[" + name + "] is empty");
+        assertType(name+"[0]", value[0], arrayType)
+    }
+
     // Test class instance
-    msg = "[" + name + "] is not an instance of [" + expectedType + "]";
+    assertClass(name, value, expectedType);
+};
+
+/**
+ * Assert that the passed value is of the expected class
+ * @param {string}  name                Name of the value, to be shown in the exception message
+ * @param {*}       value               The value to be tested
+ * @param {string}  expectedClassName   The expected class name
+ */
+var assertClass = function(name, value, expectedClassName) {
+    var msg = "[" + name + "] is not an instance of [" + expectedClassName + "]";
     expect(typeof value).toEqual('object', msg);
     expect(value).not.toBeNull(msg);
-    expect(value.constructor.name).toBe(expectedType, msg);
+    expect(value.constructor.name).toBe(expectedClassName, msg);
 };
 
 /**
@@ -109,8 +127,9 @@ var assertMethod = function(target, key, args, expectedType, expectedValue){
  *  assertObject('The instance', myInstance, {
  *      var1: false,
  *      var2: "string",
- *      var3: {type:"string"},
- *      var4: {type:"number", value: 1},
+ *      var3: "string[]",
+ *      var4: {type:"string"},
+ *      var5: {type:"number", value: 1},
  *      func1: {args:[]},
  *      func2: {args:[], type:"number"},
  *      func3: {args:[], type:"number", value:"something"},
@@ -125,7 +144,7 @@ var assertObject = function(name, target, tests, testAll, className){
     expect(typeof target).toEqual('object', "[" + name + "] is not an object");
     expect(target).not.toBeNull("[" + name + "] is null");
     if (className){
-        expect(target.constructor.name).toEqual(className, "["+name+"] isn't an instance of ["+className+"]");
+        assertClass(name, target, className);
     }
 
     if (!tests) return;
@@ -172,17 +191,18 @@ var assertObject = function(name, target, tests, testAll, className){
             continue;
         }
         // Invalid test
-        throw "The ["+key+"] passed to assertObject to be tested is of the unhandled type ["+type+"]";
+        throw "The ["+key+"] passed to assertObject() to be tested is of the unhandled type ["+type+"]";
     }
 
     // Convert untested into an array, and then assert that it's empty
     untested = Object.keys(untested);
-    expect(untested.length).toEqual(0, "["+name+"] properties not tested in assertObject: ["+untested.join()+"]");
+    expect(untested.length).toEqual(0, "["+name+"] properties not tested in assertObject(): ["+untested.join()+"]");
 };
 
 export {
     assertType,
     assertValue,
+    assertClass,
     assertProperty,
     assertMethod,
     assertObject
