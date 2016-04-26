@@ -83,7 +83,7 @@ class ActivityModel {
     }
 
     /**
-     * TODO What is this?
+     * TODO What is ActivityModel resourceId?
      * @readonly
      * @member {number} ActivityModel#resourceId
      * @returns {number}

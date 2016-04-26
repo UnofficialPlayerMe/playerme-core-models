@@ -60,7 +60,7 @@ class ActivityPostData {
 
     /**
      * The type of check-in for the game, if any (e.g. "playing")
-     * TODO Find other types
+     * TODO Are there other kinds of ActivityPostData gameCheckInType?
      * @readonly
      * @member {string|null} ActivityPostData#gameCheckInType
      * @returns {string|null}
@@ -138,7 +138,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * TODO What is this?
+     * TODO What is ActivityPostMetaData isInternal?
      * @readonly
      * @member {boolean} ActivityPostMetaData#isInternal
      * @returns {boolean}
