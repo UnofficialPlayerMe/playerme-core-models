@@ -1,4 +1,4 @@
-import {assertProperty, assertMethod} from './utils/TestHelpers';
+import {assertProperty, assertMethod, assertObject} from './utils/TestHelpers';
 import ActivityModel from '../src/models/activity/ActivityModel';
 import CommentModel from '../src/models/activity/comment/CommentModel';
 import RawCommentModel from './mocks/RawCommentModel';
@@ -6,56 +6,54 @@ import {StandardPost, StandardVideo} from './mocks/RawActivityModel';
 
 describe("ActivityModel", function() {
     var model = new ActivityModel(StandardPost);
+    var comment = new CommentModel(RawCommentModel);
 
     it("has the expected fields", function() {
-        var comments = model.comments;
-        assertProperty( model, 'id',                'number'            );
-        assertProperty( model, 'resourceId',        'number'            );
-        assertProperty( model, 'type',              'string',   'post'  );
-        assertProperty( model, 'user',              'UserModel'         );
-        assertProperty( model, 'source',            'string'            );
-        assertProperty( model, 'sourceUrl',         'string'            );
-        assertProperty( model, 'url',               'string'            );
-        assertProperty( model, 'fullUrl',           'string'            );
-        assertProperty( model, 'publishedAt',       'Date'              );
-        assertProperty( model, 'createdAt',         'Date'              );
-        assertProperty( model, 'updatedAt',         'Date'              );
-        assertProperty( model, 'editedAt',          'Date'              );
-        assertProperty( model, 'isSubscribed',      'boolean'           );
-        assertProperty( model, 'showEdit',          'boolean'           );
-        assertProperty( model, 'showDelete',        'boolean'           );
-        assertProperty( model, 'userIsHidden',      'boolean'           );
-        assertProperty( model, 'userIsBlocked',     'boolean'           );
-        assertProperty( model, 'userIsFollowed',    'boolean'           );
-        assertProperty( model, 'isOwnActivity',     'boolean'           );
-        assertProperty( model, 'hasLiked',          'boolean'           );
-        assertProperty( model, 'likesCount',        'number'            );
-        assertProperty( model, 'hasPinned',         'boolean'           );
-        assertProperty( model, 'pinsCount',         'number'            );
-        assertProperty( model, 'hasShared',         'boolean'           );
-        assertProperty( model, 'shareCount',        'number'            );
-        assertProperty( model, 'commentsCount',     'number'            );
-        assertProperty( model, 'comments',          'Array'             );
-        assertProperty( comments, '0',              'CommentModel'      );
-        assertProperty( model, 'post',              'ActivityPostData'  );
-        assertProperty( model, 'video',             'null'              );
+        assertObject("Activity Model", model, {
+            'id':                'number',
+            'resourceId':        'number',
+            'type':              {type:'string', value: "post"},
+            'user':              'UserModel',
+            'source':            'string',
+            'sourceUrl':         'string',
+            'url':               'string',
+            'fullUrl':           'string',
+            'publishedAt':       'Date',
+            'createdAt':         'Date',
+            'updatedAt':         'Date',
+            'editedAt':          'Date',
+            'isSubscribed':      'boolean',
+            'showEdit':          'boolean',
+            'showDelete':        'boolean',
+            'userIsHidden':      'boolean',
+            'userIsBlocked':     'boolean',
+            'userIsFollowed':    'boolean',
+            'isOwnActivity':     'boolean',
+            'hasLiked':          'boolean',
+            'likesCount':        'number',
+            'hasPinned':         'boolean',
+            'pinsCount':         'number',
+            'hasShared':         'boolean',
+            'shareCount':        'number',
+            'commentsCount':     'number',
+            'comments':          'CommentModel[]',
+            'post':              'ActivityPostData',
+            'video':             'null',
 
-        assertMethod( model, 'isVideo',         [], 'boolean', model.type   == 'video'      );
-        assertMethod( model, 'isPost',          [], 'boolean', model.type   == 'post'       );
-        assertMethod( model, 'isFromYoutube',   [], 'boolean', model.source == 'youtube'    );
-        assertMethod( model, 'isFromTwitch',    [], 'boolean', model.source == 'twitch'     );
-        assertMethod( model, 'isFromPlayer',    [], 'boolean', model.source == 'player'     );
-        assertMethod( model, 'hasAllComments',  [], 'boolean', model.comments.length >= model.commentsCount );
-    });
-    it("can have comments added", function(){
-        var originalCount = model.comments.length;
-        var originalTotal = model.commentsCount;
+            // Methods
+            'isVideo':         { args: [], type: 'boolean', value: model.type   == 'video'   },
+            'isPost':          { args: [], type: 'boolean', value: model.type   == 'post'    },
+            'isFromYoutube':   { args: [], type: 'boolean', value: model.source == 'youtube' },
+            'isFromTwitch':    { args: [], type: 'boolean', value: model.source == 'twitch'  },
+            'isFromPlayer':    { args: [], type: 'boolean', value: model.source == 'player'  },
+            'hasAllComments':  { args: [], type: 'boolean', value: model.comments.length >= model.commentsCount },
 
-        var comment = new CommentModel(RawCommentModel);
-        assertMethod( model, 'addComment',  [comment]);
-
-        expect(model.comments.length).toBe(originalCount+1, "Comment array length is wrong");
-        expect(model.commentsCount).toBe(originalTotal+1, "Comments count is wrong");
+            // Give own test cases
+            'addComment':         'function',
+            'updateComment':      'function',
+            'removeComment':      'function',
+            'addCommentsToStart': 'function'
+        }, true, "ActivityModel");
     });
     it("can have comments added", function(){
         var originalCount = model.comments.length;

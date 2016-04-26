@@ -44,7 +44,8 @@ var assertType = function (name, value, expectedType) {
         var arrayType = expectedType.slice(0, -2);
         expect(Array.isArray(value)).toBe(true, "[" + name + "] is not an array");
         expect(value.length).not.toBe(0, "[" + name + "] is empty");
-        assertType(name+"[0]", value[0], arrayType)
+        assertType(name+"[0]", value[0], arrayType);
+        return;
     }
 
     // Test class instance
