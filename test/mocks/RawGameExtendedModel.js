@@ -23,7 +23,7 @@ var standard = {
         cached: "original.cached",
         original_filename: "original.original_filename"
     },
-    alias: null,
+    alias: "alias\ntitle alias",
     short_description: null,
     slug: "slug",
     website: "website",

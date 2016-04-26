@@ -27,7 +27,6 @@ class GameExtendedModel extends GameModel {
         this._updatedAt         = obj && toDate(obj.updated_at)     || null;
         this._deletedAt         = obj && toDate(obj.deleted_at)     || null;
         this._coverBy           = obj && obj.cover_by               || 0;
-        this._alias             = obj && obj.alias                  || null;
         this._website           = obj && obj.website                || '';
         this._facebook          = obj && obj.facebook               || '';
         this._twitter           = obj && obj.twitter                || '';
@@ -38,6 +37,8 @@ class GameExtendedModel extends GameModel {
         this._buyLink           = obj && obj.buy_link               || '';
         this._kickstarter       = obj && obj.kickstarter            || '';
         this._favouritesCount   = obj && obj.favourites_count       || 0;
+
+        this._aliases = obj && obj.alias && obj.alias.split('\n') || [];
 
         this._platforms = [];
         if (obj && obj.platforms){
@@ -77,7 +78,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * TODO What's this?
+     * TODO What is GameExtendedModel displaySource?
      * @readonly
      * @member {boolean} GameExtendedModel#displaySource
      * @returns {boolean}
@@ -167,13 +168,13 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * TODO What is this?
+     * Other names that this game goes by
      * @readonly
-     * @member {null} GameExtendedModel#alias
-     * @returns {null}
+     * @member {String[]} GameExtendedModel#aliases
+     * @returns {String[]}
      */
-    get alias(){
-        return this._alias;
+    get aliases(){
+        return this._aliases;
     }
 
     /**

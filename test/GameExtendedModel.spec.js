@@ -33,7 +33,7 @@ describe("GameExtendedModel", function() {
             updatedAt:       'Date',
             deletedAt:       'null',
             coverBy:         'number',
-            alias:           'null',
+            aliases:         'string[]',
             website:         'string',
             facebook:        'string',
             twitter:         'string',
@@ -43,15 +43,11 @@ describe("GameExtendedModel", function() {
             youtube:         'string',
             buyLink:         'string',
             kickstarter:     'string',
-            platforms:       'array',
             favouritesCount: 'number',
-            developers:      'array',
-            publishers:      'array'
+            platforms:       'GamePlatform[]',
+            developers:      'GameCompany[]',
+            publishers:      'GameCompany[]'
         }, true, 'GameExtendedModel');
-
-        assertProperty( model.platforms,  '0', 'GamePlatform');
-        assertProperty( model.developers, '0', 'GameCompany' );
-        assertProperty( model.publishers, '0', 'GameCompany' );
     });
 });
 
