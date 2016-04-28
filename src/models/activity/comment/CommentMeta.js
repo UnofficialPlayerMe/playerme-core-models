@@ -21,7 +21,7 @@ class CommentMeta {
     /**
      * An array of URLs to images.
      * @readonly
-     * @member {string[]} CommentMetaModel#images
+     * @member {string[]} CommentMeta#images
      * @returns {string[]}
      */
     get images(){
@@ -31,7 +31,7 @@ class CommentMeta {
     /**
      * Absolute path to this asset.
      * @readonly
-     * @member {string} CommentMetaModel#url
+     * @member {string} CommentMeta#url
      * @returns {string}
      */
     get url() {
@@ -41,7 +41,7 @@ class CommentMeta {
     /**
      * Title of this asset.
      * @readonly
-     * @member {string} CommentMetaModel#title
+     * @member {string} CommentMeta#title
      * @returns {string}
      */
     get title() {
@@ -51,7 +51,7 @@ class CommentMeta {
     /**
      * Description for this asset.
      * @readonly
-     * @member {string} CommentMetaModel#description
+     * @member {string} CommentMeta#description
      * @returns {string}
      */
     get description() {
@@ -61,7 +61,7 @@ class CommentMeta {
     /**
      * The provider that hosts this asset.
      * @readonly
-     * @member {string} CommentMetaModel#provider
+     * @member {string} CommentMeta#provider
      * @returns {string}
      */
     get provider() {
@@ -71,7 +71,7 @@ class CommentMeta {
     /**
      * The type of asset.
      * @readonly
-     * @member {string} CommentMetaModel#content
+     * @member {string} CommentMeta#content
      * @returns {string}
      */
     get content() {
@@ -81,7 +81,7 @@ class CommentMeta {
     /**
      * TODO What is CommentMetaModel isInternal?
      * @readonly
-     * @member {boolean} CommentMetaModel#isInternal
+     * @member {boolean} CommentMeta#isInternal
      * @returns {boolean}
      */
     get isInternal() {
@@ -91,7 +91,7 @@ class CommentMeta {
     /**
      * The URL of a thumbnail for the asset.
      * @readonly
-     * @member {string} CommentMetaModel#thumbnail
+     * @member {string} CommentMeta#thumbnail
      * @returns {string}
      */
     get thumbnail() {

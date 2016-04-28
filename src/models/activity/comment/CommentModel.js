@@ -68,7 +68,7 @@ class CommentModel {
     /**
      * The ID of the original poster.
      * @readonly
-     * @member {number} CommentModel#activity_user_id
+     * @member {number} CommentModel#activityUserId
      * @returns {number}
      */
     get activityUserId(){
@@ -108,8 +108,8 @@ class CommentModel {
     /**
      * Metadata associated with this comment.
      * @readonly
-     * @member {Array} CommentModel#metas
-     * @returns {Array}
+     * @member {CommentMeta[]} CommentModel#metas
+     * @returns {CommentMeta[]}
      */
     get metas(){
         return this._metas;
@@ -138,8 +138,8 @@ class CommentModel {
     /**
      * The date and time the comment was last edited by the user on (or null).
      * @readonly
-     * @member {Date} CommentModel#editedAt
-     * @returns {Date}
+     * @member {Date|null} CommentModel#editedAt
+     * @returns {Date|null}
      */
     get editedAt(){
         return this._editedAt;
@@ -148,8 +148,8 @@ class CommentModel {
     /**
      * The date and time the comment was soft deleted on (or null).
      * @readonly
-     * @member {Date} CommentModel#deletedAt
-     * @returns {Date}
+     * @member {Date|null} CommentModel#deletedAt
+     * @returns {Date|null}
      */
     get deletedAt(){
         return this._deletedAt;

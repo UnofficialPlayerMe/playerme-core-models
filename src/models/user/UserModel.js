@@ -91,7 +91,7 @@ class UserModel {
     }
 
     /**
-     * A relative URL to the user's profile
+     * A relative URL to the user's profile.
      * @readonly
      * @member {string} UserModel#url
      * @returns {string}
@@ -151,7 +151,7 @@ class UserModel {
     }
 
     /**
-     * Whether the account is for a normal user
+     * Whether the account is for a normal user.
      * @returns {boolean}
      */
     isUser(){
@@ -159,7 +159,7 @@ class UserModel {
     }
 
     /**
-     * Whether the account is for a group
+     * Whether the account is for a group.
      * @returns {boolean}
      */
     isGroup(){

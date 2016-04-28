@@ -64,7 +64,7 @@ class GameModel {
     }
 
     /**
-     * The URL to the game's cover
+     * The URL to the game's cover.
      * @readonly
      * @member {string|null} GameModel#cover
      * @returns {string|null}
@@ -74,7 +74,7 @@ class GameModel {
     }
 
     /**
-     * The original upload of the game's cover
+     * The original upload of the game's cover.
      * @readonly
      * @member {string|null} GameModel#coverOriginal
      * @returns {string|null}
@@ -84,7 +84,7 @@ class GameModel {
     }
 
     /**
-     * The original filename of the game's cover
+     * The original filename of the game's cover.
      * @readonly
      * @member {string|null} GameModel#coverOriginalFilename
      * @returns {string|null}
@@ -94,7 +94,7 @@ class GameModel {
     }
 
     /**
-     * The URL to game's box
+     * The URL to game's box.
      * @readonly
      * @member {string|null} GameModel#boxCached
      * @returns {string|null}
@@ -104,7 +104,7 @@ class GameModel {
     }
 
     /**
-     * The original upload of the game's box
+     * The original upload of the game's box.
      * @readonly
      * @member {string|null} GameModel#boxOriginal
      * @returns {string|null}
@@ -114,7 +114,7 @@ class GameModel {
     }
 
     /**
-     * The original filename of the game's box
+     * The original filename of the game's box.
      * @readonly
      * @member {string|null} GameModel#boxOriginalFilename
      * @returns {string|null}
@@ -124,7 +124,7 @@ class GameModel {
     }
 
     /**
-     * The URL friendly slug for the game
+     * The URL friendly slug for the game.
      * @readonly
      * @member {string} GameModel#slug
      * @returns {string}
@@ -134,7 +134,7 @@ class GameModel {
     }
 
     /**
-     * The link to the game's page on player
+     * The link to the game's page on player.
      * @readonly
      * @member {string} GameModel#url
      * @returns {string}
@@ -144,7 +144,7 @@ class GameModel {
     }
 
     /**
-     * The number of likes the game has received
+     * The number of likes the game has received.
      * @readonly
      * @member {number} GameModel#likesCount
      * @returns {number}
@@ -154,7 +154,7 @@ class GameModel {
     }
 
     /**
-     * If the player has liked the game
+     * If the player has liked the game.
      * @readonly
      * @member {boolean} GameModel#hasLiked
      * @returns {boolean}

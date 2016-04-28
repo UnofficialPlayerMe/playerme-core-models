@@ -1,7 +1,7 @@
 import GameMetadataModel from './../game/GameMetadataModel';
 
 /**
- * The main content of a Post
+ * The main contents of an ActivityModel of type "post".
  */
 class ActivityPostData {
     /**
@@ -19,7 +19,7 @@ class ActivityPostData {
     }
 
     /**
-     * The post's formatted text
+     * The post's formatted text.
      * @readonly
      * @member {string} ActivityPostData#post
      * @returns {string}
@@ -29,7 +29,7 @@ class ActivityPostData {
     }
 
     /**
-     * The post's un-formatted text
+     * The post's un-formatted text.
      * @readonly
      * @member {string} ActivityPostData#postRaw
      * @returns {string}
@@ -39,7 +39,7 @@ class ActivityPostData {
     }
 
     /**
-     * The post's related content
+     * The post's related content.
      * @readonly
      * @member {ActivityPostMetaData[]} ActivityPostData#meta
      * @returns {ActivityPostMetaData[]}
@@ -49,7 +49,7 @@ class ActivityPostData {
     }
 
     /**
-     * The game that has been checked in, if any
+     * The game that has been checked in, if any.
      * @readonly
      * @member {GameMetadataModel|null} ActivityPostData#game
      * @returns {GameMetadataModel|null}
@@ -59,8 +59,8 @@ class ActivityPostData {
     }
 
     /**
-     * The type of check-in for the game, if any (e.g. "playing")
-     * TODO Are there other kinds of ActivityPostData gameCheckInType?
+     * The type of check-in for the game, if any (e.g. "playing").
+     * TODO The API can apparently handle other types, but can the client specify them?
      * @readonly
      * @member {string|null} ActivityPostData#gameCheckInType
      * @returns {string|null}
@@ -70,7 +70,7 @@ class ActivityPostData {
     }
 
     /**
-     * If the post says the author is playing a game
+     * If the post says the author is playing a game.
      * @returns {boolean}
      */
     isPlayingGame(){
@@ -80,7 +80,7 @@ class ActivityPostData {
 } // End of ActivityPostData
 
 /**
- * Metadata associated with a Post
+ * Metadata associated with a Post.
  */
 class ActivityPostMetaData {
     /**
@@ -98,7 +98,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * The meta's content type (i.e. "Photo")
+     * The meta's content type (i.e. "Photo").
      * @readonly
      * @member {string} ActivityPostMetaData#content
      * @returns {string}
@@ -108,7 +108,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * The title of the metadata, if applicable
+     * The title of the metadata, if applicable.
      * @readonly
      * @member {string|null} ActivityPostMetaData#title
      * @returns {string|null}
@@ -118,7 +118,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * The description for the metadata, if applicable
+     * The description for the metadata, if applicable.
      * @readonly
      * @member {string|null} ActivityPostMetaData#description
      * @returns {string|null}
@@ -128,7 +128,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * The provider for the metadata (e.g. "Player")
+     * The provider for the metadata (e.g. "Player").
      * @readonly
      * @member {string} ActivityPostMetaData#provider
      * @returns {string}
@@ -148,7 +148,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * A list of image URLs
+     * A list of image URLs.
      * @readonly
      * @member {string[]} ActivityPostMetaData#images
      * @returns {string[]}
@@ -158,7 +158,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * The link to the metadata
+     * The link to whatever's represented by the metadata (e.g. an image)
      * @readonly
      * @member {string} ActivityPostMetaData#url
      * @returns {string}
@@ -168,7 +168,7 @@ class ActivityPostMetaData {
     }
 
     /**
-     * URL of the metadata's thumbnail
+     * URL of the metadata's thumbnail.
      * @readonly
      * @member {string|null} ActivityPostMetaData#thumbnail
      * @returns {string|null}

@@ -93,7 +93,7 @@ class ActivityModel {
     }
 
     /**
-     * The type of activity (i.e. "Video" or "Post")
+     * The type of activity (i.e. "Video" or "Post").
      * @readonly
      * @member {string} ActivityModel#type
      * @returns {string}
@@ -103,7 +103,7 @@ class ActivityModel {
     }
 
     /**
-     * The user that posted this Activity
+     * The user that posted this Activity.
      * @readonly
      * @member {UserModel} ActivityModel#user
      * @returns {UserModel}
@@ -113,7 +113,7 @@ class ActivityModel {
     }
 
     /**
-     * Where the Activity came from (i.e. "youtube", "twitch" or "player")
+     * Where the Activity came from (i.e. "youtube", "twitch" or "player").
      * @readonly
      * @member {string} ActivityModel#source
      * @returns {string}
@@ -123,7 +123,7 @@ class ActivityModel {
     }
 
     /**
-     * The URL where this activity originated
+     * The URL where this activity originated.
      * @readonly
      * @member {string} ActivityModel#sourceUrl
      * @returns {string}
@@ -133,7 +133,7 @@ class ActivityModel {
     }
 
     /**
-     * The partial URL where this activity is located on player
+     * The partial URL where this activity is located on player.
      * @readonly
      * @member {string} ActivityModel#url
      * @returns {string}
@@ -143,7 +143,7 @@ class ActivityModel {
     }
 
     /**
-     * The full URL where this activity is located on player
+     * The full URL where this activity is located on player.
      * @readonly
      * @member {string} ActivityModel#fullUrl
      * @returns {string}
@@ -153,7 +153,7 @@ class ActivityModel {
     }
 
     /**
-     * The date this activity was published
+     * The date this activity was published.
      * @readonly
      * @member {Date} ActivityModel#publishedAt
      * @returns {Date}
@@ -163,7 +163,7 @@ class ActivityModel {
     }
 
     /**
-     * The date this activity row was created
+     * The date this activity row was created.
      * @readonly
      * @member {Date} ActivityModel#createdAt
      * @returns {Date}
@@ -173,7 +173,7 @@ class ActivityModel {
     }
 
     /**
-     * The date this activity row was updated
+     * The date this activity row was updated.
      * @readonly
      * @member {Date} ActivityModel#updatedAt
      * @returns {Date}
@@ -183,7 +183,7 @@ class ActivityModel {
     }
 
     /**
-     * The date this activity was edited, or null if never
+     * The date this activity was edited, or null if never.
      * @readonly
      * @member {Date|null} ActivityModel#editedAt
      * @returns {Date|null}
@@ -193,7 +193,7 @@ class ActivityModel {
     }
 
     /**
-     * If the current user has subscribed to this activity
+     * If the current user has subscribed to this activity.
      * @readonly
      * @member {boolean} ActivityModel#isSubscribed
      * @returns {boolean}
@@ -203,7 +203,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user can edit this activity
+     * If the user can edit this activity.
      * @readonly
      * @member {boolean} ActivityModel#showEdit
      * @returns {boolean}
@@ -213,7 +213,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user can delete this activity
+     * If the user can delete this activity.
      * @readonly
      * @member {boolean} ActivityModel#showDelete
      * @returns {boolean}
@@ -223,7 +223,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user has hidden the author
+     * If the user has hidden the author.
      * @readonly
      * @member {boolean} ActivityModel#userIsHidden
      * @returns {boolean}
@@ -233,7 +233,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user has blocked the author
+     * If the user has blocked the author.
      * @readonly
      * @member {boolean} ActivityModel#userIsBlocked
      * @returns {boolean}
@@ -243,7 +243,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user is following the author
+     * If the user is following the author.
      * @readonly
      * @member {boolean} ActivityModel#userIsFollowed
      * @returns {boolean}
@@ -253,7 +253,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user is the author
+     * If the user is the author.
      * @readonly
      * @member {boolean} ActivityModel#isOwnActivity
      * @returns {boolean}
@@ -263,7 +263,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user has liked this activity
+     * If the user has liked this activity.
      * @readonly
      * @member {boolean} ActivityModel#hasLiked
      * @returns {boolean}
@@ -273,7 +273,7 @@ class ActivityModel {
     }
 
     /**
-     * The number of likes this activity has received
+     * The number of likes this activity has received.
      * @readonly
      * @member {number} ActivityModel#likesCount
      * @returns {number}
@@ -283,7 +283,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user has pinned this activity
+     * If the user has pinned this activity.
      * @readonly
      * @member {boolean} ActivityModel#hasPinned
      * @returns {boolean}
@@ -293,7 +293,7 @@ class ActivityModel {
     }
 
     /**
-     * The number of pins this activity has received
+     * The number of pins this activity has received.
      * @readonly
      * @member {number} ActivityModel#pinsCount
      * @returns {number}
@@ -303,7 +303,7 @@ class ActivityModel {
     }
 
     /**
-     * If the user has shared this activity
+     * If the user has shared this activity.
      * @readonly
      * @member {boolean} ActivityModel#hasShared
      * @returns {boolean}
@@ -313,7 +313,7 @@ class ActivityModel {
     }
 
     /**
-     * The number of shares this activity has received
+     * The number of shares this activity has received.
      * @readonly
      * @member {number} ActivityModel#shareCount
      * @returns {number}
@@ -323,7 +323,7 @@ class ActivityModel {
     }
 
     /**
-     * The total number of comments on this activity
+     * The total number of comments on this activity.
      * @readonly
      * @member {number} ActivityModel#commentsCount
      * @returns {number}
@@ -333,7 +333,7 @@ class ActivityModel {
     }
 
     /**
-     * An array of comments the client has loaded
+     * An array of comments the client has loaded.
      * @readonly
      * @member {CommentModel[]} ActivityModel#comments
      * @returns {CommentModel[]}
@@ -343,7 +343,7 @@ class ActivityModel {
     }
 
     /**
-     * Data about the post, if this Activity is the right type
+     * Data about the post, if this Activity is the right type.
      * @readonly
      * @member {ActivityPostData|null} ActivityModel#post
      * @returns {ActivityPostData|null}
@@ -353,7 +353,7 @@ class ActivityModel {
     }
 
     /**
-     * Data about the video, if this Activity is the right type
+     * Data about the video, if this Activity is the right type.
      * @readonly
      * @member {ActivityVideoData|null} ActivityModel#video
      * @returns {ActivityVideoData|null}
@@ -367,7 +367,7 @@ class ActivityModel {
     //////////////
 
     /**
-     * True if this Activity's type is a Video
+     * True if this Activity's type is a Video.
      * @returns {boolean}
      */
     isVideo(){
@@ -375,7 +375,7 @@ class ActivityModel {
     }
 
     /**
-     * True if this Activity's type is a Post
+     * True if this Activity's type is a Post.
      * @returns {boolean}
      */
     isPost(){
@@ -387,7 +387,7 @@ class ActivityModel {
     //////////////
 
     /**
-     * True if this Activity's source is YouTube
+     * True if this Activity's source is YouTube.
      * @returns {boolean}
      */
     isFromYoutube(){
@@ -395,7 +395,7 @@ class ActivityModel {
     }
 
     /**
-     * True if this Activity's source is Twitch
+     * True if this Activity's source is Twitch.
      * @returns {boolean}
      */
     isFromTwitch(){
@@ -403,7 +403,7 @@ class ActivityModel {
     }
 
     /**
-     * True if this Activity's source is Player.me
+     * True if this Activity's source is Player.me.
      * @returns {boolean}
      */
     isFromPlayer(){
@@ -415,7 +415,7 @@ class ActivityModel {
     //////////////
 
     /**
-     * If the client has loaded all this activity's comments
+     * If the client has loaded all this activity's comments.
      * @readonly
      * @returns {boolean}
      */
@@ -424,7 +424,7 @@ class ActivityModel {
     }
 
     /**
-     * Get the comment's index by its ID
+     * Get the comment's index by its ID.
      * @param commentId
      * @returns {number}
      * @private
@@ -437,7 +437,7 @@ class ActivityModel {
     }
 
     /**
-     * Add a comment to this activity
+     * Add a comment to this activity.
      * @param {CommentModel} comment
      */
     addComment(comment){
@@ -449,9 +449,9 @@ class ActivityModel {
     }
 
     /**
-     * Override this activity's copy of a comment
+     * Override this activity's copy of a comment.
      * @param {CommentModel} comment
-     * @return {boolean} If there was an original to replace
+     * @return {boolean} If there was an original to replace.
      */
     updateComment(comment){
         if (!comment || !comment.id) {
@@ -466,9 +466,9 @@ class ActivityModel {
     }
 
     /**
-     * Remove the comment
+     * Remove the comment.
      * @param {number} commentId
-     * @returns {boolean} If there was a comment to remove
+     * @returns {boolean} If there was a comment to remove.
      */
     removeComment(commentId){
         var index = this._getCommentIndex(commentId);

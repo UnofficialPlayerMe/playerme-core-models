@@ -231,7 +231,7 @@ class UserExtendedModel extends UserModel{
     }
 
     /**
-     * Whether the logged in user is a member of this group
+     * Whether the logged in user is a member of this group.
      * @readonly
      * @member {boolean} UserExtendedModel#isConfirmedGroupMember
      * @returns {boolean}
@@ -241,7 +241,7 @@ class UserExtendedModel extends UserModel{
     }
 
     /**
-     * Whether the logged in user has rights to confirm memberships
+     * Whether the logged in user has rights to confirm memberships.
      * TODO Confirm the description for canConfirmMembership() is correct
      * @readonly
      * @member {boolean} UserExtendedModel#canConfirmMembership
@@ -252,7 +252,7 @@ class UserExtendedModel extends UserModel{
     }
 
     /**
-     * Whether the logged in user has rights to remove memberships
+     * Whether the logged in user has rights to remove memberships.
      * TODO Confirm the description for canRemoveMembership() is correct
      * @readonly
      * @member {boolean} UserExtendedModel#canRemoveMembership

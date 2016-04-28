@@ -168,7 +168,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * Other names that this game goes by
+     * Other names that this game goes by.
      * @readonly
      * @member {String[]} GameExtendedModel#aliases
      * @returns {String[]}
@@ -178,7 +178,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's website
+     * A link to the game's website.
      * @readonly
      * @member {string} GameExtendedModel#website
      * @returns {string}
@@ -188,7 +188,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's Facebook page
+     * A link to the game's Facebook page.
      * @readonly
      * @member {string} GameExtendedModel#facebook
      * @returns {string}
@@ -198,7 +198,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's Twitter account
+     * A link to the game's Twitter account.
      * @readonly
      * @member {string} GameExtendedModel#twitter
      * @returns {string}
@@ -208,7 +208,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's Google+ page
+     * A link to the game's Google+ page.
      * @readonly
      * @member {string} GameExtendedModel#gplus
      * @returns {string}
@@ -218,7 +218,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's steam page
+     * A link to the game's steam page.
      * @readonly
      * @member {string} GameExtendedModel#steam
      * @returns {string}
@@ -228,7 +228,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's Twitch page
+     * A link to the game's Twitch page.
      * @readonly
      * @member {string} GameExtendedModel#twitch
      * @returns {string}
@@ -238,7 +238,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's YouTube account
+     * A link to the game's YouTube account.
      * @readonly
      * @member {string} GameExtendedModel#youtube
      * @returns {string}
@@ -248,7 +248,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's shop
+     * A link to the game's shop.
      * @readonly
      * @member {string} GameExtendedModel#buyLink
      * @returns {string}
@@ -258,7 +258,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A link to the game's Kickstarter campaign
+     * A link to the game's Kickstarter campaign.
      * @readonly
      * @member {string} GameExtendedModel#kickstarter
      * @returns {string}
@@ -268,7 +268,7 @@ class GameExtendedModel extends GameModel {
     }
 
     /**
-     * A list of the game's platforms
+     * A list of the game's platforms.
      * @readonly
      * @member {GamePlatform[]} GameExtendedModel#platforms
      * @returns {GamePlatform[]}
@@ -288,7 +288,7 @@ class GameExtendedModel extends GameModel {
     }
     
     /**
-     * A list of the companies that developed the game
+     * A list of the companies that developed the game.
      * @readonly
      * @member {GameCompany[]} GameExtendedModel#developers
      * @returns {GameCompany[]}
@@ -298,7 +298,7 @@ class GameExtendedModel extends GameModel {
     }
     
     /**
-     * A list of the companies that published the game
+     * A list of the companies that published the game.
      * @readonly
      * @member {GameCompany[]} GameExtendedModel#publishers
      * @returns {GameCompany[]}
@@ -308,6 +308,9 @@ class GameExtendedModel extends GameModel {
     }
 }
 
+/**
+ * A model representing a platform games may be on.
+ */
 class GamePlatform {
     /**
      * Create a new Activity model.
@@ -330,7 +333,7 @@ class GamePlatform {
     }
 
     /**
-     * The platform's ID
+     * The platform's ID.
      * @readonly
      * @member {number} GamePlatform#id
      * @returns {number}
@@ -340,7 +343,7 @@ class GamePlatform {
     }
 
     /**
-     * The platform's name
+     * The platform's name.
      * @readonly
      * @member {string} GamePlatform#name
      * @returns {string}
@@ -350,7 +353,7 @@ class GamePlatform {
     }
 
     /**
-     * TODO What is this?
+     * TODO What is GamePlatform.order?
      * @readonly
      * @member {string} GamePlatform#order
      * @returns {string}
@@ -360,7 +363,7 @@ class GamePlatform {
     }
 
     /**
-     * The platform URL-friendly name
+     * The platform URL-friendly name.
      * @readonly
      * @member {string} GamePlatform#slug
      * @returns {string}
@@ -370,9 +373,9 @@ class GamePlatform {
     }
 
     /**
-     * TODO What is this for?
+     * TODO What is GamePlatform.displayName for?
      * @readonly
-     * @member {string|null} GamePlatform#slug
+     * @member {string|null} GamePlatform#displayName
      * @returns {string|null}
      */
     get displayName(){
@@ -380,6 +383,9 @@ class GamePlatform {
     }
 }
 
+/**
+ * A model representing a game publisher or developer.
+ */
 class GameCompany {
     /**
      * Create a new Activity model.
@@ -411,7 +417,7 @@ class GameCompany {
     }
 
     /**
-     * The company's ID
+     * The company's ID.
      * @readonly
      * @member {number} GameCompany#id
      * @returns {number}
@@ -421,7 +427,7 @@ class GameCompany {
     }
 
     /**
-     * The ID of the company's user
+     * The ID of the company's user.
      * @readonly
      * @member {number} GameCompany#userId
      * @returns {number}
@@ -431,7 +437,7 @@ class GameCompany {
     }
 
     /**
-     * The company's name
+     * The company's name.
      * @readonly
      * @member {string} GameCompany#name
      * @returns {string}
@@ -441,9 +447,9 @@ class GameCompany {
     }
 
     /**
-     * A description of the company
+     * A description of the company.
      * @readonly
-     * @member {string} GameCompany#homepage
+     * @member {string} GameCompany#description
      * @returns {string}
      */
     get description(){
@@ -451,7 +457,7 @@ class GameCompany {
     }
 
     /**
-     * The company's homepage
+     * The company's homepage.
      * @readonly
      * @member {string} GameCompany#homepage
      * @returns {string}
@@ -461,7 +467,7 @@ class GameCompany {
     }
 
     /**
-     * The URL friendly name of the company
+     * The URL friendly name of the company.
      * @readonly
      * @member {string} GameCompany#slug
      * @returns {string}
@@ -471,7 +477,7 @@ class GameCompany {
     }
 
     /**
-     * The date the game entry was created
+     * The date the game entry was created.
      * @readonly
      * @member {Date} GameCompany#createdAt
      * @returns {Date}
@@ -481,7 +487,7 @@ class GameCompany {
     }
 
     /**
-     * The date the game entry was updated
+     * The date the game entry was updated.
      * @readonly
      * @member {Date} GameCompany#updatedAt
      * @returns {Date}
@@ -491,7 +497,7 @@ class GameCompany {
     }
 
     /**
-     * The date the game was deleted
+     * The date the game was deleted.
      * @readonly
      * @member {Date|null} GameCompany#deletedAt
      * @returns {Date|null}

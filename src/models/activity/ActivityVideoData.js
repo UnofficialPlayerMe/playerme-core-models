@@ -1,5 +1,5 @@
 /**
- * The main content of a video activity
+ * The main contents of an ActivityModel of type "video".
  */
 class ActivityVideoData {
     /**
@@ -14,7 +14,7 @@ class ActivityVideoData {
     }
 
     /**
-     * The video's title
+     * The video's title.
      * @readonly
      * @member {string} ActivityVideoData#title
      * @returns {string}
@@ -24,7 +24,7 @@ class ActivityVideoData {
     }
 
     /**
-     * The video's description
+     * The video's description.
      * @readonly
      * @member {string} ActivityVideoData#description
      * @returns {string}
@@ -34,7 +34,7 @@ class ActivityVideoData {
     }
 
     /**
-     * The URL of the video
+     * The URL of the video.
      * @readonly
      * @member {string} ActivityVideoData#url
      * @returns {string}
@@ -44,7 +44,7 @@ class ActivityVideoData {
     }
 
     /**
-     * The video's thumbnail
+     * The video's thumbnail.
      * @readonly
      * @member {string} ActivityVideoData#thumbnail
      * @returns {string}
