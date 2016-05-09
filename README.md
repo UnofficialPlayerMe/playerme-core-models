@@ -1,17 +1,17 @@
-# upa-models
+# player-core-models
 A module containing models that represent objects in the [Player v1 API](http://docs.playerme.apiary.io/).
 
 # Installing
 You can either just download the zipped files, or you can use a dependency manager like [Bower](http://bower.io/) or [NPM](https://docs.npmjs.com/getting-started/what-is-npm).
 
-* Bower: `bower install -S "git+https://github.com/Zazz-PlayerMe/upa-models.git"`
-* NPM: `npm install -S "git+https://github.com/Zazz-PlayerMe/upa-models.git"`
+* Bower: `bower install -S "git+https://github.com/UnofficialPlayerMe/player-core-models.git"`
+* NPM: `npm install -S "git+https://github.com/UnofficialPlayerMe/player-core-models.git"`
 
 # Usage
-After including either the standard or minified source file in the **dist** folder, the models will be accessible from `window.UPA.models`.  
-Example: `var myUser = new UPA.models.UserModel();`
+After including either the standard or minified source file in the **dist** folder, the models will be accessible from `window.PlayerMe.models`.  
+Example: `var myUser = new PlayerMe.models.UserModel();`
 
-If you use Webpack, you can use the `require('upa-models')` or ES2015's `import UPAModels from 'upa-models'` syntax for including upa-models by adding `externals:{"upa-models":"UPA.models"}` to the Webpack config, which maps `"upa-models"` to the `window.UPA.models` object.
+If you use Webpack, you can use the `require('player-core-models')` or ES2015's `import PlayerModels from 'player-core-models'` syntax for including player-core-models by adding `externals:{"player-core-models":"PlayerMe.models"}` to the Webpack config, which maps `"player-core-models"` to the `window.PlayerMe.models` object.
 
 Alternatively, you can also include the source files in your build.
 

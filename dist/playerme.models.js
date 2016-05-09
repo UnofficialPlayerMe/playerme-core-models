@@ -1,4 +1,4 @@
-var UPA = UPA || {}; UPA["models"] =
+var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -68,11 +68,11 @@ var UPA = UPA || {}; UPA["models"] =
 
 	var _ActivityModel2 = _interopRequireDefault(_ActivityModel);
 
-	var _GameModel = __webpack_require__(7);
+	var _GameModel = __webpack_require__(9);
 
 	var _GameModel2 = _interopRequireDefault(_GameModel);
 
-	var _GameExtendedModel = __webpack_require__(9);
+	var _GameExtendedModel = __webpack_require__(10);
 
 	var _GameExtendedModel2 = _interopRequireDefault(_GameExtendedModel);
 
@@ -149,7 +149,7 @@ var UPA = UPA || {}; UPA["models"] =
 
 
 	        /**
-	         * Whether the account is for a normal user
+	         * Whether the account is for a normal user.
 	         * @returns {boolean}
 	         */
 	        value: function isUser() {
@@ -157,7 +157,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Whether the account is for a group
+	         * Whether the account is for a group.
 	         * @returns {boolean}
 	         */
 
@@ -239,7 +239,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A relative URL to the user's profile
+	         * A relative URL to the user's profile.
 	         * @readonly
 	         * @member {string} UserModel#url
 	         * @returns {string}
@@ -393,6 +393,11 @@ var UPA = UPA || {}; UPA["models"] =
 	        _this._canMessage = obj && obj.can_message || false;
 	        _this._isOnline = obj && obj.is_online || false;
 	        _this._followingCount = obj && obj.following_count || 0;
+
+	        // Group specific
+	        _this._isConfirmedGroupMember = obj && obj.is_confirmed_group_member || false;
+	        _this._canConfirmMembership = obj && obj.can_confirm_membership || false;
+	        _this._canRemoveMembership = obj && obj.can_remove_membership || false;
 
 	        // Overrides
 	        if (cover) _this._cover = cover.cached;
@@ -632,6 +637,47 @@ var UPA = UPA || {}; UPA["models"] =
 	        get: function get() {
 	            return this._followingCount;
 	        }
+
+	        /**
+	         * Whether the logged in user is a member of this group.
+	         * @readonly
+	         * @member {boolean} UserExtendedModel#isConfirmedGroupMember
+	         * @returns {boolean}
+	         */
+
+	    }, {
+	        key: 'isConfirmedGroupMember',
+	        get: function get() {
+	            return this._isConfirmedGroupMember;
+	        }
+
+	        /**
+	         * Whether the logged in user has rights to confirm memberships.
+	         * TODO Confirm the description for canConfirmMembership() is correct
+	         * @readonly
+	         * @member {boolean} UserExtendedModel#canConfirmMembership
+	         * @returns {boolean}
+	         */
+
+	    }, {
+	        key: 'canConfirmMembership',
+	        get: function get() {
+	            return this._canConfirmMembership;
+	        }
+
+	        /**
+	         * Whether the logged in user has rights to remove memberships.
+	         * TODO Confirm the description for canRemoveMembership() is correct
+	         * @readonly
+	         * @member {boolean} UserExtendedModel#canRemoveMembership
+	         * @returns {boolean}
+	         */
+
+	    }, {
+	        key: 'canRemoveMembership',
+	        get: function get() {
+	            return this._canRemoveMembership;
+	        }
 	    }]);
 
 	    return UserExtendedModel;
@@ -760,7 +806,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        /**
 	         * The ID of the original poster.
 	         * @readonly
-	         * @member {number} CommentModel#activity_user_id
+	         * @member {number} CommentModel#activityUserId
 	         * @returns {number}
 	         */
 
@@ -812,8 +858,8 @@ var UPA = UPA || {}; UPA["models"] =
 	        /**
 	         * Metadata associated with this comment.
 	         * @readonly
-	         * @member {Array} CommentModel#metas
-	         * @returns {Array}
+	         * @member {CommentMeta[]} CommentModel#metas
+	         * @returns {CommentMeta[]}
 	         */
 
 	    }, {
@@ -851,8 +897,8 @@ var UPA = UPA || {}; UPA["models"] =
 	        /**
 	         * The date and time the comment was last edited by the user on (or null).
 	         * @readonly
-	         * @member {Date} CommentModel#editedAt
-	         * @returns {Date}
+	         * @member {Date|null} CommentModel#editedAt
+	         * @returns {Date|null}
 	         */
 
 	    }, {
@@ -864,8 +910,8 @@ var UPA = UPA || {}; UPA["models"] =
 	        /**
 	         * The date and time the comment was soft deleted on (or null).
 	         * @readonly
-	         * @member {Date} CommentModel#deletedAt
-	         * @returns {Date}
+	         * @member {Date|null} CommentModel#deletedAt
+	         * @returns {Date|null}
 	         */
 
 	    }, {
@@ -1026,7 +1072,7 @@ var UPA = UPA || {}; UPA["models"] =
 	  /**
 	   * An array of URLs to images.
 	   * @readonly
-	   * @member {string[]} CommentMetaModel#images
+	   * @member {string[]} CommentMeta#images
 	   * @returns {string[]}
 	   */
 
@@ -1062,7 +1108,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * Absolute path to this asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#url
+	     * @member {string} CommentMeta#url
 	     * @returns {string}
 	     */
 
@@ -1075,7 +1121,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * Title of this asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#title
+	     * @member {string} CommentMeta#title
 	     * @returns {string}
 	     */
 
@@ -1088,7 +1134,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * Description for this asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#description
+	     * @member {string} CommentMeta#description
 	     * @returns {string}
 	     */
 
@@ -1101,7 +1147,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * The provider that hosts this asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#provider
+	     * @member {string} CommentMeta#provider
 	     * @returns {string}
 	     */
 
@@ -1114,7 +1160,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * The type of asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#content
+	     * @member {string} CommentMeta#content
 	     * @returns {string}
 	     */
 
@@ -1127,7 +1173,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * TODO What is CommentMetaModel isInternal?
 	     * @readonly
-	     * @member {boolean} CommentMetaModel#isInternal
+	     * @member {boolean} CommentMeta#isInternal
 	     * @returns {boolean}
 	     */
 
@@ -1140,7 +1186,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    /**
 	     * The URL of a thumbnail for the asset.
 	     * @readonly
-	     * @member {string} CommentMetaModel#thumbnail
+	     * @member {string} CommentMeta#thumbnail
 	     * @returns {string}
 	     */
 
@@ -1280,7 +1326,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        //////////////
 
 	        /**
-	         * True if this Activity's type is a Video
+	         * True if this Activity's type is a Video.
 	         * @returns {boolean}
 	         */
 	        value: function isVideo() {
@@ -1288,7 +1334,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * True if this Activity's type is a Post
+	         * True if this Activity's type is a Post.
 	         * @returns {boolean}
 	         */
 
@@ -1303,7 +1349,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        //////////////
 
 	        /**
-	         * True if this Activity's source is YouTube
+	         * True if this Activity's source is YouTube.
 	         * @returns {boolean}
 	         */
 
@@ -1314,7 +1360,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * True if this Activity's source is Twitch
+	         * True if this Activity's source is Twitch.
 	         * @returns {boolean}
 	         */
 
@@ -1325,7 +1371,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * True if this Activity's source is Player.me
+	         * True if this Activity's source is Player.me.
 	         * @returns {boolean}
 	         */
 
@@ -1340,7 +1386,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        //////////////
 
 	        /**
-	         * If the client has loaded all this activity's comments
+	         * If the client has loaded all this activity's comments.
 	         * @readonly
 	         * @returns {boolean}
 	         */
@@ -1352,7 +1398,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Get the comment's index by its ID
+	         * Get the comment's index by its ID.
 	         * @param commentId
 	         * @returns {number}
 	         * @private
@@ -1368,7 +1414,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Add a comment to this activity
+	         * Add a comment to this activity.
 	         * @param {CommentModel} comment
 	         */
 
@@ -1383,9 +1429,9 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Override this activity's copy of a comment
+	         * Override this activity's copy of a comment.
 	         * @param {CommentModel} comment
-	         * @return {boolean} If there was an original to replace
+	         * @return {boolean} If there was an original to replace.
 	         */
 
 	    }, {
@@ -1403,9 +1449,9 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Remove the comment
+	         * Remove the comment.
 	         * @param {number} commentId
-	         * @returns {boolean} If there was a comment to remove
+	         * @returns {boolean} If there was a comment to remove.
 	         */
 
 	    }, {
@@ -1438,7 +1484,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What is this?
+	         * TODO What is ActivityModel resourceId?
 	         * @readonly
 	         * @member {number} ActivityModel#resourceId
 	         * @returns {number}
@@ -1451,7 +1497,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The type of activity (i.e. "Video" or "Post")
+	         * The type of activity (i.e. "Video" or "Post").
 	         * @readonly
 	         * @member {string} ActivityModel#type
 	         * @returns {string}
@@ -1464,7 +1510,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The user that posted this Activity
+	         * The user that posted this Activity.
 	         * @readonly
 	         * @member {UserModel} ActivityModel#user
 	         * @returns {UserModel}
@@ -1477,7 +1523,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Where the Activity came from (i.e. "youtube", "twitch" or "player")
+	         * Where the Activity came from (i.e. "youtube", "twitch" or "player").
 	         * @readonly
 	         * @member {string} ActivityModel#source
 	         * @returns {string}
@@ -1490,7 +1536,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The URL where this activity originated
+	         * The URL where this activity originated.
 	         * @readonly
 	         * @member {string} ActivityModel#sourceUrl
 	         * @returns {string}
@@ -1503,7 +1549,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The partial URL where this activity is located on player
+	         * The partial URL where this activity is located on player.
 	         * @readonly
 	         * @member {string} ActivityModel#url
 	         * @returns {string}
@@ -1516,7 +1562,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The full URL where this activity is located on player
+	         * The full URL where this activity is located on player.
 	         * @readonly
 	         * @member {string} ActivityModel#fullUrl
 	         * @returns {string}
@@ -1529,7 +1575,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date this activity was published
+	         * The date this activity was published.
 	         * @readonly
 	         * @member {Date} ActivityModel#publishedAt
 	         * @returns {Date}
@@ -1542,7 +1588,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date this activity row was created
+	         * The date this activity row was created.
 	         * @readonly
 	         * @member {Date} ActivityModel#createdAt
 	         * @returns {Date}
@@ -1555,7 +1601,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date this activity row was updated
+	         * The date this activity row was updated.
 	         * @readonly
 	         * @member {Date} ActivityModel#updatedAt
 	         * @returns {Date}
@@ -1568,7 +1614,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date this activity was edited, or null if never
+	         * The date this activity was edited, or null if never.
 	         * @readonly
 	         * @member {Date|null} ActivityModel#editedAt
 	         * @returns {Date|null}
@@ -1581,7 +1627,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the current user has subscribed to this activity
+	         * If the current user has subscribed to this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#isSubscribed
 	         * @returns {boolean}
@@ -1594,7 +1640,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user can edit this activity
+	         * If the user can edit this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#showEdit
 	         * @returns {boolean}
@@ -1607,7 +1653,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user can delete this activity
+	         * If the user can delete this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#showDelete
 	         * @returns {boolean}
@@ -1620,7 +1666,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user has hidden the author
+	         * If the user has hidden the author.
 	         * @readonly
 	         * @member {boolean} ActivityModel#userIsHidden
 	         * @returns {boolean}
@@ -1633,7 +1679,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user has blocked the author
+	         * If the user has blocked the author.
 	         * @readonly
 	         * @member {boolean} ActivityModel#userIsBlocked
 	         * @returns {boolean}
@@ -1646,7 +1692,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user is following the author
+	         * If the user is following the author.
 	         * @readonly
 	         * @member {boolean} ActivityModel#userIsFollowed
 	         * @returns {boolean}
@@ -1659,7 +1705,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user is the author
+	         * If the user is the author.
 	         * @readonly
 	         * @member {boolean} ActivityModel#isOwnActivity
 	         * @returns {boolean}
@@ -1672,7 +1718,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user has liked this activity
+	         * If the user has liked this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#hasLiked
 	         * @returns {boolean}
@@ -1685,7 +1731,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The number of likes this activity has received
+	         * The number of likes this activity has received.
 	         * @readonly
 	         * @member {number} ActivityModel#likesCount
 	         * @returns {number}
@@ -1698,7 +1744,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user has pinned this activity
+	         * If the user has pinned this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#hasPinned
 	         * @returns {boolean}
@@ -1711,7 +1757,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The number of pins this activity has received
+	         * The number of pins this activity has received.
 	         * @readonly
 	         * @member {number} ActivityModel#pinsCount
 	         * @returns {number}
@@ -1724,7 +1770,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the user has shared this activity
+	         * If the user has shared this activity.
 	         * @readonly
 	         * @member {boolean} ActivityModel#hasShared
 	         * @returns {boolean}
@@ -1737,7 +1783,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The number of shares this activity has received
+	         * The number of shares this activity has received.
 	         * @readonly
 	         * @member {number} ActivityModel#shareCount
 	         * @returns {number}
@@ -1750,7 +1796,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The total number of comments on this activity
+	         * The total number of comments on this activity.
 	         * @readonly
 	         * @member {number} ActivityModel#commentsCount
 	         * @returns {number}
@@ -1763,7 +1809,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * An array of comments the client has loaded
+	         * An array of comments the client has loaded.
 	         * @readonly
 	         * @member {CommentModel[]} ActivityModel#comments
 	         * @returns {CommentModel[]}
@@ -1776,7 +1822,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Data about the post, if this Activity is the right type
+	         * Data about the post, if this Activity is the right type.
 	         * @readonly
 	         * @member {ActivityPostData|null} ActivityModel#post
 	         * @returns {ActivityPostData|null}
@@ -1789,7 +1835,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * Data about the video, if this Activity is the right type
+	         * Data about the video, if this Activity is the right type.
 	         * @readonly
 	         * @member {ActivityVideoData|null} ActivityModel#video
 	         * @returns {ActivityVideoData|null}
@@ -1820,16 +1866,16 @@ var UPA = UPA || {}; UPA["models"] =
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _GameModel = __webpack_require__(7);
+	var _GameMetadataModel = __webpack_require__(7);
 
-	var _GameModel2 = _interopRequireDefault(_GameModel);
+	var _GameMetadataModel2 = _interopRequireDefault(_GameMetadataModel);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	/**
-	 * The main content of a Post
+	 * The main contents of an ActivityModel of type "post".
 	 */
 
 	var ActivityPostData = function () {
@@ -1849,12 +1895,12 @@ var UPA = UPA || {}; UPA["models"] =
 	        this._metas = obj && obj.metas.map(function (meta) {
 	            return new ActivityPostMetaData(meta);
 	        }) || [];
-	        this._game = game && new _GameModel2.default(obj.game) || null;
+	        this._game = game && new _GameMetadataModel2.default(obj.game) || null;
 	        this._gameCheckInType = game && game.check_in_type || null;
 	    }
 
 	    /**
-	     * The post's formatted text
+	     * The post's formatted text.
 	     * @readonly
 	     * @member {string} ActivityPostData#post
 	     * @returns {string}
@@ -1866,7 +1912,7 @@ var UPA = UPA || {}; UPA["models"] =
 
 
 	        /**
-	         * If the post says the author is playing a game
+	         * If the post says the author is playing a game.
 	         * @returns {boolean}
 	         */
 	        value: function isPlayingGame() {
@@ -1879,7 +1925,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The post's un-formatted text
+	         * The post's un-formatted text.
 	         * @readonly
 	         * @member {string} ActivityPostData#postRaw
 	         * @returns {string}
@@ -1892,7 +1938,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The post's related content
+	         * The post's related content.
 	         * @readonly
 	         * @member {ActivityPostMetaData[]} ActivityPostData#meta
 	         * @returns {ActivityPostMetaData[]}
@@ -1905,10 +1951,10 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The game that has been checked in, if any
+	         * The game that has been checked in, if any.
 	         * @readonly
-	         * @member {GameModel|null} ActivityPostData#game
-	         * @returns {GameModel|null}
+	         * @member {GameMetadataModel|null} ActivityPostData#game
+	         * @returns {GameMetadataModel|null}
 	         */
 
 	    }, {
@@ -1918,8 +1964,8 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The type of check-in for the game, if any (e.g. "playing")
-	         * TODO Find other types
+	         * The type of check-in for the game, if any (e.g. "playing").
+	         * TODO The API can apparently handle other types, but can the client specify them?
 	         * @readonly
 	         * @member {string|null} ActivityPostData#gameCheckInType
 	         * @returns {string|null}
@@ -1936,7 +1982,7 @@ var UPA = UPA || {}; UPA["models"] =
 	}(); // End of ActivityPostData
 
 	/**
-	 * Metadata associated with a Post
+	 * Metadata associated with a Post.
 	 */
 
 
@@ -1961,7 +2007,7 @@ var UPA = UPA || {}; UPA["models"] =
 	    }
 
 	    /**
-	     * The meta's content type (i.e. "Photo")
+	     * The meta's content type (i.e. "Photo").
 	     * @readonly
 	     * @member {string} ActivityPostMetaData#content
 	     * @returns {string}
@@ -1975,7 +2021,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The title of the metadata, if applicable
+	         * The title of the metadata, if applicable.
 	         * @readonly
 	         * @member {string|null} ActivityPostMetaData#title
 	         * @returns {string|null}
@@ -1988,7 +2034,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The description for the metadata, if applicable
+	         * The description for the metadata, if applicable.
 	         * @readonly
 	         * @member {string|null} ActivityPostMetaData#description
 	         * @returns {string|null}
@@ -2001,7 +2047,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The provider for the metadata (e.g. "Player")
+	         * The provider for the metadata (e.g. "Player").
 	         * @readonly
 	         * @member {string} ActivityPostMetaData#provider
 	         * @returns {string}
@@ -2014,7 +2060,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What is this?
+	         * TODO What is ActivityPostMetaData isInternal?
 	         * @readonly
 	         * @member {boolean} ActivityPostMetaData#isInternal
 	         * @returns {boolean}
@@ -2027,7 +2073,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A list of image URLs
+	         * A list of image URLs.
 	         * @readonly
 	         * @member {string[]} ActivityPostMetaData#images
 	         * @returns {string[]}
@@ -2040,7 +2086,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The link to the metadata
+	         * The link to whatever's represented by the metadata (e.g. an image)
 	         * @readonly
 	         * @member {string} ActivityPostMetaData#url
 	         * @returns {string}
@@ -2053,7 +2099,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * URL of the metadata's thumbnail
+	         * URL of the metadata's thumbnail.
 	         * @readonly
 	         * @member {string|null} ActivityPostMetaData#thumbnail
 	         * @returns {string|null}
@@ -2074,6 +2120,330 @@ var UPA = UPA || {}; UPA["models"] =
 
 /***/ },
 /* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * A class representing a game linked to ActivityPostData
+	 */
+
+	var GameMetadataModel = function () {
+	    /**
+	     * Create a new Activity model.
+	     * @param {Object} [obj] A player response object to initialise this model with.
+	     */
+
+	    function GameMetadataModel() {
+	        var obj = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+	        _classCallCheck(this, GameMetadataModel);
+
+	        var cover = obj && obj.cover || null;
+	        var box = obj && obj.box || null;
+
+	        this._id = obj && obj.id || 0;
+	        this._title = obj && obj.title || '';
+	        this._shortDescription = obj && obj.short_description || '';
+	        this._coverCached = cover && cover.cached || null;
+	        this._coverOriginal = cover && cover.original || null;
+	        this._coverOriginalFilename = cover && cover.original_filename || null;
+	        this._boxCached = box && box.cached || null;
+	        this._boxOriginal = box && box.original || null;
+	        this._boxOriginalFilename = box && box.original_filename || null;
+	        this._slug = obj && obj.slug || '';
+	        this._url = obj && obj.url || '';
+	        this._likesCount = obj && obj.likes_count || 0;
+	        this._hasLiked = obj && obj.has_liked || false;
+	    }
+
+	    _createClass(GameMetadataModel, [{
+	        key: 'toString',
+	        value: function toString() {
+	            var msg = '[GameMetadataModel';
+	            if (this._id) msg += ' #' + this._id;
+	            if (this._slug) msg += ' "' + this._slug + '"';
+	            return msg + ']';
+	        }
+
+	        /**
+	         * The game's ID number.
+	         * @readonly
+	         * @member {number} GameMetadataModel#id
+	         * @returns {number}
+	         */
+
+	    }, {
+	        key: 'id',
+	        get: function get() {
+	            return this._id;
+	        }
+
+	        /**
+	         * The game's title.
+	         * @readonly
+	         * @member {string} GameMetadataModel#title
+	         * @returns {string}
+	         */
+
+	    }, {
+	        key: 'title',
+	        get: function get() {
+	            return this._title;
+	        }
+
+	        /**
+	         * A short description of the game.
+	         * @readonly
+	         * @member {string} GameMetadataModel#shortDescription
+	         * @returns {string}
+	         */
+
+	    }, {
+	        key: 'shortDescription',
+	        get: function get() {
+	            return this._shortDescription;
+	        }
+
+	        /**
+	         * The URL to the game's cover.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#cover
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'cover',
+	        get: function get() {
+	            return this._coverCached;
+	        }
+
+	        /**
+	         * The original upload of the game's cover.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#coverOriginal
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'coverOriginal',
+	        get: function get() {
+	            return this._coverOriginal;
+	        }
+
+	        /**
+	         * The original filename of the game's cover.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#coverOriginalFilename
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'coverOriginalFilename',
+	        get: function get() {
+	            return this._coverOriginalFilename;
+	        }
+
+	        /**
+	         * The URL to game's box.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#boxCached
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'box',
+	        get: function get() {
+	            return this._boxCached;
+	        }
+
+	        /**
+	         * The original upload of the game's box.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#boxOriginal
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'boxOriginal',
+	        get: function get() {
+	            return this._boxOriginal;
+	        }
+
+	        /**
+	         * The original filename of the game's box.
+	         * @readonly
+	         * @member {string|null} GameMetadataModel#boxOriginalFilename
+	         * @returns {string|null}
+	         */
+
+	    }, {
+	        key: 'boxOriginalFilename',
+	        get: function get() {
+	            return this._boxOriginalFilename;
+	        }
+
+	        /**
+	         * The URL friendly slug for the game.
+	         * @readonly
+	         * @member {string} GameMetadataModel#slug
+	         * @returns {string}
+	         */
+
+	    }, {
+	        key: 'slug',
+	        get: function get() {
+	            return this._slug;
+	        }
+
+	        /**
+	         * The link to the game's page on player.
+	         * @readonly
+	         * @member {string} GameMetadataModel#url
+	         * @returns {string}
+	         */
+
+	    }, {
+	        key: 'url',
+	        get: function get() {
+	            return this._url;
+	        }
+
+	        /**
+	         * The number of likes the game has received.
+	         * @readonly
+	         * @member {number} GameMetadataModel#likesCount
+	         * @returns {number}
+	         */
+
+	    }, {
+	        key: 'likesCount',
+	        get: function get() {
+	            return this._likesCount;
+	        }
+
+	        /**
+	         * If the player has liked the game.
+	         * @readonly
+	         * @member {boolean} GameMetadataModel#hasLiked
+	         * @returns {boolean}
+	         */
+
+	    }, {
+	        key: 'hasLiked',
+	        get: function get() {
+	            return this._hasLiked;
+	        }
+	    }]);
+
+	    return GameMetadataModel;
+	}();
+
+	exports.default = GameMetadataModel;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * The main contents of an ActivityModel of type "video".
+	 */
+
+	var ActivityVideoData = function () {
+	  /**
+	   * @param {object} [obj] Part of a player response object to initialise this instance with.
+	   */
+
+	  function ActivityVideoData() {
+	    var obj = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+	    _classCallCheck(this, ActivityVideoData);
+
+	    this._title = obj && obj.title || '';
+	    this._description = obj && obj.description || '';
+	    this._url = obj && obj.url || '';
+	    this._thumbnail = obj && obj.thumbnail || '';
+	  }
+
+	  /**
+	   * The video's title.
+	   * @readonly
+	   * @member {string} ActivityVideoData#title
+	   * @returns {string}
+	   */
+
+
+	  _createClass(ActivityVideoData, [{
+	    key: 'title',
+	    get: function get() {
+	      return this._title;
+	    }
+
+	    /**
+	     * The video's description.
+	     * @readonly
+	     * @member {string} ActivityVideoData#description
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'description',
+	    get: function get() {
+	      return this._description;
+	    }
+
+	    /**
+	     * The URL of the video.
+	     * @readonly
+	     * @member {string} ActivityVideoData#url
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'url',
+	    get: function get() {
+	      return this._url;
+	    }
+
+	    /**
+	     * The video's thumbnail.
+	     * @readonly
+	     * @member {string} ActivityVideoData#thumbnail
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'thumbnail',
+	    get: function get() {
+	      return this._thumbnail;
+	    }
+	  }]);
+
+	  return ActivityVideoData;
+	}();
+
+	exports.default = ActivityVideoData;
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2168,7 +2538,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The URL to the game's cover
+	         * The URL to the game's cover.
 	         * @readonly
 	         * @member {string|null} GameModel#cover
 	         * @returns {string|null}
@@ -2181,7 +2551,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The original upload of the game's cover
+	         * The original upload of the game's cover.
 	         * @readonly
 	         * @member {string|null} GameModel#coverOriginal
 	         * @returns {string|null}
@@ -2194,7 +2564,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The original filename of the game's cover
+	         * The original filename of the game's cover.
 	         * @readonly
 	         * @member {string|null} GameModel#coverOriginalFilename
 	         * @returns {string|null}
@@ -2207,7 +2577,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The URL to game's box
+	         * The URL to game's box.
 	         * @readonly
 	         * @member {string|null} GameModel#boxCached
 	         * @returns {string|null}
@@ -2220,7 +2590,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The original upload of the game's box
+	         * The original upload of the game's box.
 	         * @readonly
 	         * @member {string|null} GameModel#boxOriginal
 	         * @returns {string|null}
@@ -2233,7 +2603,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The original filename of the game's box
+	         * The original filename of the game's box.
 	         * @readonly
 	         * @member {string|null} GameModel#boxOriginalFilename
 	         * @returns {string|null}
@@ -2246,7 +2616,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The URL friendly slug for the game
+	         * The URL friendly slug for the game.
 	         * @readonly
 	         * @member {string} GameModel#slug
 	         * @returns {string}
@@ -2259,7 +2629,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The link to the game's page on player
+	         * The link to the game's page on player.
 	         * @readonly
 	         * @member {string} GameModel#url
 	         * @returns {string}
@@ -2272,7 +2642,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The number of likes the game has received
+	         * The number of likes the game has received.
 	         * @readonly
 	         * @member {number} GameModel#likesCount
 	         * @returns {number}
@@ -2285,7 +2655,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * If the player has liked the game
+	         * If the player has liked the game.
 	         * @readonly
 	         * @member {boolean} GameModel#hasLiked
 	         * @returns {boolean}
@@ -2304,100 +2674,7 @@ var UPA = UPA || {}; UPA["models"] =
 	exports.default = GameModel;
 
 /***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/**
-	 * The main content of a video activity
-	 */
-
-	var ActivityVideoData = function () {
-	  /**
-	   * @param {object} [obj] Part of a player response object to initialise this instance with.
-	   */
-
-	  function ActivityVideoData() {
-	    var obj = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
-
-	    _classCallCheck(this, ActivityVideoData);
-
-	    this._title = obj && obj.title || '';
-	    this._description = obj && obj.description || '';
-	    this._url = obj && obj.url || '';
-	    this._thumbnail = obj && obj.thumbnail || '';
-	  }
-
-	  /**
-	   * The video's title
-	   * @readonly
-	   * @member {string} ActivityVideoData#title
-	   * @returns {string}
-	   */
-
-
-	  _createClass(ActivityVideoData, [{
-	    key: 'title',
-	    get: function get() {
-	      return this._title;
-	    }
-
-	    /**
-	     * The video's description
-	     * @readonly
-	     * @member {string} ActivityVideoData#description
-	     * @returns {string}
-	     */
-
-	  }, {
-	    key: 'description',
-	    get: function get() {
-	      return this._description;
-	    }
-
-	    /**
-	     * The URL of the video
-	     * @readonly
-	     * @member {string} ActivityVideoData#url
-	     * @returns {string}
-	     */
-
-	  }, {
-	    key: 'url',
-	    get: function get() {
-	      return this._url;
-	    }
-
-	    /**
-	     * The video's thumbnail
-	     * @readonly
-	     * @member {string} ActivityVideoData#thumbnail
-	     * @returns {string}
-	     */
-
-	  }, {
-	    key: 'thumbnail',
-	    get: function get() {
-	      return this._thumbnail;
-	    }
-	  }]);
-
-	  return ActivityVideoData;
-	}();
-
-	exports.default = ActivityVideoData;
-
-/***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2409,7 +2686,7 @@ var UPA = UPA || {}; UPA["models"] =
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _GameModel2 = __webpack_require__(7);
+	var _GameModel2 = __webpack_require__(9);
 
 	var _GameModel3 = _interopRequireDefault(_GameModel2);
 
@@ -2455,7 +2732,6 @@ var UPA = UPA || {}; UPA["models"] =
 	        _this._updatedAt = obj && toDate(obj.updated_at) || null;
 	        _this._deletedAt = obj && toDate(obj.deleted_at) || null;
 	        _this._coverBy = obj && obj.cover_by || 0;
-	        _this._alias = obj && obj.alias || null;
 	        _this._website = obj && obj.website || '';
 	        _this._facebook = obj && obj.facebook || '';
 	        _this._twitter = obj && obj.twitter || '';
@@ -2466,6 +2742,8 @@ var UPA = UPA || {}; UPA["models"] =
 	        _this._buyLink = obj && obj.buy_link || '';
 	        _this._kickstarter = obj && obj.kickstarter || '';
 	        _this._favouritesCount = obj && obj.favourites_count || 0;
+
+	        _this._aliases = obj && obj.alias && obj.alias.split('\n') || [];
 
 	        _this._platforms = [];
 	        if (obj && obj.platforms) {
@@ -2511,7 +2789,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What's this?
+	         * TODO What is GameExtendedModel displaySource?
 	         * @readonly
 	         * @member {boolean} GameExtendedModel#displaySource
 	         * @returns {boolean}
@@ -2628,20 +2906,20 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What is this?
+	         * Other names that this game goes by.
 	         * @readonly
-	         * @member {null} GameExtendedModel#alias
-	         * @returns {null}
+	         * @member {String[]} GameExtendedModel#aliases
+	         * @returns {String[]}
 	         */
 
 	    }, {
-	        key: 'alias',
+	        key: 'aliases',
 	        get: function get() {
-	            return this._alias;
+	            return this._aliases;
 	        }
 
 	        /**
-	         * A link to the game's website
+	         * A link to the game's website.
 	         * @readonly
 	         * @member {string} GameExtendedModel#website
 	         * @returns {string}
@@ -2654,7 +2932,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's Facebook page
+	         * A link to the game's Facebook page.
 	         * @readonly
 	         * @member {string} GameExtendedModel#facebook
 	         * @returns {string}
@@ -2667,7 +2945,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's Twitter account
+	         * A link to the game's Twitter account.
 	         * @readonly
 	         * @member {string} GameExtendedModel#twitter
 	         * @returns {string}
@@ -2680,7 +2958,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's Google+ page
+	         * A link to the game's Google+ page.
 	         * @readonly
 	         * @member {string} GameExtendedModel#gplus
 	         * @returns {string}
@@ -2693,7 +2971,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's steam page
+	         * A link to the game's steam page.
 	         * @readonly
 	         * @member {string} GameExtendedModel#steam
 	         * @returns {string}
@@ -2706,7 +2984,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's Twitch page
+	         * A link to the game's Twitch page.
 	         * @readonly
 	         * @member {string} GameExtendedModel#twitch
 	         * @returns {string}
@@ -2719,7 +2997,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's YouTube account
+	         * A link to the game's YouTube account.
 	         * @readonly
 	         * @member {string} GameExtendedModel#youtube
 	         * @returns {string}
@@ -2732,7 +3010,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's shop
+	         * A link to the game's shop.
 	         * @readonly
 	         * @member {string} GameExtendedModel#buyLink
 	         * @returns {string}
@@ -2745,7 +3023,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A link to the game's Kickstarter campaign
+	         * A link to the game's Kickstarter campaign.
 	         * @readonly
 	         * @member {string} GameExtendedModel#kickstarter
 	         * @returns {string}
@@ -2758,7 +3036,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A list of the game's platforms
+	         * A list of the game's platforms.
 	         * @readonly
 	         * @member {GamePlatform[]} GameExtendedModel#platforms
 	         * @returns {GamePlatform[]}
@@ -2784,7 +3062,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A list of the companies that developed the game
+	         * A list of the companies that developed the game.
 	         * @readonly
 	         * @member {GameCompany[]} GameExtendedModel#developers
 	         * @returns {GameCompany[]}
@@ -2797,7 +3075,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A list of the companies that published the game
+	         * A list of the companies that published the game.
 	         * @readonly
 	         * @member {GameCompany[]} GameExtendedModel#publishers
 	         * @returns {GameCompany[]}
@@ -2812,6 +3090,11 @@ var UPA = UPA || {}; UPA["models"] =
 
 	    return GameExtendedModel;
 	}(_GameModel3.default);
+
+	/**
+	 * A model representing a platform games may be on.
+	 */
+
 
 	var GamePlatform = function () {
 	    /**
@@ -2841,7 +3124,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The platform's ID
+	         * The platform's ID.
 	         * @readonly
 	         * @member {number} GamePlatform#id
 	         * @returns {number}
@@ -2854,7 +3137,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The platform's name
+	         * The platform's name.
 	         * @readonly
 	         * @member {string} GamePlatform#name
 	         * @returns {string}
@@ -2867,7 +3150,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What is this?
+	         * TODO What is GamePlatform.order?
 	         * @readonly
 	         * @member {string} GamePlatform#order
 	         * @returns {string}
@@ -2880,7 +3163,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The platform URL-friendly name
+	         * The platform URL-friendly name.
 	         * @readonly
 	         * @member {string} GamePlatform#slug
 	         * @returns {string}
@@ -2893,9 +3176,9 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * TODO What is this for?
+	         * TODO What is GamePlatform.displayName for?
 	         * @readonly
-	         * @member {string|null} GamePlatform#slug
+	         * @member {string|null} GamePlatform#displayName
 	         * @returns {string|null}
 	         */
 
@@ -2908,6 +3191,11 @@ var UPA = UPA || {}; UPA["models"] =
 
 	    return GamePlatform;
 	}();
+
+	/**
+	 * A model representing a game publisher or developer.
+	 */
+
 
 	var GameCompany = function () {
 	    /**
@@ -2946,7 +3234,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The company's ID
+	         * The company's ID.
 	         * @readonly
 	         * @member {number} GameCompany#id
 	         * @returns {number}
@@ -2959,7 +3247,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The ID of the company's user
+	         * The ID of the company's user.
 	         * @readonly
 	         * @member {number} GameCompany#userId
 	         * @returns {number}
@@ -2972,7 +3260,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The company's name
+	         * The company's name.
 	         * @readonly
 	         * @member {string} GameCompany#name
 	         * @returns {string}
@@ -2985,9 +3273,9 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * A description of the company
+	         * A description of the company.
 	         * @readonly
-	         * @member {string} GameCompany#homepage
+	         * @member {string} GameCompany#description
 	         * @returns {string}
 	         */
 
@@ -2998,7 +3286,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The company's homepage
+	         * The company's homepage.
 	         * @readonly
 	         * @member {string} GameCompany#homepage
 	         * @returns {string}
@@ -3011,7 +3299,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The URL friendly name of the company
+	         * The URL friendly name of the company.
 	         * @readonly
 	         * @member {string} GameCompany#slug
 	         * @returns {string}
@@ -3024,7 +3312,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date the game entry was created
+	         * The date the game entry was created.
 	         * @readonly
 	         * @member {Date} GameCompany#createdAt
 	         * @returns {Date}
@@ -3037,7 +3325,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date the game entry was updated
+	         * The date the game entry was updated.
 	         * @readonly
 	         * @member {Date} GameCompany#updatedAt
 	         * @returns {Date}
@@ -3050,7 +3338,7 @@ var UPA = UPA || {}; UPA["models"] =
 	        }
 
 	        /**
-	         * The date the game was deleted
+	         * The date the game was deleted.
 	         * @readonly
 	         * @member {Date|null} GameCompany#deletedAt
 	         * @returns {Date|null}

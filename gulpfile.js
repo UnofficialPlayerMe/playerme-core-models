@@ -28,8 +28,8 @@ gulp.task('build', function() {
     ).pipe(
         webpack({
             output: {
-                filename: 'upa.models.js',
-                library: ['UPA', 'models']
+                filename: 'playerme.models.js',
+                library: ['PlayerMe', 'models']
             },
             module: {
                 loaders: [

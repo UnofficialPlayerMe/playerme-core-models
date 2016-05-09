@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UPA-Models Test Page</title>
+    <title>Models Test Page</title>
 
-    <script src="./dist/upa.models.js"></script>
+    <script src="0dist/playerme.models.js"></script>
 
     <script>
         function onLoad() {
             // Log library
-            console.log("UPA", UPA);
+            console.log("PlayerMe", PlayerMe);
 
             // Get model list
             var modelList = document.getElementById("modelList");
 
             // List models
-            for (var model in UPA.models) {
-                var instance = new UPA.models[model];
-                var prototype = UPA.models[model].prototype;
+            for (var model in PlayerMe.models) {
+                var instance = new PlayerMe.models[model];
+                var prototype = PlayerMe.models[model].prototype;
                 var properties = Object.getOwnPropertyNames(prototype);
 
                 // Add to list
@@ -43,7 +43,7 @@
 </head>
 <body onload="onLoad()">
 
-<h1>UPA-Models Test Page</h1>
+<h1>Models Test Page</h1>
 <ul id="modelList"></ul>
 
 </body>

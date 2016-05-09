@@ -1,24 +1,23 @@
 {
-  "name": "upa-models",
+  "name": "playerme-core-models",
   "version": "0.0.3",
   "description": "A module containing models that represent objects in the Player v1 API",
   "private": true,
-  "main": "dist/upa.models.js",
+  "main": "dist/playerme.models.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zazz-PlayerMe/upa-models.git"
+    "url": "https://github.com/UnofficialPlayerMe/playerme-core-models.git"
   },
   "author": {
     "name": "Zazz",
-    "email": "zazz@playerme.zazz.rocks",
-    "url": "playerme.zazz.rocks"
+    "url": "https://github.com/CaptainZazz"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zazz-PlayerMe/upa-models/issues"
+    "url": "https://github.com/UnofficialPlayerMe/playerme-core-models.git/issues"
   },
   "devDependencies": {
     "gulp": "~3.9.1",
