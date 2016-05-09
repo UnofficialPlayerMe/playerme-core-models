@@ -4,9 +4,6 @@
   "description": "A module containing models that represent objects in the Player v1 API",
   "private": true,
   "main": "dist/playerme.models.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/UnofficialPlayerMe/playerme-core-models.git"

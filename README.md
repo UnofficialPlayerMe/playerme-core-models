@@ -18,3 +18,14 @@ Alternatively, you can also include the source files in your build.
 # Development
 This is written in [ES2015](https://babeljs.io/docs/learn-es2015/) Javascript and uses [Webpack](https://webpack.github.io/) to bundle it and convert to ES5.
 The project uses the [Gulp](http://gulpjs.com/) task-runner to start builds and tests.
+
+## Requirements
+* [Node.js](https://nodejs.org) is needed to run NPM and Gulp
+
+## Building
+Grab the source and run `npm install` from the root directory to fetch dependencies.
+Run the default gulp build task by running `gulp` in the root directory.
+
+## Pushing changes
+Before pushing your changes, you should run the Karma unit tests by running `gulp test` in the root directory, only pushing if there are no errors.
+You should also update the generated documentation with `gulp doc`.
