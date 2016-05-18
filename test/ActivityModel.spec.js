@@ -1,4 +1,8 @@
-import {assertProperty, assertMethod, assertObject} from './utils/TestHelpers';
+import {Jasmine} from 'playerme-core-utils';
+var assertProperty = Jasmine.assertProperty;
+var assertMethod = Jasmine.assertMethod;
+var assertObject = Jasmine.assertObject;
+
 import ActivityModel from '../src/models/activity/ActivityModel';
 import CommentModel from '../src/models/activity/comment/CommentModel';
 import RawCommentModel from './mocks/RawCommentModel';
@@ -6,7 +10,6 @@ import {StandardPost, StandardVideo} from './mocks/RawActivityModel';
 
 describe("ActivityModel", function() {
     var model = new ActivityModel(StandardPost);
-    var comment = new CommentModel(RawCommentModel);
 
     it("has the expected fields", function() {
         assertObject("Activity Model", model, {

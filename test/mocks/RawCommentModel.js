@@ -1,4 +1,5 @@
-import {getDateString} from '../utils/MockHelpers';
+import {Formats} from 'playerme-core-utils';
+
 import RawUserModel from '../mocks/RawUserModel';
 import RawCommentMeta from '../mocks/RawCommentMeta';
 
@@ -10,8 +11,8 @@ var standard = {
     post:               'post',
     post_raw:           'post_raw',
     metas:              [RawCommentMeta],
-    created_at:         getDateString(),
-    updated_at:         getDateString(),
+    created_at:         Formats.getDateString(),
+    updated_at:         Formats.getDateString(),
     edited_at:          null,
     deleted_at:         null,
     user:               RawUserModel,

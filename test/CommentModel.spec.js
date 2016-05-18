@@ -1,4 +1,6 @@
-import {assertObject} from './utils/TestHelpers';
+import {Jasmine} from 'playerme-core-utils';
+var assertObject = Jasmine.assertObject;
+
 import CommentModel from '../src/models/activity/comment/CommentModel';
 import RawCommentModel from './mocks/RawCommentModel';
 

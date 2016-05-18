@@ -1,4 +1,5 @@
-import {getDateString} from '../utils/MockHelpers';
+import {Formats} from 'playerme-core-utils';
+
 import RawUserModel from '../mocks/RawUserModel';
 import RawCommentModel from '../mocks/RawCommentModel';
 import RawActivityPostData from '../mocks/RawActivityPostData';
@@ -13,10 +14,10 @@ var StandardPost = {
     sourceUrl:      'sourceUrl',
     url:            'url',
     full_url:       'full_url',
-    published_at:   getDateString(),
-    created_at:     getDateString(),
-    updated_at:     getDateString(),
-    edited_at:      getDateString(),
+    published_at:   Formats.getDateString(),
+    created_at:     Formats.getDateString(),
+    updated_at:     Formats.getDateString(),
+    edited_at:      Formats.getDateString(),
     isSubscribed:   false,
     showEdit:       false,
     showDelete:     false,
@@ -43,10 +44,10 @@ var StandardVideo = {
     sourceUrl:      'sourceUrl',
     url:            'url',
     full_url:       'full_url',
-    published_at:   getDateString(),
-    created_at:     getDateString(),
-    updated_at:     getDateString(),
-    edited_at:      getDateString(),
+    published_at:   Formats.getDateString(),
+    created_at:     Formats.getDateString(),
+    updated_at:     Formats.getDateString(),
+    edited_at:      Formats.getDateString(),
     isSubscribed:   false,
     showEdit:       false,
     showDelete:     false,

@@ -1,4 +1,6 @@
-import {assertProperty, assertMethod} from './utils/TestHelpers';
+import {Jasmine} from 'playerme-core-utils';
+var assertProperty = Jasmine.assertProperty;
+
 import GameModel from '../src/models/game/GameModel';
 import RawGameModel from './mocks/RawGameModel';
 

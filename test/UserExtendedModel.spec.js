@@ -1,4 +1,6 @@
-import {assertObject} from './utils/TestHelpers';
+import {Jasmine} from 'playerme-core-utils';
+var assertObject = Jasmine.assertObject;
+
 import UserExtendedModel from '../src/models/user/UserExtendedModel';
 import {user as RawUser, group as RawGroup} from './mocks/RawUserExtendedModel';
 

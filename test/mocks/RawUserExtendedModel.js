@@ -1,4 +1,4 @@
-import {getDateString} from '../utils/MockHelpers';
+import {Formats} from 'playerme-core-utils';
 
 var user = {
     //Basic model
@@ -29,7 +29,7 @@ var user = {
     short_description:  'short_description',
     description:        'description',
     descriptionHtml:    'descriptionHtml',
-    created_at:         getDateString(),
+    created_at:         Formats.getDateString(),
     generated_by:       'generated_by',
     is_current_user:    false,
     is_following:       false,
@@ -70,7 +70,7 @@ var group = {
     short_description:          'short_description',
     description:                'description',
     descriptionHtml:            'descriptionHtml',
-    created_at:                 getDateString(),
+    created_at:                 Formats.getDateString(),
     generated_by:               'generated_by',
     is_current_user:            false,
     is_following:               false,

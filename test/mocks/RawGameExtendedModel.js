@@ -1,4 +1,4 @@
-import {getDateString} from '../utils/MockHelpers';
+import {Formats} from 'playerme-core-utils';
 
 var standard = {
     id: 123,
@@ -9,8 +9,8 @@ var standard = {
     steam_id: 0,
     xbox360_id: 0,
     xboxone_id: 0,
-    created_at: getDateString(),
-    updated_at: getDateString(),
+    created_at: Formats.getDateString(),
+    updated_at: Formats.getDateString(),
     deleted_at: null,
     cover: {
         original: "cover.original",
@@ -52,8 +52,8 @@ var standard = {
         description: "developer.description",
         homepage: "developer.homepage",
         slug: "developer.slug",
-        created_at: getDateString(),
-        updated_at: getDateString(),
+        created_at: Formats.getDateString(),
+        updated_at: Formats.getDateString(),
         deleted_at: null,
         pivot: {
             game_id: "123",
@@ -67,8 +67,8 @@ var standard = {
         description: "publisher.description",
         homepage: "publisher.homepage",
         slug: "publisher.slug",
-        created_at: getDateString(),
-        updated_at: getDateString(),
+        created_at: Formats.getDateString(),
+        updated_at: Formats.getDateString(),
         deleted_at: null,
         pivot: {
             game_id: "123",
