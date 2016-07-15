@@ -9,12 +9,12 @@ describe("CommentModel", function() {
         var model = new CommentModel(RawCommentModel);
 
         assertObject("Comment Model", model, {
-            'id':             'number',
-            'userId':         'number',
-            'activityUserId': 'number',
-            'activityId':     'number',
-            'post':           'string',
-            'postRaw':        'string',
+            'id':             {type:'number', value: 1},
+            'userId':         {type:'number', value: 1000},
+            'activityUserId': {type:'number', value: 1},
+            'activityId':     {type:'number', value: 1},
+            'post':           {type:'string', value: "post"},
+            'postRaw':        {type:'string', value: "post_raw"},
             'metas':          'array',
             'createdAt':      'Date',
             'updatedAt':      'Date',
@@ -31,7 +31,9 @@ describe("CommentModel", function() {
             'like':           {args:[]}
         }, true, 'CommentModel');
 
+        expect(model.metas.length).toBeGreaterThan(0, "Expected at least one metadata");
         var meta = model.metas[0];
+
         assertObject("Comment Metadata", meta, {
             'images':      'array',
             'url':         'string',

@@ -8,9 +8,11 @@ var standard = {
     user_id:            RawUserModel.id,
     activity_user_id:   1,
     activity_id:        1,
-    post:               'post',
-    post_raw:           'post_raw',
-    metas:              [RawCommentMeta],
+    data: {
+        post:           'post',
+        post_raw:       'post_raw',
+        metas:          [RawCommentMeta]
+    },
     created_at:         Formats.getDateString(),
     updated_at:         Formats.getDateString(),
     edited_at:          null,
