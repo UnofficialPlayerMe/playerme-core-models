@@ -730,6 +730,7 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	        };
 
 	        var data = obj && obj.data || null;
+	        var metas = data && data.metas || null;
 
 	        this._id = obj && obj.id || 0;
 	        this._userId = obj && obj.user_id || 0;
@@ -737,7 +738,7 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	        this._activityId = obj && obj.activity_id || 0;
 	        this._post = data && data.post || '';
 	        this._postRaw = data && data.post_raw || '';
-	        this._metas = obj && obj.metas.map(function (meta) {
+	        this._metas = metas && metas.map(function (meta) {
 	            return new _CommentMeta2.default(meta);
 	        }) || [];
 	        this._createdAt = obj && toDate(obj.created_at) || null;
