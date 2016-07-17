@@ -50,7 +50,7 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.GameExtendedModel = exports.GameModel = exports.ActivityModel = exports.CommentModel = exports.UserExtendedModel = exports.UserModel = undefined;
+	exports.NotificationModel = exports.GameExtendedModel = exports.GameModel = exports.ActivityModel = exports.CommentModel = exports.UserExtendedModel = exports.UserModel = undefined;
 
 	var _UserModel = __webpack_require__(1);
 
@@ -76,6 +76,10 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 
 	var _GameExtendedModel2 = _interopRequireDefault(_GameExtendedModel);
 
+	var _NotificationModel = __webpack_require__(11);
+
+	var _NotificationModel2 = _interopRequireDefault(_NotificationModel);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.UserModel = _UserModel2.default;
@@ -84,6 +88,7 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	exports.ActivityModel = _ActivityModel2.default;
 	exports.GameModel = _GameModel2.default;
 	exports.GameExtendedModel = _GameExtendedModel2.default;
+	exports.NotificationModel = _NotificationModel2.default;
 
 /***/ },
 /* 1 */
@@ -1262,7 +1267,7 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	        this._source = obj && obj.source || '';
 	        this._sourceUrl = obj && obj.sourceUrl || '';
 	        this._url = obj && obj.url || '';
-	        this._fullUrl = obj && toDate(obj.full_url) || '';
+	        this._fullUrl = obj && obj.full_url || '';
 	        this._publishedAt = obj && toDate(obj.published_at) || null;
 	        this._createdAt = obj && toDate(obj.created_at) || null;
 	        this._updatedAt = obj && toDate(obj.updated_at) || null;
@@ -3359,6 +3364,497 @@ var PlayerMe = PlayerMe || {}; PlayerMe["models"] =
 	exports.default = GameExtendedModel;
 	exports.GamePlatform = GamePlatform;
 	exports.GameCompany = GameCompany;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _UserModel = __webpack_require__(1);
+
+	var _UserModel2 = _interopRequireDefault(_UserModel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * A model representing a Player.me Notification.
+	 */
+
+	var NotificationModel = function () {
+	  /**
+	   * Create a new Notification model.
+	   * @param {Object} [obj] A player response object to initialise this model with.
+	   */
+
+	  function NotificationModel() {
+	    var obj = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+	    _classCallCheck(this, NotificationModel);
+
+	    var toDate = function toDate(str) {
+	      if (!str) return null;
+	      return new Date(str);
+	    };
+
+	    this._key = obj && obj.key || '';
+	    this._type = obj && obj.type || '';
+	    this._set = obj && obj.set || '';
+	    this._id = obj && obj.id || 0;
+	    this._ids = obj && obj.ids || [];
+	    this._user = obj && new _UserModel2.default(obj.user) || null;
+	    this._url = obj && obj.url || null;
+	    this._createdAt = obj && toDate(obj.created_at) || null;
+	    this._names = obj && obj.names || '';
+	    this._text = obj && obj.text || '';
+	    this._image = obj && obj.image || '';
+	    this._unread = obj && obj.unread || false;
+	  }
+
+	  _createClass(NotificationModel, [{
+	    key: 'toString',
+	    value: function toString() {
+	      var msg = '[NotificationModel';
+	      if (this._set) {
+	        msg += ' ' + this._set;
+	      }
+	      return msg + ']';
+	    }
+
+	    // <editor-fold desc="Properties">
+
+	    /**
+	     * The notification's key.
+	     * A combination of the first character of the entity name, and its ID.
+	     * @example 'c123' for comment 123
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'key',
+	    get: function get() {
+	      return this._key;
+	    }
+
+	    /**
+	     * The type of notification
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'type',
+	    get: function get() {
+	      return this._type;
+	    }
+
+	    /**
+	     * A combination of type and key, separated by a colon.
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'set',
+	    get: function get() {
+	      return this._set;
+	    }
+
+	    /**
+	     * TODO What is this?
+	     * @returns {number}
+	     */
+
+	  }, {
+	    key: 'id',
+	    get: function get() {
+	      return this._id;
+	    }
+
+	    /**
+	     * TODO What is this?
+	     * @returns {number[]}
+	     */
+
+	  }, {
+	    key: 'ids',
+	    get: function get() {
+	      return this._ids;
+	    }
+
+	    /**
+	     * TODO What is this?
+	     * @returns {UserModel}
+	     */
+
+	  }, {
+	    key: 'user',
+	    get: function get() {
+	      return this._user;
+	    }
+
+	    /**
+	     * The URL to go to the entity and clear the notification
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'url',
+	    get: function get() {
+	      return this._url;
+	    }
+
+	    /**
+	     * When the notification was created
+	     * @returns {Date}
+	     */
+
+	  }, {
+	    key: 'createdAt',
+	    get: function get() {
+	      return this._createdAt;
+	    }
+
+	    /**
+	     * The names of users at the start of the notification message
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'names',
+	    get: function get() {
+	      return this._names;
+	    }
+
+	    /**
+	     * The text at the end of the notification message
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'text',
+	    get: function get() {
+	      return this._text;
+	    }
+
+	    /**
+	     * Image to be used for the notification
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'image',
+	    get: function get() {
+	      return this._image;
+	    }
+
+	    /**
+	     * Whether or not the notification has been marked as read
+	     * @returns {boolean}
+	     */
+
+	  }, {
+	    key: 'unread',
+	    get: function get() {
+	      return this._unread;
+	    }
+
+	    // </editor-fold>
+
+	    // <editor-fold desc="Notification Types">
+	    // <editor-fold desc="Likes">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }], [{
+	    key: 'LIKE_COMMENT',
+	    get: function get() {
+	      return 'like_comment';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'LIKE_ACTIVITY',
+	    get: function get() {
+	      return 'like_activity';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Comments">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'REPLY_COMMENT',
+	    get: function get() {
+	      return 'reply_comment';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'REPLY_ACTIVITY',
+	    get: function get() {
+	      return 'reply_activity';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'ALSO_COMMENTED',
+	    get: function get() {
+	      return 'also_commented';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Mentions">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'MENTION_COMMENT',
+	    get: function get() {
+	      return 'mention_comment';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'MENTION_ACTIVITY',
+	    get: function get() {
+	      return 'mention_activity';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Follows">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'FOLLOW',
+	    get: function get() {
+	      return 'follow';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Groups">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_REQUEST_USER',
+	    get: function get() {
+	      return 'group_request_user';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_CONFIRM_USER',
+	    get: function get() {
+	      return 'group_confirm_user';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_DENY_USER',
+	    get: function get() {
+	      return 'group_deny_user';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_REMOVE_USER',
+	    get: function get() {
+	      return 'group_remove_user';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_REQUEST_ADMIN',
+	    get: function get() {
+	      return 'group_request_admin';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_CONFIRM_ADMIN',
+	    get: function get() {
+	      return 'group_confirm_admin';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_DENY_ADMIN',
+	    get: function get() {
+	      return 'group_deny_admin';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GROUP_REMOVE_ADMIN',
+	    get: function get() {
+	      return 'group_remove_admin';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Game Attribute">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GAME_ATTRIBUTE_APPROVED',
+	    get: function get() {
+	      return 'game_attribute_approved';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'GAME_SUGGESTION_APPROVED',
+	    get: function get() {
+	      return 'game_suggestion_approved';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'COVER_APPROVED',
+	    get: function get() {
+	      return 'cover_approved';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'COVER_DENIED',
+	    get: function get() {
+	      return 'cover_denied';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'IMAGES_APPROVED',
+	    get: function get() {
+	      return 'image_approved';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'VIDEO_APPROVED',
+	    get: function get() {
+	      return 'video_approved';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'VIDEO_DENIED',
+	    get: function get() {
+	      return 'video_denied';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Companies">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'COMPANY_REQUEST_APPROVED',
+	    get: function get() {
+	      return 'company_request_approved';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Achievements">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'BADGE_UPGRADE',
+	    get: function get() {
+	      return 'badge_upgrade';
+	    }
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'BADGE_NEW',
+	    get: function get() {
+	      return 'badge_new';
+	    }
+
+	    // </editor-fold>
+	    // <editor-fold desc="Partnership">
+
+	    /**
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'PARTNERSHIP_APPROVED',
+	    get: function get() {
+	      return 'partnership_approved';
+	    }
+
+	    // </editor-fold>
+	    // </editor-fold>
+
+	  }]);
+
+	  return NotificationModel;
+	}();
+
+	exports.default = NotificationModel;
 
 /***/ }
 /******/ ]);
