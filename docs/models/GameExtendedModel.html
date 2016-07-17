@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: CommentModel</title>
+	<title>Documentation Class: GameExtendedModel</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
+					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="NotificationModel.html">NotificationModel</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
 				</ul>
 			</li>
 			
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: CommentModel</h1>
+	<h1 class="page-title">Class: GameExtendedModel</h1>
 <section>
 
 <header>
     
         <h2>
-        CommentModel
+        GameExtendedModel
         </h2>
         
-            <div class="class-description"><p>A model representing a Player.me Comment.</p></div>
+            <div class="class-description"><p>A model representing an extended Player.me Game.</p></div>
         
     
 </header>
@@ -84,7 +84,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="CommentModel"><span class="type-signature"></span>new CommentModel(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="GameExtendedModel"><span class="type-signature"></span>new GameExtendedModel(<span class="optional">obj</span>)</h4>
     
     
 </dt>
@@ -92,7 +92,7 @@
 
     
     <div class="description">
-        <p>Create a new Comment model.</p>
+        <p>Create a new Activity model.</p>
     </div>
     
 
@@ -239,15 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="activityId">
-    <h4><span class="type-signature">&lt;readonly> </span>activityId<span class="type-signature"> :number</span></h4>
+<dt class="name" id="aliases">
+    <h4><span class="type-signature">&lt;readonly> </span>aliases<span class="type-signature"> :Array.&lt;String></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The ID of the activity this comment is on.</p>
+        <p>Other names that this game goes by.</p>
     </div>
     
 
@@ -256,7 +256,7 @@
         <ul>
             <li>
                 
-<span class="param-type">number</span>
+<span class="param-type">Array.&lt;String></span>
 
 
 
@@ -310,15 +310,86 @@
         
             
 <hr>
-<dt class="name" id="activityUserId">
-    <h4><span class="type-signature">&lt;readonly> </span>activityUserId<span class="type-signature"> :number</span></h4>
+<dt class="name" id="buyLink">
+    <h4><span class="type-signature">&lt;readonly> </span>buyLink<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The ID of the original poster.</p>
+        <p>A link to the game's shop.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="coverBy">
+    <h4><span class="type-signature">&lt;readonly> </span>coverBy<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The ID of the user that added the cover.</p>
     </div>
     
 
@@ -389,7 +460,7 @@
 <dd>
     
     <div class="description">
-        <p>The date and time the comment was created on.</p>
+        <p>The date the game's entry was created.</p>
     </div>
     
 
@@ -460,7 +531,7 @@
 <dd>
     
     <div class="description">
-        <p>The date and time the comment was soft deleted on (or null).</p>
+        <p>The date the game's entry was deleted.</p>
     </div>
     
 
@@ -526,15 +597,654 @@
         
             
 <hr>
-<dt class="name" id="editedAt">
-    <h4><span class="type-signature">&lt;readonly> </span>editedAt<span class="type-signature"> :Date|null</span></h4>
+<dt class="name" id="description">
+    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The date and time the comment was last edited by the user on (or null).</p>
+        <p>A description of the game.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="developers">
+    <h4><span class="type-signature">&lt;readonly> </span>developers<span class="type-signature"> :Array.&lt;<a href="GameCompany.html">GameCompany</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A list of the companies that developed the game.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="GameCompany.html">GameCompany</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="displaySource">
+    <h4><span class="type-signature">&lt;readonly> </span>displaySource<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>TODO What is GameExtendedModel displaySource?</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="facebook">
+    <h4><span class="type-signature">&lt;readonly> </span>facebook<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A link to the game's Facebook page.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="favouritesCount">
+    <h4><span class="type-signature">&lt;readonly> </span>favouritesCount<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The number of times the game has been favourited.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="gplus">
+    <h4><span class="type-signature">&lt;readonly> </span>gplus<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A link to the game's Google+ page.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="kickstarter">
+    <h4><span class="type-signature">&lt;readonly> </span>kickstarter<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A link to the game's Kickstarter campaign.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="platforms">
+    <h4><span class="type-signature">&lt;readonly> </span>platforms<span class="type-signature"> :Array.&lt;<a href="GamePlatform.html">GamePlatform</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A list of the game's platforms.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="GamePlatform.html">GamePlatform</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="publishers">
+    <h4><span class="type-signature">&lt;readonly> </span>publishers<span class="type-signature"> :Array.&lt;<a href="GameCompany.html">GameCompany</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A list of the companies that published the game.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="GameCompany.html">GameCompany</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="releasedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>releasedAt<span class="type-signature"> :Date|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date the game was released.</p>
     </div>
     
 
@@ -600,370 +1310,15 @@
         
             
 <hr>
-<dt class="name" id="hasLiked">
-    <h4><span class="type-signature">&lt;readonly> </span>hasLiked<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="steam">
+    <h4><span class="type-signature">&lt;readonly> </span>steam<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether the logged in user has liked this comment.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="id">
-    <h4><span class="type-signature">&lt;readonly> </span>id<span class="type-signature"> :number</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The comment's ID number.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">number</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="isOwnComment">
-    <h4><span class="type-signature">&lt;readonly> </span>isOwnComment<span class="type-signature"> :boolean</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether this comment belongs to the logged in user.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="likesCount">
-    <h4><span class="type-signature">&lt;readonly> </span>likesCount<span class="type-signature"> :number</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The number of likes this comment has.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">number</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="metas">
-    <h4><span class="type-signature">&lt;readonly> </span>metas<span class="type-signature"> :Array.&lt;<a href="CommentMeta.html">CommentMeta</a>></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Metadata associated with this comment.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;<a href="CommentMeta.html">CommentMeta</a>></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="post">
-    <h4><span class="type-signature">&lt;readonly> </span>post<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The display text for the comment.</p>
+        <p>A link to the game's steam page.</p>
     </div>
     
 
@@ -1026,15 +1381,86 @@
         
             
 <hr>
-<dt class="name" id="postRaw">
-    <h4><span class="type-signature">&lt;readonly> </span>postRaw<span class="type-signature"> :string</span></h4>
+<dt class="name" id="steamId">
+    <h4><span class="type-signature">&lt;readonly> </span>steamId<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The entered text for the comment.</p>
+        <p>The game's steam ID.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="twitch">
+    <h4><span class="type-signature">&lt;readonly> </span>twitch<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A link to the game's Twitch page.</p>
     </div>
     
 
@@ -1097,15 +1523,15 @@
         
             
 <hr>
-<dt class="name" id="showDelete">
-    <h4><span class="type-signature">&lt;readonly> </span>showDelete<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="twitter">
+    <h4><span class="type-signature">&lt;readonly> </span>twitter<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether the logged in user is able to delete this comment.</p>
+        <p>A link to the game's Twitter account.</p>
     </div>
     
 
@@ -1114,78 +1540,7 @@
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="showEdit">
-    <h4><span class="type-signature">&lt;readonly> </span>showEdit<span class="type-signature"> :boolean</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether the logged in user is able to edit this comment.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
 
@@ -1247,7 +1602,7 @@
 <dd>
     
     <div class="description">
-        <p>The date and time the comment was last updated on.</p>
+        <p>The date the game's entry was last updated.</p>
     </div>
     
 
@@ -1310,15 +1665,15 @@
         
             
 <hr>
-<dt class="name" id="url">
-    <h4><span class="type-signature">&lt;readonly> </span>url<span class="type-signature"> :string</span></h4>
+<dt class="name" id="website">
+    <h4><span class="type-signature">&lt;readonly> </span>website<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The full URL to this post on the main player.me site.</p>
+        <p>A link to the game's website.</p>
     </div>
     
 
@@ -1381,86 +1736,15 @@
         
             
 <hr>
-<dt class="name" id="user">
-    <h4><span class="type-signature">&lt;readonly> </span>user<span class="type-signature"> :<a href="UserModel.html">UserModel</a></span></h4>
+<dt class="name" id="xbox360Id">
+    <h4><span class="type-signature">&lt;readonly> </span>xbox360Id<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The user that posted the comment.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="UserModel.html">UserModel</a></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="userId">
-    <h4><span class="type-signature">&lt;readonly> </span>userId<span class="type-signature"> :number</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The ID of the user that posted the comment.</p>
+        <p>The game's XBox 360 ID.</p>
     </div>
     
 
@@ -1523,15 +1807,15 @@
         
             
 <hr>
-<dt class="name" id="userIsBlocked">
-    <h4><span class="type-signature">&lt;readonly> </span>userIsBlocked<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="xboxoneId">
+    <h4><span class="type-signature">&lt;readonly> </span>xboxoneId<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>If the current user has blocked the user that wrote this comment.</p>
+        <p>The game's XBox One ID.</p>
     </div>
     
 
@@ -1540,7 +1824,78 @@
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="youtube">
+    <h4><span class="type-signature">&lt;readonly> </span>youtube<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A link to the game's YouTube account.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
 
 
 
@@ -1595,132 +1950,6 @@
     
 
     
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="like"><span class="type-signature"></span>like(bool)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Like the comment and update likesCount.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>bool</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
-    
 
     
 
@@ -1767,7 +1996,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 15th 2016, 7:53:09 pm
+		on July 17th 2016, 8:03:14 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

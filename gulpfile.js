@@ -44,7 +44,7 @@ gulp.task('doc', function (done) {
             "excludePattern": "(^|\\/|\\\\)_"
         },
         "opts": {
-            "destination": "./docs/api"
+            "destination": "./docs/models"
         },
         "plugins": [
             "plugins/markdown"

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: CommentMeta</title>
+	<title>Documentation Class: GameMetadataModel</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
+					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="NotificationModel.html">NotificationModel</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
 				</ul>
 			</li>
 			
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: CommentMeta</h1>
+	<h1 class="page-title">Class: GameMetadataModel</h1>
 <section>
 
 <header>
     
         <h2>
-        CommentMeta
+        GameMetadataModel
         </h2>
         
-            <div class="class-description"><p>A class representing a Player.me Comment's assets.</p></div>
+            <div class="class-description"><p>A class representing a game linked to ActivityPostData</p></div>
         
     
 </header>
@@ -84,7 +84,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="CommentMeta"><span class="type-signature"></span>new CommentMeta(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="GameMetadataModel"><span class="type-signature"></span>new GameMetadataModel(<span class="optional">obj</span>)</h4>
     
     
 </dt>
@@ -92,7 +92,7 @@
 
     
     <div class="description">
-        <p>Create a new Comment Meta instance.</p>
+        <p>Create a new Activity model.</p>
     </div>
     
 
@@ -156,7 +156,7 @@
 
             
 
-            <td class="description last"><p>A player response object to initialise this object with.</p></td>
+            <td class="description last"><p>A player response object to initialise this model with.</p></td>
         </tr>
 
     
@@ -239,15 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="content">
-    <h4><span class="type-signature">&lt;readonly> </span>content<span class="type-signature"> :string</span></h4>
+<dt class="name" id="boxCached">
+    <h4><span class="type-signature">&lt;readonly> </span>boxCached<span class="type-signature"> :string|null</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The type of asset.</p>
+        <p>The URL to game's box.</p>
     </div>
     
 
@@ -257,6 +257,9 @@
             <li>
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
 
 
 
@@ -310,15 +313,15 @@
         
             
 <hr>
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string</span></h4>
+<dt class="name" id="boxOriginal">
+    <h4><span class="type-signature">&lt;readonly> </span>boxOriginal<span class="type-signature"> :string|null</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Description for this asset.</p>
+        <p>The original upload of the game's box.</p>
     </div>
     
 
@@ -328,6 +331,9 @@
             <li>
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
 
 
 
@@ -381,15 +387,15 @@
         
             
 <hr>
-<dt class="name" id="images">
-    <h4><span class="type-signature">&lt;readonly> </span>images<span class="type-signature"> :Array.&lt;string></span></h4>
+<dt class="name" id="boxOriginalFilename">
+    <h4><span class="type-signature">&lt;readonly> </span>boxOriginalFilename<span class="type-signature"> :string|null</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>An array of URLs to images.</p>
+        <p>The original filename of the game's box.</p>
     </div>
     
 
@@ -398,7 +404,10 @@
         <ul>
             <li>
                 
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
 
 
 
@@ -452,15 +461,237 @@
         
             
 <hr>
-<dt class="name" id="isInternal">
-    <h4><span class="type-signature">&lt;readonly> </span>isInternal<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="cover">
+    <h4><span class="type-signature">&lt;readonly> </span>cover<span class="type-signature"> :string|null</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>TODO What is CommentMetaModel isInternal?</p>
+        <p>The URL to the game's cover.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="coverOriginal">
+    <h4><span class="type-signature">&lt;readonly> </span>coverOriginal<span class="type-signature"> :string|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The original upload of the game's cover.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="coverOriginalFilename">
+    <h4><span class="type-signature">&lt;readonly> </span>coverOriginalFilename<span class="type-signature"> :string|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The original filename of the game's cover.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="hasLiked">
+    <h4><span class="type-signature">&lt;readonly> </span>hasLiked<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>If the player has liked the game.</p>
     </div>
     
 
@@ -523,15 +754,157 @@
         
             
 <hr>
-<dt class="name" id="provider">
-    <h4><span class="type-signature">&lt;readonly> </span>provider<span class="type-signature"> :string</span></h4>
+<dt class="name" id="id">
+    <h4><span class="type-signature">&lt;readonly> </span>id<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The provider that hosts this asset.</p>
+        <p>The game's ID number.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="likesCount">
+    <h4><span class="type-signature">&lt;readonly> </span>likesCount<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The number of likes the game has received.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="shortDescription">
+    <h4><span class="type-signature">&lt;readonly> </span>shortDescription<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A short description of the game.</p>
     </div>
     
 
@@ -594,15 +967,15 @@
         
             
 <hr>
-<dt class="name" id="thumbnail">
-    <h4><span class="type-signature">&lt;readonly> </span>thumbnail<span class="type-signature"> :string</span></h4>
+<dt class="name" id="slug">
+    <h4><span class="type-signature">&lt;readonly> </span>slug<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The URL of a thumbnail for the asset.</p>
+        <p>The URL friendly slug for the game.</p>
     </div>
     
 
@@ -673,7 +1046,7 @@
 <dd>
     
     <div class="description">
-        <p>Title of this asset.</p>
+        <p>The game's title.</p>
     </div>
     
 
@@ -744,7 +1117,7 @@
 <dd>
     
     <div class="description">
-        <p>Absolute path to this asset.</p>
+        <p>The link to the game's page on player.</p>
     </div>
     
 
@@ -808,206 +1181,6 @@
     
 
     
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="isPhoto"><span class="type-signature"></span>isPhoto()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Whether this asset is a photo.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="isVideo"><span class="type-signature"></span>isVideo()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Whether this asset is a video.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        </dl>
-    
 
     
 
@@ -1054,7 +1227,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 15th 2016, 7:53:09 pm
+		on July 17th 2016, 8:03:14 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

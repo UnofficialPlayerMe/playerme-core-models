@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ActivityPostData</title>
+	<title>Documentation Class: GameCompany</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
+					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="NotificationModel.html">NotificationModel</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
 				</ul>
 			</li>
 			
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ActivityPostData</h1>
+	<h1 class="page-title">Class: GameCompany</h1>
 <section>
 
 <header>
     
         <h2>
-        ActivityPostData
+        GameCompany
         </h2>
         
-            <div class="class-description"><p>The main contents of an ActivityModel of type &quot;post&quot;.</p></div>
+            <div class="class-description"><p>A model representing a game publisher or developer.</p></div>
         
     
 </header>
@@ -84,12 +84,16 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ActivityPostData"><span class="type-signature"></span>new ActivityPostData(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="GameCompany"><span class="type-signature"></span>new GameCompany(<span class="optional">obj</span>)</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        <p>Create a new Activity model.</p>
+    </div>
     
 
     
@@ -131,7 +135,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
 
@@ -152,7 +156,7 @@
 
             
 
-            <td class="description last"><p>Part of a player response object to initialise this instance with.</p></td>
+            <td class="description last"><p>A player response object to initialise this model with.</p></td>
         </tr>
 
     
@@ -235,15 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="game">
-    <h4><span class="type-signature">&lt;readonly> </span>game<span class="type-signature"> :<a href="GameMetadataModel.html">GameMetadataModel</a>|null</span></h4>
+<dt class="name" id="createdAt">
+    <h4><span class="type-signature">&lt;readonly> </span>createdAt<span class="type-signature"> :Date</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The game that has been checked in, if any.</p>
+        <p>The date the game entry was created.</p>
     </div>
     
 
@@ -252,7 +256,78 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="GameMetadataModel.html">GameMetadataModel</a></span>
+<span class="param-type">Date</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="deletedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>deletedAt<span class="type-signature"> :Date|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date the game was deleted.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
 |
 
 <span class="param-type">null</span>
@@ -309,161 +384,15 @@
         
             
 <hr>
-<dt class="name" id="gameCheckInType">
-    <h4><span class="type-signature">&lt;readonly> </span>gameCheckInType<span class="type-signature"> :string|null</span></h4>
+<dt class="name" id="description">
+    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The type of check-in for the game, if any (e.g. &quot;playing&quot;).
-TODO The API can apparently handle other types, but can the client specify them?</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">null</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="meta">
-    <h4><span class="type-signature">&lt;readonly> </span>meta<span class="type-signature"> :Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The post's related content.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;<a href="ActivityPostMetaData.html">ActivityPostMetaData</a>></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="post">
-    <h4><span class="type-signature">&lt;readonly> </span>post<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The post's formatted text.</p>
+        <p>A description of the company.</p>
     </div>
     
 
@@ -526,15 +455,15 @@ TODO The API can apparently handle other types, but can the client specify them?
         
             
 <hr>
-<dt class="name" id="postRaw">
-    <h4><span class="type-signature">&lt;readonly> </span>postRaw<span class="type-signature"> :string</span></h4>
+<dt class="name" id="homepage">
+    <h4><span class="type-signature">&lt;readonly> </span>homepage<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The post's un-formatted text.</p>
+        <p>The company's homepage.</p>
     </div>
     
 
@@ -544,6 +473,361 @@ TODO The API can apparently handle other types, but can the client specify them?
             <li>
                 
 <span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="id">
+    <h4><span class="type-signature">&lt;readonly> </span>id<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The company's ID.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="name">
+    <h4><span class="type-signature">&lt;readonly> </span>name<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The company's name.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="slug">
+    <h4><span class="type-signature">&lt;readonly> </span>slug<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The URL friendly name of the company.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="updatedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>updatedAt<span class="type-signature"> :Date</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date the game entry was updated.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="userId">
+    <h4><span class="type-signature">&lt;readonly> </span>userId<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The ID of the company's user.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
 
 
 
@@ -597,108 +881,6 @@ TODO The API can apparently handle other types, but can the client specify them?
         </dl>
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="isPlayingGame"><span class="type-signature"></span>isPlayingGame()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>If the post says the author is playing a game.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -746,7 +928,7 @@ TODO The API can apparently handle other types, but can the client specify them?
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 15th 2016, 7:53:09 pm
+		on July 17th 2016, 8:03:14 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: GameCompany</title>
+	<title>Documentation Class: UserModel</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
+					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="NotificationModel.html">NotificationModel</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
 				</ul>
 			</li>
 			
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: GameCompany</h1>
+	<h1 class="page-title">Class: UserModel</h1>
 <section>
 
 <header>
     
         <h2>
-        GameCompany
+        UserModel
         </h2>
         
-            <div class="class-description"><p>A model representing a game publisher or developer.</p></div>
+            <div class="class-description"><p>A model representing a Player.me User.</p></div>
         
     
 </header>
@@ -84,7 +84,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="GameCompany"><span class="type-signature"></span>new GameCompany(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="UserModel"><span class="type-signature"></span>new UserModel(<span class="optional">obj</span>)</h4>
     
     
 </dt>
@@ -92,7 +92,7 @@
 
     
     <div class="description">
-        <p>Create a new Activity model.</p>
+        <p>Create a new User model.</p>
     </div>
     
 
@@ -239,160 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="createdAt">
-    <h4><span class="type-signature">&lt;readonly> </span>createdAt<span class="type-signature"> :Date</span></h4>
+<dt class="name" id="accountType">
+    <h4><span class="type-signature">&lt;readonly> </span>accountType<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The date the game entry was created.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Date</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="deletedAt">
-    <h4><span class="type-signature">&lt;readonly> </span>deletedAt<span class="type-signature"> :Date|null</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The date the game was deleted.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Date</span>
-|
-
-<span class="param-type">null</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;readonly> </span>description<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>A description of the company.</p>
+        <p>The type of account.</p>
     </div>
     
 
@@ -455,15 +310,16 @@
         
             
 <hr>
-<dt class="name" id="homepage">
-    <h4><span class="type-signature">&lt;readonly> </span>homepage<span class="type-signature"> :string</span></h4>
+<dt class="name" id="avatar">
+    <h4><span class="type-signature">&lt;readonly> </span>avatar<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The company's homepage.</p>
+        <p>The URL of the user's avatar.
+Player provides a default.</p>
     </div>
     
 
@@ -473,6 +329,148 @@
             <li>
                 
 <span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="cover">
+    <h4><span class="type-signature">&lt;readonly> </span>cover<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The URL to the user's profile cover image.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="followersCount">
+    <h4><span class="type-signature">&lt;readonly> </span>followersCount<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The number of followers the user has.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
 
 
 
@@ -534,7 +532,7 @@
 <dd>
     
     <div class="description">
-        <p>The company's ID.</p>
+        <p>The user's ID.</p>
     </div>
     
 
@@ -597,15 +595,15 @@
         
             
 <hr>
-<dt class="name" id="name">
-    <h4><span class="type-signature">&lt;readonly> </span>name<span class="type-signature"> :string</span></h4>
+<dt class="name" id="isFeatured">
+    <h4><span class="type-signature">&lt;readonly> </span>isFeatured<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The company's name.</p>
+        <p>Whether Player.me has listed this as a featured user.</p>
     </div>
     
 
@@ -614,7 +612,220 @@
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="isPartner">
+    <h4><span class="type-signature">&lt;readonly> </span>isPartner<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether this is a Player.me staff member or partner.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="isPrivate">
+    <h4><span class="type-signature">&lt;readonly> </span>isPrivate<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether this is a private user.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="isVerified">
+    <h4><span class="type-signature">&lt;readonly> </span>isVerified<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether Player.me has verified this user.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
 
 
 
@@ -676,7 +887,7 @@
 <dd>
     
     <div class="description">
-        <p>The URL friendly name of the company.</p>
+        <p>The URL-friendly version of the user's name.</p>
     </div>
     
 
@@ -739,15 +950,15 @@
         
             
 <hr>
-<dt class="name" id="updatedAt">
-    <h4><span class="type-signature">&lt;readonly> </span>updatedAt<span class="type-signature"> :Date</span></h4>
+<dt class="name" id="url">
+    <h4><span class="type-signature">&lt;readonly> </span>url<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The date the game entry was updated.</p>
+        <p>A relative URL to the user's profile.</p>
     </div>
     
 
@@ -756,7 +967,7 @@
         <ul>
             <li>
                 
-<span class="param-type">Date</span>
+<span class="param-type">string</span>
 
 
 
@@ -810,15 +1021,15 @@
         
             
 <hr>
-<dt class="name" id="userId">
-    <h4><span class="type-signature">&lt;readonly> </span>userId<span class="type-signature"> :number</span></h4>
+<dt class="name" id="username">
+    <h4><span class="type-signature">&lt;readonly> </span>username<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The ID of the company's user.</p>
+        <p>The user's username.</p>
     </div>
     
 
@@ -827,7 +1038,7 @@
         <ul>
             <li>
                 
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
 
@@ -882,6 +1093,206 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="isGroup"><span class="type-signature"></span>isGroup()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Whether the account is for a group.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isUser"><span class="type-signature"></span>isUser()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Whether the account is for a normal user.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
 
     
 
@@ -928,7 +1339,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 15th 2016, 7:53:09 pm
+		on July 17th 2016, 8:03:14 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

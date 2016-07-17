@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: UserModel</title>
+	<title>Documentation Class: CommentModel</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
+					<li><a href="ActivityModel.html">ActivityModel</a></li><li><a href="ActivityPostData.html">ActivityPostData</a></li><li><a href="ActivityPostMetaData.html">ActivityPostMetaData</a></li><li><a href="ActivityVideoData.html">ActivityVideoData</a></li><li><a href="CommentMeta.html">CommentMeta</a></li><li><a href="CommentModel.html">CommentModel</a></li><li><a href="GameCompany.html">GameCompany</a></li><li><a href="GameExtendedModel.html">GameExtendedModel</a></li><li><a href="GameMetadataModel.html">GameMetadataModel</a></li><li><a href="GameModel.html">GameModel</a></li><li><a href="GamePlatform.html">GamePlatform</a></li><li><a href="NotificationModel.html">NotificationModel</a></li><li><a href="UserExtendedModel.html">UserExtendedModel</a></li><li><a href="UserModel.html">UserModel</a></li>
 				</ul>
 			</li>
 			
@@ -63,16 +63,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: UserModel</h1>
+	<h1 class="page-title">Class: CommentModel</h1>
 <section>
 
 <header>
     
         <h2>
-        UserModel
+        CommentModel
         </h2>
         
-            <div class="class-description"><p>A model representing a Player.me User.</p></div>
+            <div class="class-description"><p>A model representing a Player.me Comment.</p></div>
         
     
 </header>
@@ -84,7 +84,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="UserModel"><span class="type-signature"></span>new UserModel(<span class="optional">obj</span>)</h4>
+    <h4 class="name" id="CommentModel"><span class="type-signature"></span>new CommentModel(<span class="optional">obj</span>)</h4>
     
     
 </dt>
@@ -92,7 +92,7 @@
 
     
     <div class="description">
-        <p>Create a new User model.</p>
+        <p>Create a new Comment model.</p>
     </div>
     
 
@@ -239,229 +239,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="accountType">
-    <h4><span class="type-signature">&lt;readonly> </span>accountType<span class="type-signature"> :string</span></h4>
+<dt class="name" id="activityId">
+    <h4><span class="type-signature">&lt;readonly> </span>activityId<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The type of account.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="avatar">
-    <h4><span class="type-signature">&lt;readonly> </span>avatar<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The URL of the user's avatar.
-Player provides a default.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="cover">
-    <h4><span class="type-signature">&lt;readonly> </span>cover<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The URL to the user's profile cover image.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="followersCount">
-    <h4><span class="type-signature">&lt;readonly> </span>followersCount<span class="type-signature"> :number</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The number of followers the user has.</p>
+        <p>The ID of the activity this comment is on.</p>
     </div>
     
 
@@ -471,6 +257,367 @@ Player provides a default.</p>
             <li>
                 
 <span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="activityUserId">
+    <h4><span class="type-signature">&lt;readonly> </span>activityUserId<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The ID of the original poster.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="createdAt">
+    <h4><span class="type-signature">&lt;readonly> </span>createdAt<span class="type-signature"> :Date</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date and time the comment was created on.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="deletedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>deletedAt<span class="type-signature"> :Date|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date and time the comment was soft deleted on (or null).</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="editedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>editedAt<span class="type-signature"> :Date|null</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date and time the comment was last edited by the user on (or null).</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="hasLiked">
+    <h4><span class="type-signature">&lt;readonly> </span>hasLiked<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether the logged in user has liked this comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
 
 
 
@@ -532,7 +679,7 @@ Player provides a default.</p>
 <dd>
     
     <div class="description">
-        <p>The user's ID.</p>
+        <p>The comment's ID number.</p>
     </div>
     
 
@@ -595,15 +742,15 @@ Player provides a default.</p>
         
             
 <hr>
-<dt class="name" id="isFeatured">
-    <h4><span class="type-signature">&lt;readonly> </span>isFeatured<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="isOwnComment">
+    <h4><span class="type-signature">&lt;readonly> </span>isOwnComment<span class="type-signature"> :boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether Player.me has listed this as a featured user.</p>
+        <p>Whether this comment belongs to the logged in user.</p>
     </div>
     
 
@@ -666,15 +813,15 @@ Player provides a default.</p>
         
             
 <hr>
-<dt class="name" id="isPartner">
-    <h4><span class="type-signature">&lt;readonly> </span>isPartner<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="likesCount">
+    <h4><span class="type-signature">&lt;readonly> </span>likesCount<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether this is a Player.me staff member or partner.</p>
+        <p>The number of likes this comment has.</p>
     </div>
     
 
@@ -683,7 +830,7 @@ Player provides a default.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
 
 
 
@@ -737,15 +884,15 @@ Player provides a default.</p>
         
             
 <hr>
-<dt class="name" id="isPrivate">
-    <h4><span class="type-signature">&lt;readonly> </span>isPrivate<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="metas">
+    <h4><span class="type-signature">&lt;readonly> </span>metas<span class="type-signature"> :Array.&lt;<a href="CommentMeta.html">CommentMeta</a>></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether this is a private user.</p>
+        <p>Metadata associated with this comment.</p>
     </div>
     
 
@@ -754,7 +901,7 @@ Player provides a default.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">Array.&lt;<a href="CommentMeta.html">CommentMeta</a>></span>
 
 
 
@@ -808,86 +955,15 @@ Player provides a default.</p>
         
             
 <hr>
-<dt class="name" id="isVerified">
-    <h4><span class="type-signature">&lt;readonly> </span>isVerified<span class="type-signature"> :boolean</span></h4>
+<dt class="name" id="post">
+    <h4><span class="type-signature">&lt;readonly> </span>post<span class="type-signature"> :string</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>Whether Player.me has verified this user.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="slug">
-    <h4><span class="type-signature">&lt;readonly> </span>slug<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The URL-friendly version of the user's name.</p>
+        <p>The display text for the comment.</p>
     </div>
     
 
@@ -897,6 +973,290 @@ Player provides a default.</p>
             <li>
                 
 <span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="postRaw">
+    <h4><span class="type-signature">&lt;readonly> </span>postRaw<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The entered text for the comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="showDelete">
+    <h4><span class="type-signature">&lt;readonly> </span>showDelete<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether the logged in user is able to delete this comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="showEdit">
+    <h4><span class="type-signature">&lt;readonly> </span>showEdit<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether the logged in user is able to edit this comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="updatedAt">
+    <h4><span class="type-signature">&lt;readonly> </span>updatedAt<span class="type-signature"> :Date</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The date and time the comment was last updated on.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Date</span>
 
 
 
@@ -958,7 +1318,7 @@ Player provides a default.</p>
 <dd>
     
     <div class="description">
-        <p>A relative URL to the user's profile.</p>
+        <p>The full URL to this post on the main player.me site.</p>
     </div>
     
 
@@ -1021,15 +1381,15 @@ Player provides a default.</p>
         
             
 <hr>
-<dt class="name" id="username">
-    <h4><span class="type-signature">&lt;readonly> </span>username<span class="type-signature"> :string</span></h4>
+<dt class="name" id="user">
+    <h4><span class="type-signature">&lt;readonly> </span>user<span class="type-signature"> :<a href="UserModel.html">UserModel</a></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p>The user's username.</p>
+        <p>The user that posted the comment.</p>
     </div>
     
 
@@ -1038,7 +1398,149 @@ Player provides a default.</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="UserModel.html">UserModel</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="userId">
+    <h4><span class="type-signature">&lt;readonly> </span>userId<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The ID of the user that posted the comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="userIsBlocked">
+    <h4><span class="type-signature">&lt;readonly> </span>userIsBlocked<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>If the current user has blocked the user that wrote this comment.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
 
 
 
@@ -1099,7 +1601,7 @@ Player provides a default.</p>
             
 <hr>
 <dt>
-    <h4 class="name" id="isGroup"><span class="type-signature"></span>isGroup()</h4>
+    <h4 class="name" id="like"><span class="type-signature"></span>like(bool)</h4>
     
     
 </dt>
@@ -1107,7 +1609,7 @@ Player provides a default.</p>
 
     
     <div class="description">
-        <p>Whether the account is for a group.</p>
+        <p>Like the comment and update likesCount.</p>
     </div>
     
 
@@ -1116,6 +1618,50 @@ Player provides a default.</p>
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bool</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -1169,124 +1715,6 @@ Player provides a default.</p>
     
 
     
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="isUser"><span class="type-signature"></span>isUser()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Whether the account is for a normal user.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
@@ -1339,7 +1767,7 @@ Player provides a default.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 15th 2016, 7:53:09 pm
+		on July 17th 2016, 8:03:14 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
