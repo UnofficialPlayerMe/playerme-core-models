@@ -25,7 +25,7 @@ class ActivityModel {
         this._source            = obj && obj.source                 || '';
         this._sourceUrl         = obj && obj.sourceUrl              || '';
         this._url               = obj && obj.url                    || '';
-        this._fullUrl           = obj && toDate(obj.full_url)       || '';
+        this._fullUrl           = obj && obj.full_url               || '';
         this._publishedAt       = obj && toDate(obj.published_at)   || null;
         this._createdAt         = obj && toDate(obj.created_at)     || null;
         this._updatedAt         = obj && toDate(obj.updated_at)     || null;
