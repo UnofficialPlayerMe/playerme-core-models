@@ -159,7 +159,7 @@
 * ~~Video Entity~~
 
 ## [User's Notifications](http://docs.playerme.apiary.io/#reference/user's-notifications)
-* Notifications Collection - **To Do**
+* Notifications Collection - **NotificationModel**
 ```json
 [{
   "key":            "c3736725",
